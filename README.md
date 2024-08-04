@@ -15,3 +15,5 @@ npm uninstall vite
 ```bash
 ln -s "$(which codeium_language_server)" /home/denhax/.cache/nvim/codeuim/bin/1.8.80/language_server_linux_x64
 ```
+
+Link for gtk3 for gtk4 in .config/gtk$(..)
