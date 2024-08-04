@@ -1,7 +1,7 @@
 {
-  pkgs,
   config,
   lib,
+  username,
   ...
 }:
 
@@ -20,6 +20,10 @@ in
       enable = true;
       userName = "DenHax";
       userEmail = "whatxpw@gmail.com";
+      extraConfig = {
+        init.defaultBranch = "main";
+        safe.direcrory = "/home/${username}/nix";
+      };
     };
   };
 }
