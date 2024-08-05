@@ -1,16 +1,16 @@
 {
   networking = {
-    networkmanager.wifi.backend = "iwd";
-
-    wireless.iwd = {
-      enable = true;
-
-      settings = {
-        Settings = {
-          AutoConnect = true;
-        };
-      };
-    };
+    # networkmanager.wifi.backend = "iwd";
+    #
+    # wireless.iwd = {
+    #   enable = true;
+    #
+    #   settings = {
+    #     Settings = {
+    #       AutoConnect = true;
+    #     };
+    #   };
+    # };
 
     firewall = {
       enable = true;

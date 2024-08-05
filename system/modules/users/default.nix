@@ -28,7 +28,7 @@ in
             "docker"
             "input"
             "libvirtd"
-            "networkManager"
+            "networkmanager"
             "video"
             "wheel"
           ];

@@ -18,14 +18,14 @@ in
   config = mkIf cfg.enable {
     programs.helix = {
       enable = true;
-      extraPackages =
-        let
-          # hasEditor = true;
-          importPkgs = import ../editor_pkgs.nix { inherit pkgs; };
-        in
-        [ ] ++ importPkgs;
+      extraPackages = with pkgs; [ ];
+      # let
+      # hasEditor = true;
+      # importPkgs = import ../editor_pkgs.nix { inherit pkgs; };
+      # in
+      # [ ] ++ importPkgs;
       settings = {
-        theme = "horizon-dark";
+        # theme = "horizon-dark";
         editor.cursor-shape = {
           normal = "block";
           insert = "bar";
@@ -40,7 +40,7 @@ in
           language-servers = [ "nil_ls" ];
         }
       ];
-      themes = { };
+      # themes = { };
     };
   };
 }

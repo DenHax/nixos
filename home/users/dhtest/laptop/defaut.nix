@@ -10,7 +10,7 @@
   };
 
   imports = [
-    ../../../../modules/nixConfig
+    ../../../../system/modules/nix
     ../../../modules/kitty
     # ../../../modules/flameshot
     ../../../modules/fastfetch

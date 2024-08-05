@@ -8,7 +8,7 @@
 
     opacity = {
       applications = 0.9;
-      terminal = 0.77;
+      terminal = 0.9;
       popups = 0.8;
       desktop = 0.99;
     };
@@ -16,7 +16,7 @@
     fonts = {
       sizes = {
         applications = 14;
-        terminal = 12;
+        terminal = 13;
         popups = 14;
         desktop = 14;
       };

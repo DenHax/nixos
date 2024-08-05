@@ -14,9 +14,9 @@ let
   monitorsSettings =
     if hostname == "workstation" then
       [ "HDMI-A-1,1920x1080@60,1920x0,1" ]
-    else if hostname == "nbox" then
+    else if hostname == "laptop" then
       [
-        "HDMI-A-1,1920x1080@60,1920x0,1"
+        # "HDMI-A-1,1920x1080@60,1920x0,1"
         "eDP-1,1920x1080@60,0x0,1"
       ]
     else

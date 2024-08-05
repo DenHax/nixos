@@ -17,15 +17,15 @@ in
 
   config = mkIf cfg.enable {
     services.dunst =
-      let
-        iconGtk = config.gtk.iconTheme;
-      in
+      # let
+      #   iconGtk = config.gtk.iconTheme;
+      # in
       {
         enable = false;
-        iconTheme = {
-          name = iconGtk.name;
-          package = iconGtk.package;
-        };
+        # iconTheme = {
+        #   name = iconGtk.name;
+        #   package = iconGtk.package;
+        # };
       };
   };
 }

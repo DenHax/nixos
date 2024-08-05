@@ -15,25 +15,23 @@
       isNvidia ? false,
       isAMD ? false,
     }:
-    {
-      inputs.home-manager.lib.homeManagerConfiguraion = {
-        pkgs = inputs.nixpkgs.legacyPackages.${platform};
-        extraSpecialArgs = {
-          inherit
-            inputs
-            platform
-            username
-            hostname
-            stateVersion
-            isWorkstation
-            isIntel
-            isRyzen
-            isNvidia
-            isAMD
-            ;
-        };
-        modules = [ "../home" ];
+    inputs.home-manager.lib.homeManagerConfiguration {
+      pkgs = inputs.nixpkgs.legacyPackages.${platform};
+      extraSpecialArgs = {
+        inherit
+          inputs
+          platform
+          username
+          hostname
+          stateVersion
+          isWorkstation
+          isIntel
+          isRyzen
+          isNvidia
+          isAMD
+          ;
       };
+      modules = [ ../home ];
     };
 
   mkHost =

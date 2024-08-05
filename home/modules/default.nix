@@ -1,13 +1,13 @@
 { inputs, ... }:
-
 {
   imports = [
     inputs.stylix.homeManagerModules.stylix
-    ../../modules/stylix
+    ../../stylix
 
     ./ags
     ./alacritty
     ./awesome
+    ./btop
     ./dconf
     ./direnv
     ./dunst
@@ -20,7 +20,6 @@
     ./fzf
     ./git
     ./gtk
-    ./gvfs
     ./helix
     ./htop
     ./hypridle
@@ -35,6 +34,7 @@
     ./qt
     ./ripgrep
     ./rofi
+    ./ssh
     ./starship
     ./swaync
     ./tmux

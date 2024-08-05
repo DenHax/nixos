@@ -36,7 +36,7 @@ in
             "--asterisks"
             "--remember"
             "--time"
-            "--cmd ${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
+            # "--cmd ${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
           ];
         };
       };

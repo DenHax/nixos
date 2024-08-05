@@ -26,7 +26,7 @@ in
       networkmanager.enable = true;
       firewall.checkReversePath = false;
       networkmanager.wifi.macAddress = "random";
-      useDHCP = mkDefault true;
+      # useDHCP = mkDefault true;
       hostName = hostname;
     };
   };

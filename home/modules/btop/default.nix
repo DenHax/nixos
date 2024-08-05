@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 
 with lib;
 
@@ -20,7 +15,7 @@ in
       enable = true;
       settings = {
         # color_theme = "kanagawa";
-        theme_background = false;
+        # theme_background = false;
         vim_keys = true;
         update_ms = 100;
       };

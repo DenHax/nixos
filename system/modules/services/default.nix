@@ -5,6 +5,7 @@
     ./auto-cpufreq
     ./fwupd
     ./greetd
+    # ./gvfs
     ./hyprland
     ./input
     ./logind

@@ -1,6 +1,7 @@
 {
   imports = [
     ../../modules
+    ./bootloader
     ./disko
     ./fingerprint
     ./hardware
@@ -37,6 +38,7 @@
       blueman.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
+      # gvfs.enable = true;
       hyprland.enable = true;
       input.enable = false;
       light.enable = true;

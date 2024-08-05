@@ -22,14 +22,14 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.1";
-    };
-
-    xdghypr = {
-      url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprland = {
+    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.1";
+    # };
+    #
+    # xdghypr = {
+    #   url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.1";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     stylix.url = "github:danth/stylix";
     darwin = {
@@ -112,7 +112,7 @@
           ${hosts.macbox.hostname} = confMake.mkHostDarwin hosts.macbox;
         };
 
-        homeConfiguraion = {
+        homeConfigurations = {
 
           "${hosts.workstationDH.username}@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
           "root@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;

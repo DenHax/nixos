@@ -19,7 +19,7 @@ in
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = pkgs.hyprland; # inputs.hyprland.packages.${pkgs.system}.hyprland;
     };
   };
 }

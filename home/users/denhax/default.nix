@@ -1,6 +1,6 @@
 {
   pkgs,
-  inputs,
+  # inputs,
   config,
   isWorkstation,
   ...
@@ -8,7 +8,6 @@
 
 let
   inherit (pkgs.stdenv) isLinux;
-  ufetch = pkgs.callPackage ../../../pkgs/ufetch { };
 
   texlive-pkg = (
     pkgs.texlive.combine {
@@ -70,7 +69,6 @@ in
     # GUI applications
     zathura.enable = true;
     firefox.enable = isLinux && isWorkstation;
-    gvfs.enable = true;
 
     # WM and  DE
     awesome.enable = false;
@@ -91,7 +89,7 @@ in
     fzf.enable = true;
     git.enable = true;
     htop.enable = true;
-    password-store.enable = true;
+    password-store.enable = false;
     ripgrep.enable = true;
     ssh.enable = isLinux && isWorkstation;
     zoxide.enable = true;
@@ -111,7 +109,7 @@ in
         fd
         duf
         jq
-        btop
+        # btop
         procs
         tlrc
         pre-commit
@@ -180,7 +178,6 @@ in
       ++ lib.optionals isWorkstation [
         discord
         obsidian
-        youtube-dl
         semgrep
       ]
       ++ lib.optionals (isLinux && isWorkstation) [

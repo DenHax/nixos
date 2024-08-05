@@ -33,10 +33,11 @@
 
     services = {
       awesome.enable = false;
-      blueman.enable = true;
       auto-cpufreq.enable = false;
+      blueman.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
+      # gvfs.enable = true;
       hyprland.enable = true;
       input.enable = false;
       light.enable = true;

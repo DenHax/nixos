@@ -1,5 +1,5 @@
 {
-  pkgs,
+  # pkgs,
   config,
   lib,
   ...
@@ -18,14 +18,14 @@ in
   config = mkIf cfg.enable {
     gtk = {
       enable = true;
-      iconTheme = {
-        name = "Kanagawa";
-        package = pkgs.kanagawa-icon-theme;
-      };
-      theme = {
-        name = "Kanagawa-BL";
-        package = pkgs.kanagawa-gtk-theme;
-      };
+      # iconTheme = {
+      #   name = "Kanagawa";
+      #   package = pkgs.kanagawa-icon-theme;
+      # };
+      # theme = {
+      #   name = "Kanagawa-BL";
+      #   # package = pkgs.kanagawa-gtk-theme;
+      # };
       gtk4 = { };
     };
   };

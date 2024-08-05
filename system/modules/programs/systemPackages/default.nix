@@ -3,7 +3,9 @@
   lib,
   config,
   isWorkstation,
-
+  isIntel,
+  isRyzen,
+  isNvidia,
   ...
 }:
 
@@ -107,7 +109,7 @@ in
       ]
       ++ lib.optionals (isIntel == "true") [ microcodeIntel ]
       ++ lib.optionals (isRyzen == "true") [ ]
-      ++ lib.optionals (isNvidia == "true") [ ]
-      ++ lib.optionals (isAMD == "true") [ ];
+      ++ lib.optionals (isNvidia == "true") [ ];
+    # ++ lib.optionals (isAMD == "true") [ ];
   };
 }

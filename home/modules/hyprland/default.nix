@@ -1,4 +1,5 @@
 {
+  inputs,
   pkgs,
   config,
   lib,
@@ -40,7 +41,7 @@ in
       enable = true;
       xwayland.enable = true;
       # package = pkgs.hyprland;
-      package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = pkgs.hyprland; # inputs.hyprland.packages.${pkgs.system}.hyprland;
       settings = {
         exec-once = [
           "${pkgs.bash}/bin/bash ~/.config/hypr/auto.sh"
@@ -51,8 +52,6 @@ in
         ];
         "$mainMod" = "SUPER";
         "$shiftMod" = "SUPER SHIFT";
-
-        monitor = ",preferred,auto,1";
 
         env = [
           "XDG_CURRENT_DESKTOP,Hyprland"
@@ -85,8 +84,8 @@ in
           gaps_in = 5;
           gaps_out = 20;
           border_size = 3;
-          "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-          "col.inactive_border" = "rgba(595959aa)";
+          # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          # "col.inactive_border" = "rgba(595959aa)";
 
           layout = "master";
 
