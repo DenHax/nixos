@@ -18,10 +18,10 @@ in
   config = mkIf cfg.enable {
     programs.kitty = {
       enable = true;
-      # font = {
-      #   name = "FiraCode Nerd Font";
-      #   size = 13;
-      # };
+      font = {
+        name = "FiraCode Nerd Font";
+        size = 13;
+      };
       settings = {
         # background_opacity = "0.95";
       };

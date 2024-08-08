@@ -52,7 +52,7 @@ in
     ags.enable = false;
     dconf.enable = isWorkstation;
     dunst.enable = false;
-    eww.enable = isWorkstation;
+    eww.enable = false;
     waybar.enable = config.module.hyprland.enable;
 
     # Cli tools, text editors, file managers, terminal emulator, shells and prompt
@@ -62,7 +62,9 @@ in
     fish.enable = false;
     kitty.enable = isWorkstation;
     nvim.enable = true;
+    micro.enable = false;
     starship.enable = true;
+    tmux.enable = true;
     yazi.enable = true;
     zsh.enable = true;
 
@@ -78,17 +80,20 @@ in
     hypridle.enable = config.module.hyprland.enable;
     hyprlock.enable = config.module.hyprland.enable;
     hyprpaper.enable = config.module.hyprland.enable;
+    # hyprpaper.enable = false;
     rofi.enable = config.module.hyprland.enable;
+    swaync.enable = true;
     qt.enable = true;
     xdg.enable = isLinux && isWorkstation;
 
     # Cli utils and equivalents
-    btop.enable = true;
+    btop.enable = false;
     eza.enable = true;
     fastfetch.enable = true;
     fzf.enable = true;
     git.enable = true;
     htop.enable = true;
+    neofetch.enable = false;
     password-store.enable = false;
     ripgrep.enable = true;
     ssh.enable = isLinux && isWorkstation;
@@ -105,31 +110,30 @@ in
       with pkgs;
       [
         # Cli utils and equiv
-        bat
+        gat
         fd
         duf
         jq
-        # btop
         procs
         tlrc
         pre-commit
         tokei
-        ffmpeg
         zip
         unzip
-        # eza
-        # ripgrep
-        # fzf
-        # htop
-        # zsh-z
-        # gnuplot
         # fastfetch
+        neofetch
+        # bat
+        # btop
+        # eza
+        # ffmpeg
+        # gnuplot
+        # zsh-z
 
         # Nix and NixOS
         nix-prefetch-scripts
         nix-prefetch-github
-        deadnix
-        statix
+        # deadnix
+        # statix
 
         # Development envirements, Devenv and etc.
         devenv
@@ -157,18 +161,18 @@ in
         # postgresql
 
         # Secrets and Security
-        pass
+        # pass
         sops
         grype
         syft
 
         # DevOps Utils
-        docker-compose
-        kubectl
-        kubernetes-helm
-        ansible
-        ansible-lint
-        terraform
+        # docker-compose
+        # kubectl
+        # kubernetes-helm
+        # ansible
+        # ansible-lint
+        # terraform
 
         # Git stuff
         # git
@@ -176,7 +180,7 @@ in
 
       ]
       ++ lib.optionals isWorkstation [
-        discord
+        # discord
         obsidian
         semgrep
       ]
@@ -185,7 +189,7 @@ in
         vagrant
 
         # Alter
-        vesktop
+        # vesktop
 
         # Filemanagers
         # mate.caja
@@ -194,28 +198,27 @@ in
         lxde.lxmenu-data
 
         # Office
-        onlyoffice-bin
-        texlive-pkg
-        libreoffice-qt
+        # onlyoffice-bin
+        # texlive-pkg
+        # libreoffice-qt
         # hunspell
         # hunspellDicts.en_US
         # hunspellDicts.ru_RU
         # biber
 
         # Menu
-        ulauncher
+        # ulauncher
 
         # Misc
-        obs-studio
-        dconf2nix
-        via
-        gat
-        vlc
+        # obs-studio
+        # dconf2nix
+        # via
+        # vlc
         pavucontrol
 
         # GTK
         gtk-engine-murrine
-        gnome-themes-extra
+        # gnome-themes-extra
 
         # Images and pdf viewers, videos
         feh
@@ -234,7 +237,13 @@ in
         swappy
         satty
 
+        # UML, SVG, any editors
+        umlet
+        plantuml
+        # staruml
+
         # Utlis
+        # swww
         brightnessctl
         cliphist
         dbus
@@ -265,13 +274,13 @@ in
 
         # Terminal emulator
         # warp-terminal
-        xterm
-        alacritty
+        # xterm
+        # alacritty
 
         # Rofi
-        rofi-screenshot
-        rofi-bluetooth
-        rofi-power-menu
+        # rofi-screenshot
+        # rofi-bluetooth
+        # rofi-power-menu
         # rofi-mpd
         # rofi-menugen
         # rofi-pulse-select

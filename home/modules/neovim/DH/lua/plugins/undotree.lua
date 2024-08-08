@@ -1,7 +1,8 @@
 return {
 	"mbbill/undotree",
-	-- opts = {},
-	-- config = function()
-	-- 	require("undotree").setup({})
-	-- end,
+	enabled = false,
+	opts = {},
+	config = function()
+		require("undotree").setup({})
+	end,
 }

@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     dconf = {
-      enable = true;
+      # enable = true;
       settings = {
         "org/virt-manager/virt-manager/connections" = {
           autoconnect = [ "qemu:///system" ];

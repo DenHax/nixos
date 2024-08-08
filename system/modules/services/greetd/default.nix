@@ -2,7 +2,6 @@
   lib,
   config,
   username,
-  inputs,
   pkgs,
   ...
 }:
@@ -28,16 +27,23 @@ in
       #   default_session = initial_session;
       # };
 
+      package = pkgs.greetd.tuigreetd;
       settings = {
         default_session = {
           user = username;
-          command = builtins.concatStringsSep " " [
-            "${pkgs.greetd.tuigreet}/bin/tuigreet"
-            "--asterisks"
-            "--remember"
-            "--time"
-            # "--cmd ${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
-          ];
+          command = "${pkgs.hyprland}/bin/Hyprland";
+          # command = builtins.concatStringsSep " " [
+          #   "${pkgs.greetd.tuigreet}/bin/tuigreet"
+          #   # "--asterisks"
+          #   "--remember"
+          #   "--time"
+          #   "--cmd ${pkgs.hyprland}/bin/Hyprland"
+          #   # "--cmd ${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland"
+          # ];
+        };
+        initial_session = {
+          command = "${pkgs.hyprland}/bin/Hyprland";
+          user = username;
         };
       };
     };

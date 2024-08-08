@@ -19,7 +19,7 @@
     virtualisation.enable = true;
 
     programs = {
-      dconf.enable = true;
+      dconf.enable = false;
       fish.enable = true;
       font.enable = true;
       gnupg.enable = true;

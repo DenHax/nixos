@@ -24,7 +24,6 @@ in
     environment.systemPackages =
       with pkgs;
       [
-
         # Nix and NixOS
         home-manager
         nvd
@@ -44,7 +43,8 @@ in
         # auto-cpufreq
 
         # Text editors and IDE
-        micro
+        # micro
+        vim
 
         # CLI equivalents
 
@@ -63,7 +63,7 @@ in
         glxinfo
         pciutils
         usbutils
-        powertop
+        # powertop
         lm_sensors
         strace
         ltrace
@@ -104,7 +104,7 @@ in
         fwupd-efi
 
         # Utils
-        gnome.dconf-editor
+        # gnome.dconf-editor
         grim
       ]
       ++ lib.optionals (isIntel == "true") [ microcodeIntel ]

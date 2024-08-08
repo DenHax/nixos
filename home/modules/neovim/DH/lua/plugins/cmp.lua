@@ -48,7 +48,7 @@ return {
 			"petertriho/cmp-git",
 			"f3fora/cmp-spell",
 			"kdheepak/cmp-latex-symbols",
-			"micangl/cmp-vimtex",
+			-- "micangl/cmp-vimtex",
 			{
 				"L3MON4D3/LuaSnip",
 				dependencies = {
@@ -108,7 +108,7 @@ return {
 						group_index = 2,
 					},
 					{ name = "neorg" },
-					{ name = "vimtex" },
+					-- { name = "vimtex" },
 					{ name = "git" },
 					{ nam = "crates" },
 					{
@@ -165,6 +165,7 @@ return {
 	},
 	{
 		"micangl/cmp-vimtex",
+		enabled = false,
 		config = function()
 			require("cmp_vimtex").setup({})
 		end,

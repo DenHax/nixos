@@ -42,6 +42,13 @@ in
       xwayland.enable = true;
       # package = pkgs.hyprland;
       package = pkgs.hyprland; # inputs.hyprland.packages.${pkgs.system}.hyprland;
+      systemd = {
+        enable = true;
+        extraCommands = lib.mkBefore [
+          "systemctl --user stop graphical-session.target"
+          "systemctl --user start hyprland-session.target"
+        ];
+      };
       settings = {
         exec-once = [
           "${pkgs.bash}/bin/bash ~/.config/hypr/auto.sh"
@@ -56,8 +63,7 @@ in
         env = [
           "XDG_CURRENT_DESKTOP,Hyprland"
           "XDG_SESSION_DESKTOP,Hyprland"
-          "XCURSOR_SIZE,36"
-          "HYPRSHOT_DIR,Pictures/Screenshots"
+          "XCURSOR_SIZE,18"
         ];
 
         debug = {
@@ -87,7 +93,7 @@ in
           # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
           # "col.inactive_border" = "rgba(595959aa)";
 
-          layout = "master";
+          layout = "dwindle";
 
           #no_cursor_warps = false;
         };
@@ -144,6 +150,9 @@ in
           enable_swallow = true;
           render_ahead_of_time = false;
           disable_hyprland_logo = true;
+          disable_autoreload = false;
+          focus_on_activate = false;
+          force_default_wallpaper = 0;
         };
       };
     };

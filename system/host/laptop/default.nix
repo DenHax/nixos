@@ -7,6 +7,7 @@
     ./hardware
     ./kernel
     ./network
+    # ./powermanagment
     ./sound
   ];
 
@@ -20,7 +21,7 @@
     virtualisation.enable = true;
 
     programs = {
-      dconf.enable = true;
+      dconf.enable = false;
       fish.enable = true;
       font.enable = true;
       gnupg.enable = true;
@@ -44,7 +45,7 @@
       light.enable = true;
       logind.enable = false;
       sddm.enable = false;
-      syncthing.enable = true;
+      syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
     };

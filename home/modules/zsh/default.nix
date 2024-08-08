@@ -21,30 +21,34 @@ in
       enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+      shellAliases =
+        let
+          flakeDir = "~/nix";
+        in
+        {
+          rb = "doas nixos-rebuild switch --flake ${flakeDir}";
+          upd = "nix flake update ${flakeDir}";
+          upg = "doas nixos-rebuild switch --upgrade --flake ${flakeDir}";
+          hms = "home-manager switch --flake ${flakeDir}";
 
-      shellAliases = {
-        # let
-        #   flakeDir = "~/nix";
-        # in
-        # {
-        #   rb = "doas nixos-rebuild switch --flake ${flakeDir}";
-        #   upd = "nix flake update ${flakeDir}";
-        #   upg = "doas nixos-rebuild switch --upgrade --flake ${flakeDir}";
-        #
-        #   hms = "home-manager switch --flake ${flakeDir}";
+          ll = "ls -l";
+          el = "eza -l";
+          ea = "eza -a";
+          se = "sudoedit";
+          ff = "fastfetch";
+          e = "eza --icons=auto";
+          tree = "eza --tree --level=4 --icons=auto";
+        };
 
-        ll = "ls -l";
-        el = "eza -l";
-        ea = "eza -a";
-        se = "sudoedit";
-        ff = "fastfetch";
-        b = "bat";
-        e = "eza --icons=auto";
-        tree = "eza --tree --level=4 --icons=auto";
+      history = {
+        size = 10000;
+        path = "${config.xdg.dataHome}/zsh/history";
       };
 
-      history.size = 10000;
-      history.path = "${config.xdg.dataHome}/zsh/history";
+      # profileExtra = # bash
+      #   ''
+      #     eval '$(direnv hook zsh)'
+      #   '';
 
       oh-my-zsh = {
         enable = true;

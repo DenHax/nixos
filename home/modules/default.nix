@@ -28,6 +28,7 @@
     ./hyprpaper
     ./kitty
     ./micro
+    ./neofetch
     ./neovim
     ./nm-applet
     ./password-store

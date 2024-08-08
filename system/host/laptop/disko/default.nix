@@ -1,5 +1,4 @@
 { inputs, ... }:
-
 {
   imports = [ inputs.disko.nixosModules.disko ];
   # TODO: NEW: what about dif filesystem

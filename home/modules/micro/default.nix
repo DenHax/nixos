@@ -22,7 +22,7 @@ in
         autosu = false;
         cursorline = true;
         autosave = 5;
-        colorscheme = "gruvbox";
+        # colorscheme = "gruvbox";
         fileformat = "unix";
         # lsp = {
         #   # enable = true;

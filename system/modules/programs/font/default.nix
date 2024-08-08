@@ -29,8 +29,11 @@ in
 
       packages = with pkgs; [
         liberation_ttf
+        fira-sans
+        fira-mono
         fira-code
         fira-code-symbols
+        fira-code-nerdfont
         fantasque-sans-mono
         font-awesome
         corefonts

@@ -10,7 +10,7 @@ return {
 	end,
 	---@type gopher.Config
 	opts = {},
-	-- config = function()
-	-- 	require("gopher").setup({})
-	-- end,
+	config = function()
+		require("gopher").setup({})
+	end,
 }

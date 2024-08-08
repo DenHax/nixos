@@ -1,9 +1,20 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  hostname,
+  ...
+}:
+let
+  wallpaper = ./kgw5.png;
+  scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  cursorSize = if hostname == "laptop" then 18 else 14;
+in
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-    image = ./kgw5.png;
+    autoEnable = true;
+    base16Scheme = scheme;
+    image = wallpaper;
     polarity = "dark";
 
     opacity = {
@@ -11,6 +22,11 @@
       terminal = 0.9;
       popups = 0.8;
       desktop = 0.99;
+    };
+    cursor = {
+      name = "Vimix-cursors";
+      package = pkgs.vimix-cursors;
+      size = cursorSize;
     };
 
     fonts = {
@@ -22,6 +38,16 @@
       };
 
       serif = {
+        package = (pkgs.nerdfonts.override { fonts = [ "FiraMono" ]; });
+        name = "FiraMono Nerd Font";
+      };
+
+      sansSerif = {
+        package = pkgs.fira-sans;
+        name = "FiraSans";
+      };
+
+      monospace = {
         package = (
           pkgs.nerdfonts.override {
             fonts = [
@@ -33,14 +59,7 @@
         name = "FiraCode Nerd Font";
       };
 
-      sansSerif = config.stylix.fonts.serif;
-
-      monospace = {
-        package = config.stylix.fonts.serif.package;
-        name = "FiraCode Nerd Font Mono";
-      };
-
-      emoji = config.stylix.fonts.serif;
+      # emoji = config.stylix.fonts.serif;
     };
   };
 }

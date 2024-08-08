@@ -12,6 +12,7 @@ return {
 
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
+		enabled = false,
 		config = function()
 			require("telescope").setup({
 				extensions = {

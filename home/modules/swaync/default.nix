@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    module.swaync.enable = mkEnableOption "Enables swwaync";
+    module.swaync.enable = mkEnableOption "Enables swaync";
   };
 
   config = mkIf cfg.enable {
