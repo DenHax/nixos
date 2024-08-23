@@ -38,12 +38,12 @@ in
             # "custom/weather"
           ];
           modules-right = [
-            "pulseaudio"
-            "custom/mem"
-            "cpu"
-            (if isLaptop then "backlight" else "")
-            (if isLaptop then "battery" else "")
-            "tray"
+            (
+              if isLaptop then
+                "pulseaudio" "custom/mem" "cpu" "backlight" "battery" "tray"
+              else
+                "pulseaudio" "custom/mem" "cpu" "tray"
+            )
           ];
 
           # Logo
