@@ -1,17 +1,16 @@
 { inputs, ... }:
-
 {
   imports = [ inputs.disko.nixosModules.disko ];
   disko.devices = {
     disk = {
       vdb = {
         type = "disk";
-        device = "/dev/disk/by-id/ata...";
+        device = "/dev/disk/by-id/ata-WDC_WD1003FBYX-01Y7B1_WD-WCAW36691834";
         content = {
           type = "gpt";
           partitions = {
             ESP = {
-              size = "512M";
+              size = "500M";
               type = "EF00";
               content = {
                 type = "filesystem";
@@ -27,10 +26,12 @@
                 name = "crypted";
                 extraOpenArgs = [ ];
                 settings = {
+                  # if you want to use the key for interactive login be sure there is no trailing newline
+                  # for example use `echo -n "password" > /tmp/secret.key`
                   keyFile = "/tmp/secret.key";
                   allowDiscards = true;
                 };
-                additionalKeyFiles = [ "/tmp/adsec.key" ];
+                additionalKeyFiles = [ "/tmp/additionalSecret.key" ];
                 content = {
                   type = "lvm_pv";
                   vg = "pool";

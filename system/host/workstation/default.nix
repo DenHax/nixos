@@ -1,10 +1,11 @@
 {
   imports = [
     ../../modules
-    ./disko
+    ./bootloader
+    # ./disko
     ./gpu
     ./hardware
-    ./kernel
+    # ./kernel
     ./network
     ./sound
   ];
@@ -19,7 +20,7 @@
     virtualisation.enable = true;
 
     programs = {
-      dconf.enable = false;
+      dconf.enable = true;
       fish.enable = true;
       font.enable = true;
       gnupg.enable = true;
@@ -28,7 +29,7 @@
       nh.enable = true;
       systemPackages.enable = true;
       xdg-portal.enable = true;
-      zsh.enable = false;
+      zsh.enable = true;
     };
 
     services = {
@@ -43,7 +44,7 @@
       light.enable = true;
       logind.enable = false;
       sddm.enable = false;
-      syncthing.enable = true;
+      syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
     };
