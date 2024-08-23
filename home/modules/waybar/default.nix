@@ -37,14 +37,23 @@ in
             "clock"
             # "custom/weather"
           ];
-          modules-right = [
-            (
-              if isLaptop then
-                "pulseaudio" "custom/mem" "cpu" "backlight" "battery" "tray"
-              else
-                "pulseaudio" "custom/mem" "cpu" "tray"
-            )
-          ];
+          modules-right =
+            if isLaptop then
+              [
+                "pulseaudio"
+                "custom/mem"
+                "cpu"
+                "backlight"
+                "battery"
+                "tray"
+              ]
+            else
+              [
+                "pulseaudio"
+                "custom/mem"
+                "cpu"
+                "tray"
+              ];
 
           # Logo
           "custom/nixlogo" = {
