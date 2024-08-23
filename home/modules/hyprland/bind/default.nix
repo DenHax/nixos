@@ -16,6 +16,9 @@ let
   brightnessControl = "${pkgs.brightnessctl}/bin/brightnessctl";
   cliphist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
   appLauncher = "rofi -show";
+  terminal = "${pkgs.kitty}/bin/kitty";
+  filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";
+  picker = "${pkgs.hyprpicker}/bin/hyprpicker -a";
 
   # Screenshots and recorders
   grimBlastCmd = "${pkgs.grimblast}/bin/grimblast --notify --freeze";
@@ -113,12 +116,13 @@ in
         "$mainMod, G, togglefloating,"
 
         # Apps and utils shortcuts
-        "$mainMod, Return, exec, ${pkgs.kitty}/bin/kitty"
-        "$mainMod, E, exec, ${pkgs.pcmanfm}/bin/pcmanfm"
+        "$mainMod, Return, exec, ${terminal}"
+        "$mainMod, E, exec, ${filemanager}"
         "$mainMod, R, exec, ${appLauncher} drun -show-icons"
         "$mainMod, C, exec, ${appLauncher} calc"
         "$mainMod, V, exec, ${cliphist}"
-        "$mainMod, P,       pseudo,      # dwindle"
+        # "$mainMod, P,       pseudo,      # dwindle"
+        "$mainMod, P,       exec, ${picker}"
         "$mainMod, J,       togglesplit, # dwindle"
 
         # Screenshots and Screenrecords

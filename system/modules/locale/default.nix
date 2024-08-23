@@ -43,7 +43,7 @@ in
           )
       );
       extraLocaleSettings = {
-        LANGUAGE = "ru_RU.UTF-8";
+        # LANGUAGE = "ru_RU.UTF-8";
       };
     };
   };

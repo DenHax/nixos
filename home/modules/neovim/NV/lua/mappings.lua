@@ -3,12 +3,9 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "j", "<ESC>")
-
 -- Personal keymaps
 map("n", ";", ":")
-map("i", "jj", "<Esc>", { desc = "Exit from insert" }) -- exit
+map("i", "jj", "<Esc>", opts, { desc = "Exit from insert" }) -- exit
 map("n", "<leader>sh", ":split<CR>", opts, { desc = "Horizontal split" })
 map("n", "<leader>ss", ":vsplit<CR>", opts, { desc = "Vertical split" })
 map("n", "<Esc>", ":nohlsearch<CR>", opts)

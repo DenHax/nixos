@@ -15,6 +15,12 @@ in
     module.rofi.enable = mkEnableOption "Enables rofi";
   };
 
+  # (pkgs.rofi-calc.override (previous: {
+  #   rofi-calc = previous.rofi-calc.overrideAttrs { rofi-unwrapped = prev.rofi-wayland-unwrapped; };
+  # }))
+  # (pkgs.rofi-emoji.override (previous: {
+  #   rofi-emoji = previous.rofi-emoji.overrideAttrs { rofi-unwrapped = prev.rofi-wayland-unwrapped; };
+  # }))
   config = mkIf cfg.enable {
     programs.rofi = {
       enable = true;
@@ -23,9 +29,9 @@ in
       location = "center";
       terminal = "kitty";
 
-      plugins = with pkgs; [
-        rofi-calc
-        rofi-emoji
+      plugins = [
+        pkgs.rofi-calc
+        # pkgs.rofi-emoji
       ];
     };
 

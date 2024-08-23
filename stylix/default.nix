@@ -6,7 +6,10 @@
 }:
 let
   wallpaper = ./kgw5.png;
-  scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  # scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+  # scheme = "${pkgs.base16-schemes}/share/themes/flat.yaml"; # so bad comment color
+  scheme = "${pkgs.base16-schemes}/share/themes/darktooth.yaml";
+  # darktooth, flat, Hopscotch, 
   cursorSize = if hostname == "laptop" then 18 else 14;
 in
 {
@@ -21,7 +24,7 @@ in
       applications = 0.9;
       terminal = 0.9;
       popups = 0.8;
-      desktop = 0.99;
+      desktop = 0.9;
     };
     cursor = {
       name = "Vimix-cursors";

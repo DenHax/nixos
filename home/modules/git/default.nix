@@ -23,6 +23,7 @@ in
       extraConfig = {
         init.defaultBranch = "main";
         safe.direcrory = "/home/${username}/nix";
+        pull.rebase = false;
       };
     };
   };

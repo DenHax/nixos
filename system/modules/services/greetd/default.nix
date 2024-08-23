@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   username,
   pkgs,
   ...
@@ -31,7 +32,7 @@ in
       settings = {
         default_session = {
           user = username;
-          command = "${pkgs.hyprland}/bin/Hyprland";
+          command = "${pkgs.hyprland}/bin/Hyprland"; # "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland";
           # command = builtins.concatStringsSep " " [
           #   "${pkgs.greetd.tuigreet}/bin/tuigreet"
           #   # "--asterisks"
@@ -42,7 +43,7 @@ in
           # ];
         };
         initial_session = {
-          command = "${pkgs.hyprland}/bin/Hyprland";
+          command = "${pkgs.hyprland}/bin/Hyprland"; # "${inputs.hyprland.packages.${pkgs.system}.hyprland}/bin/Hyprland";
           user = username;
         };
       };

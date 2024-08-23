@@ -5,7 +5,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    devenv.url = "github:cachix/devenv";
+    # devenv.url = "github:cachix/devenv";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -23,6 +23,11 @@
     };
 
     sops-nix.url = "github:Mic92/sops-nix";
+
+    # firefox-addons = {
+    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #   inputs.nixpgs.follows = "nixpkgs";
+    # };
 
     # hyprland = {
     #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1&ref=refs/tags/v0.41.1";

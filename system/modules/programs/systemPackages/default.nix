@@ -84,16 +84,6 @@ in
         cacert
       ]
       ++ optionals isWorkstation [
-        # Themes
-        kanagawa-gtk-theme
-        kanagawa-icon-theme
-        orchis-theme
-        vimix-cursors
-        tela-circle-icon-theme
-        linearicons-free
-        flat-remix-icon-theme
-        papirus-icon-theme
-
         # Hardware
         libGL
 

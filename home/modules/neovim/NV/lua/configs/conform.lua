@@ -34,4 +34,8 @@ local options = {
   },
 }
 
+vim.keymap.set("n", "<leader>cf", function()
+  require("conform").format {}
+end, { desc = "Formatting" })
+
 return options

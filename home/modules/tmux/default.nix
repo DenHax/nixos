@@ -36,6 +36,7 @@ in
       plugins = with pkgs.tmuxPlugins; [
         vim-tmux-navigator
         power-theme
+        sessionist
         {
           plugin = resurrect;
           extraConfig = # bash
@@ -50,7 +51,6 @@ in
               set -g @continuum-restore 'on'
             '';
         }
-        sessionist
       ];
     };
   };

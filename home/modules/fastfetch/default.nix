@@ -20,39 +20,39 @@ in
     programs.fastfetch = {
       enable = true;
       settings = {
-        # logo = {
-        #   source = "nixos_small";
-        #   padding = {
-        #     right = 1;
-        #   };
-        # };
+        logo = {
+          source = "nixos_small";
+          padding = {
+            right = 1;
+          };
+        };
         # display = {
         #   binaryPrefix = "si";
         #   color = "blue";
         #   separator = "  ";
         # };
-        # modules = [
-        #   "os"
-        #   "host"
-        #   "kernel"
-        #   "packages"
-        #   "shell"
-        #   "terminal"
-        #   "terminalfont"
-        #   "wm"
-        #   "lm"
-        #   "theme"
-        #   "icons"
-        #   "cpu"
-        #   "gpu"
-        #   "memory"
-        #   "swap"
-        #   "disk"
-        #   "battery"
-        #   # "locale"
-        #   "break"
-        #   "colors"
-        # ];
+        modules = [
+          "os"
+          "host"
+          "kernel"
+          "packages"
+          "shell"
+          "terminal"
+          "terminalfont"
+          "wm"
+          "lm"
+          "theme"
+          "icons"
+          "cpu"
+          "gpu"
+          "memory"
+          "swap"
+          "disk"
+          "battery"
+          # "locale"
+          "break"
+          "colors"
+        ];
       };
     };
   };

@@ -28,7 +28,7 @@ in
 
     home.packages = with pkgs; [
       # Hypr ecosystem
-      # hyprpicker
+      hyprpicker
       # hyprland
       # hyprlock
       # hyprpaper
@@ -40,8 +40,8 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      # package = pkgs.hyprland;
-      package = pkgs.hyprland; # inputs.hyprland.packages.${pkgs.system}.hyprland;
+      package = pkgs.hyprland;
+      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [

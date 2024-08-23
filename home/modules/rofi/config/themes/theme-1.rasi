@@ -10,7 +10,7 @@
 
 /*****----- Configuration -----*****/
 configuration {
-	modi:                       "drun,calc,emoji";
+	modi:                       "drun";
     show-icons:                 true;
     display-drun:               " Apps";
     display-run:                " Run";

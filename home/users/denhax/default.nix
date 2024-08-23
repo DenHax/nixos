@@ -43,6 +43,7 @@ in
   nixpkgs.overlays = [
     (import ../../../internal/rofi-calc)
     (import ../../../internal/rofi-emoji)
+    # (import ../../../internal/rofimofi)
   ];
 
   stylix.targets = { };
@@ -137,6 +138,7 @@ in
 
         # Development envirements, Devenv and etc.
         devenv
+        # cachix
 
         # Program langs,
         rustc
@@ -150,6 +152,7 @@ in
         # kotlin
 
         # Build programs, packages managers
+        pnpm
         cargo
         gcc
         gnumake
@@ -167,12 +170,12 @@ in
         syft
 
         # DevOps Utils
-        # docker-compose
-        # kubectl
-        # kubernetes-helm
-        # ansible
-        # ansible-lint
-        # terraform
+        docker-compose
+        ansible
+        ansible-lint
+        kubectl
+        kubernetes-helm
+        terraform
 
         # Git stuff
         # git
@@ -188,6 +191,12 @@ in
         # DevOps Utils
         vagrant
 
+        # Backend utils 
+        bruno
+
+        # Frontend utils 
+
+        # Mobile utils 
         # Alter
         # vesktop
 
@@ -208,16 +217,27 @@ in
 
         # Menu
         # ulauncher
+        # rofi
+        # dmenu
 
-        # Misc
+        # Misc, Music, Video
         # obs-studio
         # dconf2nix
         # via
         # vlc
         pavucontrol
+        musescore
 
-        # GTK
+        # Themes and Icons
         gtk-engine-murrine
+        kanagawa-gtk-theme
+        kanagawa-icon-theme
+        orchis-theme
+        vimix-cursors
+        tela-circle-icon-theme
+        linearicons-free
+        flat-remix-icon-theme
+        papirus-icon-theme
         # gnome-themes-extra
 
         # Images and pdf viewers, videos
@@ -237,9 +257,14 @@ in
         swappy
         satty
 
-        # UML, SVG, any editors
-        umlet
-        plantuml
+        # UML, SVG, Diagrams, Prototypes, any editors
+        akira-unstable
+        inkscape-with-extensions
+        gimp-with-plugins
+        pizarra
+        # plantuml
+        # umlet
+        # pencil
         # staruml
 
         # Utlis
@@ -267,7 +292,7 @@ in
         telegram-desktop
 
         # Text editors
-        zed-editor
+        # zed-editor
 
         # AI and pilots
         # codeium
