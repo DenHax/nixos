@@ -10,6 +10,7 @@ with lib;
 
 let
   cfg = config.module.hyprland;
+  flakeDir = "~/nix";
 in
 
 {
@@ -51,7 +52,7 @@ in
       };
       settings = {
         exec-once = [
-          "${pkgs.bash}/bin/bash ~/.config/hypr/auto.sh"
+          "${pkgs.bash}/bin/bash ${flakeDir}/pkg/waystart/auto.sh"
           "wl-paste --type text --watch cliphist store"
           "wl-paste --type image --watch cliphist store"
           "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
