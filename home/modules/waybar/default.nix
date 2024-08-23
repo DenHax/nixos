@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  hostname,
   ...
 }:
 
@@ -9,6 +10,7 @@ with lib;
 
 let
   cfg = config.module.waybar;
+  isLaptop = hostname == "laptop";
 in
 {
   options = {
@@ -39,8 +41,8 @@ in
             "pulseaudio"
             "custom/mem"
             "cpu"
-            "backlight"
-            "battery"
+            (if isLaptop then "backlight" else "")
+            (if isLaptop then "battery" else "")
             "tray"
           ];
 
