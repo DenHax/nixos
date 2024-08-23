@@ -32,6 +32,15 @@ in
         # luajitPackages.luarocks
 
         # Language server protocols, linters, formatters
+
+        # YAML
+        yaml-language-server
+        yamllint
+        yamlfmt
+
+        # Docker & Kubernetes
+        docker-ls
+
         # Go
         gopls
         gotools
