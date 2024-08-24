@@ -3,6 +3,7 @@
   # inputs,
   config,
   isWorkstation,
+  hostname,
   ...
 }:
 
