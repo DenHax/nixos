@@ -35,8 +35,10 @@
     feh.enable = false;
     fish.enable = false;
     kitty.enable = isWorkstation;
+    lf.enable = true;
     nvim.enable = true;
     micro.enable = false;
+    ranger.enable = false;
     starship.enable = true;
     tmux.enable = true;
     yazi.enable = true;
