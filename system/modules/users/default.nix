@@ -16,11 +16,11 @@ in
   };
   config = mkIf cfg.enable {
     users = {
-      mutableUsers = true;
-      defaultUserShell = pkgs.zsh;
+      mutableUsers = false;
       users = {
         ${username} = {
           isNormalUser = true;
+          shell = pkgs.zsh;
           description = "${username}, Senior HelloWorld-developer (Golang, Rust, JavaScript, TypeScript, Lua, Nix, C, C++, Bash, PowerShell, Java, PHP, Python, Latex, Markdown, Norg, HTML, CSS, XML, SQL)";
           home = "/home/${username}";
           extraGroups = [
