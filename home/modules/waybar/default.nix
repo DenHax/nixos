@@ -1,5 +1,5 @@
 {
-  # pkgs,
+  pkgs,
   config,
   lib,
   hostname,
@@ -27,7 +27,7 @@ in
           margin = "9 13 -10 18";
 
           modules-left = [
-            # "custom/nixlogo"
+            "custom/nixlogo"
             "hyprland/workspaces"
             "hyprland/language"
             # "keyboard-state"
@@ -87,7 +87,7 @@ in
             # timezone = "America/New_York";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
             format = "{:%a %b %d, %H:%M}";
-            # on-click = "${pkgs.eww}/bin/eww update showcalendar=true";
+            on-click = "${pkgs.eww}/bin/eww update showcalendar=true";
 
             actions = {
               on-scroll-down = "shift_down";

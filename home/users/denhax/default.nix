@@ -38,6 +38,8 @@ in
   imports = [
     ../../../system/modules/nix
     ../../modules
+    ./env.nix
+    ./variables.nix
   ];
 
   nixpkgs.overlays = [
@@ -311,6 +313,11 @@ in
         # rofi-pulse-select
         # rofi-vpn
         # rofi-pass
+      ]
+      ++ lib.optionals (hostname == "workstation") [
+        protonup
+        lutris
+        heroic
       ];
   };
 }

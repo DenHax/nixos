@@ -8,6 +8,7 @@
     ./kdeconnect
     ./light
     ./nix-helper
+    ./steam
     ./systemPackages
     ./xdg-portal
     ./zsh

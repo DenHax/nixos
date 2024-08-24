@@ -27,6 +27,7 @@
       hm.enable = true;
       kdeconnect.enable = true;
       nh.enable = true;
+      steam.enable = true;
       systemPackages.enable = true;
       xdg-portal.enable = true;
       zsh.enable = true;
