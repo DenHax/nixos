@@ -2,6 +2,7 @@
   pkgs,
   config,
   lib,
+  hostname,
   ...
 }:
 
@@ -33,25 +34,28 @@ in
           # ignore_dbus_inhibit = false;
         };
 
-        listener = [
-          {
-            timeout = 240;
-            on-timeout = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
-            on-resume = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
-          }
-          {
-            timeout = 300;
-            on-timeout = lockCmd;
-            # on-timeout = "loginctl lock-session";
-            on-resume = "";
-          }
-          {
-            timeout = 450;
-            on-timeout = suspendCmd;
-            on-resume = "hyprctl dispatch dpms on";
-            # on-resume = "";
-          }
-        ];
+        listener =
+          [
+            {
+              timeout = 240;
+              on-timeout = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
+              on-resume = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
+            }
+            {
+              timeout = 300;
+              on-timeout = lockCmd;
+              # on-timeout = "loginctl lock-session";
+              on-resume = "";
+            }
+          ]
+          ++ lib.optionals (hostname == "laptop") [
+            {
+              timeout = 450;
+              on-timeout = suspendCmd;
+              on-resume = "hyprctl dispatch dpms on";
+              # on-resume = "";
+            }
+          ];
       };
     };
   };
