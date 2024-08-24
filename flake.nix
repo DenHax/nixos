@@ -46,7 +46,7 @@
   };
 
   outputs =
-    { flake-parts, ... }@inputs:
+    { self, flake-parts, ... }@inputs:
     let
       linuxArch = "x86_64-linux";
       linuxArmArch = "aarch64-linux";
@@ -69,6 +69,7 @@
         laptopDH = {
           hostname = "laptop";
           username = "denhax";
+          templates = import "${self}/templates" { inherit self; };
           platform = linuxArch; # ? legacyLinuxArch
           isWorkstation = true;
           isIntel = true;
@@ -84,6 +85,7 @@
         raspDH = {
           hostname = "raspberry";
           username = "denhax";
+          templates = import "${self}/templates" { inherit self; };
           platform = linuxArmArch; # ? legacyLinuxArch
           isWorkstation = false;
           isIntel = false;
@@ -135,6 +137,7 @@
 
           "${hosts.macXDH.username}@${hosts.macXDH.hostname}" = confMake.mkHome hosts.macXDH;
         };
+        templates = import "${self}/template" { inherit self; };
       };
     };
 }
