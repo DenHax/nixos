@@ -30,19 +30,18 @@ in
     home.packages = with pkgs; [
       # Hypr ecosystem
       hyprpicker
+      grimblast
       # hyprland
       # hyprlock
       # hyprpaper
+      # hyprshot
       # xdg-desktop-portal-hyprland
-      hyprshot
-      grimblast
     ];
 
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
       package = pkgs.hyprland;
-      # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [
