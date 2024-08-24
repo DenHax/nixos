@@ -38,7 +38,6 @@ in
   imports = [
     ../../../system/modules/nix
     ../../modules
-    ./env.nix
     ./variables.nix
   ];
 
