@@ -14,6 +14,7 @@
     ./eww
     ./eza
     ./fastfetch
+    ./feh
     ./fish
     ./firefox
     ./flameshot
@@ -27,12 +28,15 @@
     ./hyprlock
     ./hyprpaper
     ./kitty
+    ./lazygit
+    ./lf
     ./micro
     ./neofetch
     ./neovim
     ./nm-applet
     ./password-store
     ./qt
+    ./ranger
     ./ripgrep
     ./rofi
     ./ssh

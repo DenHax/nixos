@@ -3,15 +3,15 @@
 with lib;
 
 let
-  cfg = config.module.ssh;
+  cfg = config.module.ranger;
 in
 {
   options.module = {
-    ssh.enable = mkEnableOption "Enables ssh";
+    ranger.enable = mkEnableOption "Enable ranger";
   };
 
   config = mkIf cfg.enable {
-    programs.ssh = {
+    programs.ranger = {
       enable = true;
     };
   };
