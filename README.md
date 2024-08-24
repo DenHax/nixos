@@ -1,6 +1,14 @@
 # Nix config: NixOS & Home Manager
 
-Package that install _without_ Nix or buildFrom:
+## Get start:
+```bash
+git clone git@github.com:DenHax/nixos.git nix
+cd nix
+sudo nixos-rebuild switch --flake ./#
+home-manager switch --flake ./#@
+```
+
+## Package that install _without_ Nix or buildFrom:
 
 - Vite:
 

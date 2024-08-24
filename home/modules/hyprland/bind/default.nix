@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  username,
   ...
 }:
 
@@ -47,9 +46,6 @@ in
         # Clipboad init
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-
-        # Wallpapaer init
-        # "${pkgs.swww}/bin/swww init & sleep 0.5 && exec ${pkgs.swww}/bin/swww img /home/${username}/Pictures/Wallpapers/kanagawa_dark.png --transition-type simple"
       ];
 
       # bind = [
@@ -60,7 +56,8 @@ in
       #   "SUPERSHIFT, TAB, changegroupactive, b"
       #
       # ];
-      env = [ "HYPRSHOT_DIR,Pictures/Screenshots" ];
+
+      # env = [ "HYPRSHOT_DIR,Pictures/Screenshots" ];
 
       bind = [
         # Motion with windows
@@ -183,12 +180,12 @@ in
         "float, ^(imv)$"
         "size 800 450,^(imv)$"
         "center,^(imv)$"
-        "float, ^(feh)$"
-        "size 800 450,^(feh)$"
-        "center,^(feh)$"
         "float, ^(mpv)$"
         "size 800 450,^(mpv)$"
         "center,^(mpv)$"
+        # "float, ^(feh)$"
+        # "size 800 450,^(feh)$"
+        # "center,^(feh)$"
       ];
       windowrulev2 = [
         # Xdg

@@ -3,15 +3,14 @@
 with lib;
 
 let
-  cfg = config.module.ssh;
+  cfg = config.module.lazygit;
 in
 {
   options.module = {
-    ssh.enable = mkEnableOption "Enables ssh";
+    lazygit.enable = mkEnableOption "Enable lazygit";
   };
-
   config = mkIf cfg.enable {
-    programs.ssh = {
+    programs.lazygit = {
       enable = true;
     };
   };

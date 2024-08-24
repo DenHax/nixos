@@ -1,0 +1,216 @@
+{
+  config,
+  lib,
+  pkgs,
+  isWorkstation,
+  hostname,
+  ...
+}:
+
+with lib;
+
+let
+  inherit (pkgs.stdenv) isLinux;
+  cfg = config.module.users.denhax.packages;
+
+  texlive-pkg = (
+    pkgs.texlive.combine {
+      inherit (pkgs.texlive)
+        scheme-medium
+        xifthen
+        ifmtarg
+        framed
+        paralist
+        titlesec
+        enumitem
+        cyrillic
+        babel-russian
+        minted
+        ;
+    }
+  );
+in
+{
+  options.module.users.maxmur.packages = {
+    enable = mkEnableOption "Enable maxmur packages";
+  };
+
+  config = mkIf cfg.enable {
+    fonts.fontconfig.enable = true;
+
+    home.packages =
+      with pkgs;
+      [
+        # Cli utils and equiv
+        gat
+        fd
+        duf
+        jq
+        procs
+        tlrc
+        pre-commit
+        tokei
+        zip
+        unzip
+        pre-commit
+        ffmpeg
+
+        # Nix and NixOS
+        nix-prefetch-scripts
+        nix-prefetch-github
+        # deadnix
+        # statix
+
+        # Development envirements, Devenv and etc.
+        devenv
+
+        # Program langs,
+        rustc
+        nodejs_22
+        typescript
+        go
+        lua
+        # python312
+
+        # Build programs, packages managers
+        pnpm
+        cargo
+        gcc
+        gnumake
+
+        # Secrets and Security
+        age
+        grype
+        sops
+        syft
+
+        # DevOps Utils
+        docker-compose
+        ansible
+        ansible-lint
+        kubectl
+        kubernetes-helm
+        terraform
+      ]
+      ++ lib.optionals isWorkstation [
+        # discord
+        obsidian
+        semgrep
+        bruno
+      ]
+      ++ lib.optionals (isLinux && isWorkstation) [
+        # DevOps Utils
+        vagrant
+
+        # Filemanagers
+        pcmanfm
+        shared-mime-info
+        lxde.lxmenu-data
+
+        # Office
+        # onlyoffice-bin
+        # texlive-pkg
+        # libreoffice-qt
+        # hunspell
+        # hunspellDicts.en_US
+        # hunspellDicts.ru_RU
+        # biber
+
+        # Misc, Music, Video
+        pavucontrol
+        musescore
+        # obs-studio
+        # dconf2nix
+        # via
+        # vlc
+
+        # Themes and Icons
+        gtk-engine-murrine
+        kanagawa-gtk-theme
+        kanagawa-icon-theme
+        orchis-theme
+        vimix-cursors
+        tela-circle-icon-theme
+        linearicons-free
+        flat-remix-icon-theme
+        papirus-icon-theme
+        # gnome-themes-extra
+
+        # Images and pdf viewers, videos
+        viu
+        nomacs
+        imv
+        mpv
+        # feh
+        # swayimg
+        # imagemagick
+        # oculante
+
+        # Screenshots and recorders
+        grim
+        slurp
+        swappy
+        satty
+
+        # UML, SVG, Diagrams, Prototypes, any editors
+        akira-unstable
+        inkscape-with-extensions
+        gimp-with-plugins
+        pizarra
+        # plantuml
+        # umlet
+        # pencil
+        # staruml
+
+        # Utlis
+        # swww
+        brightnessctl
+        cliphist
+        dbus
+        libnotify
+        glib
+        networkmanagerapplet
+        xdg-utils
+
+        # Wayland
+        wl-clipboard
+        wf-recorder
+        wlroots
+        xwayland
+
+        # Xorg
+        # xclip
+        # picom
+        # dmenu
+
+        # Messenger
+        telegram-desktop
+
+        # Text editors
+        # zed-editor
+
+        # AI and pilots
+        # codeium
+
+        # Terminal emulator
+        # warp-terminal
+        # xterm
+        # alacritty
+
+        # Rofi
+        # rofi-screenshot
+        # rofi-bluetooth
+        # rofi-power-menu
+        # rofi-mpd
+        # rofi-menugen
+        # rofi-pulse-select
+        # rofi-vpn
+        # rofi-pass
+      ]
+      ++ lib.optionals (hostname == "workstation") [
+        protonup
+        lutris
+        heroic
+      ];
+  };
+}

@@ -3,15 +3,15 @@
 with lib;
 
 let
-  cfg = config.module.ssh;
+  cfg = config.module.lf;
 in
 {
   options.module = {
-    ssh.enable = mkEnableOption "Enables ssh";
+    lf.enable = mkEnableOption "Enable lf";
   };
 
   config = mkIf cfg.enable {
-    programs.ssh = {
+    programs.lf = {
       enable = true;
     };
   };
