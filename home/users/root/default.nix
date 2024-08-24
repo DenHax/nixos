@@ -6,7 +6,7 @@
   };
 
   imports = [
-    ../../../system/modules/nix
+    ../../../modules/nix
     ../../modules
   ];
 
