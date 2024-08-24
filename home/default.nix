@@ -1,13 +1,23 @@
 {
+  self,
   pkgs,
   lib,
+  inputs,
+  hostname,
   username,
+  platform,
   stateVersion,
+  homeModules,
+  commonModules,
+  isWorkstation ? false,
   ...
 }:
+
 let
   inherit (pkgs.stdenv) isDarwin;
-  isRoot = if (username == "root") then true else false;
+  inherit (pkgs.stdenv) isLinux;
+
+  isRoot = username == "root";
   homeDirectory =
     if isDarwin then
       "/Users/${username}"
@@ -15,15 +25,52 @@ let
       "/root"
     else
       "/home/${username}";
+  userConfigurationPath = "${self}/home/users/${username}";
+  userConfigurationPathExist = builtins.pathExists userConfigurationPath;
+  userModulesPath = "${self}/home/users/${username}/modules";
+  userModulesPathExist = builtins.pathExists userModulesPath;
+  sshModulePath = "${homeModules}/ssh";
+  sshModuleExistPath = builtins.pathExists sshModulePath;
 in
 {
-  programs.home-manager.enable = true;
 
-  imports = lib.optional (builtins.pathExists (./. + "/users/${username}")) ./users/${username};
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
-  home = {
-    inherit username;
-    inherit stateVersion;
-    inherit homeDirectory;
+    extraSpecialArgs = {
+      inherit
+        inputs
+        self
+        hostname
+        username
+        platform
+        stateVersion
+        isLinux
+        commonModules
+        homeModules
+        isWorkstation
+        ;
+    };
+
+    users.${username} = {
+      imports =
+        [
+          inputs.sops-nix.homeManagerModules.sops
+          "${commonModules}"
+          "${homeModules}"
+        ]
+        ++ lib.optional sshModuleExistPath sshModulePath
+        ++ lib.optional userConfigurationPathExist userConfigurationPath
+        ++ lib.optional userModulesPathExist userModulesPath;
+
+      programs.home-manager.enable = true;
+
+      home = {
+        inherit username;
+        inherit stateVersion;
+        inherit homeDirectory;
+      };
+    };
   };
 }

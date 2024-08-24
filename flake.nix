@@ -54,9 +54,16 @@
       legacyLinuxArch = "i686-linux";
       legacyDarwinArch = "x86_64-darwin";
 
-      stateVersion = "24.11";
-      stateVersionDarwin = 4;
-      confMake = import ./lib { inherit inputs stateVersion stateVersionDarwin; };
+      # stateVersion = "24.11";
+      # stateVersionDarwin = 6;
+      confMake = import ./lib {
+        inherit
+          self
+          inputs
+          # stateVersion
+          # stateVersionDarwin
+          ;
+      };
       hosts = {
         workstationDH = {
           hostname = "workstation";
@@ -69,7 +76,6 @@
         laptopDH = {
           hostname = "laptop";
           username = "denhax";
-          templates = import "${self}/templates" { inherit self; };
           platform = linuxArch; # ? legacyLinuxArch
           isWorkstation = true;
           isIntel = true;
@@ -85,7 +91,6 @@
         raspDH = {
           hostname = "raspberry";
           username = "denhax";
-          templates = import "${self}/templates" { inherit self; };
           platform = linuxArmArch; # ? legacyLinuxArch
           isWorkstation = false;
           isIntel = false;
@@ -121,23 +126,24 @@
           ${hosts.macbox.hostname} = confMake.mkHostDarwin hosts.macbox;
         };
 
-        homeConfigurations = {
-
-          "${hosts.workstationDH.username}@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
-          "root@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
-
-          "${hosts.serve.username}@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
-          "root@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
-
-          "${hosts.laptopDH.username}@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
-          "root@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
-
-          "${hosts.raspDH.username}@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
-          "root@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
-
-          "${hosts.macXDH.username}@${hosts.macXDH.hostname}" = confMake.mkHome hosts.macXDH;
-        };
         templates = import "${self}/template" { inherit self; };
+
+        # homeConfigurations = {
+        #
+        #   "${hosts.workstationDH.username}@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
+        #   "root@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
+        #
+        #   "${hosts.serve.username}@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
+        #   "root@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
+        #
+        #   "${hosts.laptopDH.username}@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
+        #   "root@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
+        #
+        #   "${hosts.raspDH.username}@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
+        #   "root@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
+        #
+        #   "${hosts.macXDH.username}@${hosts.macXDH.hostname}" = confMake.mkHome hosts.macXDH;
+        # };
       };
     };
 }

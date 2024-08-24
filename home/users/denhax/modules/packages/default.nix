@@ -31,12 +31,11 @@ let
   );
 in
 {
-  options.module.users.maxmur.packages = {
-    enable = mkEnableOption "Enable maxmur packages";
+  options.module.users.denhax.packages = {
+    enable = mkEnableOption "Enable denhax packages";
   };
 
   config = mkIf cfg.enable {
-    fonts.fontconfig.enable = true;
 
     home.packages =
       with pkgs;
@@ -185,27 +184,6 @@ in
 
         # Messenger
         telegram-desktop
-
-        # Text editors
-        # zed-editor
-
-        # AI and pilots
-        # codeium
-
-        # Terminal emulator
-        # warp-terminal
-        # xterm
-        # alacritty
-
-        # Rofi
-        # rofi-screenshot
-        # rofi-bluetooth
-        # rofi-power-menu
-        # rofi-mpd
-        # rofi-menugen
-        # rofi-pulse-select
-        # rofi-vpn
-        # rofi-pass
       ]
       ++ lib.optionals (hostname == "workstation") [
         protonup

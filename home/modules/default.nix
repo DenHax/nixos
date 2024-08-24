@@ -1,54 +1,14 @@
-{ inputs, ... }:
-{
-  imports = [
-    inputs.stylix.homeManagerModules.stylix
-    ../../stylix
+{ homeModules, lib, ... }:
 
-    ./ags
-    ./alacritty
-    ./awesome
-    ./btop
-    ./dconf
-    ./direnv
-    ./dunst
-    ./eww
-    ./eza
-    ./fastfetch
-    ./feh
-    ./fish
-    ./firefox
-    ./flameshot
-    ./fzf
-    ./git
-    ./gtk
-    ./helix
-    ./htop
-    ./hypridle
-    ./hyprland
-    ./hyprlock
-    ./hyprpaper
-    ./kitty
-    ./lazygit
-    ./lf
-    ./micro
-    ./neofetch
-    ./neovim
-    ./nm-applet
-    ./password-store
-    ./qt
-    ./ranger
-    ./ripgrep
-    ./rofi
-    ./ssh
-    ./starship
-    ./swaync
-    ./tmux
-    ./vim
-    ./waybar
-    ./xdg
-    ./yazi
-    ./zathura
-    ./zoxide
-    ./zsh
-  ];
+{
+  # Read all directories from homeModules
+  imports =
+    # [
+    #   # inputs.stylix.homeManagerModules.stylix
+    #   ../../stylix
+    #
+    # ] ++
+    builtins.filter (module: lib.pathIsDirectory module) (
+      map (module: "${homeModules}/${module}") (builtins.attrNames (builtins.readDir homeModules))
+    );
 }

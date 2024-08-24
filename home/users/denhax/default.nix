@@ -2,9 +2,12 @@
   isWorkstation,
   username,
   config,
-  isLinux,
+  pkgs,
   ...
 }:
+let
+  inherit (pkgs.stdenv) isLinux;
+in
 
 {
   imports = [
