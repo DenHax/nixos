@@ -136,10 +136,10 @@ in
         # gnome-themes-extra
 
         # Images and pdf viewers, videos
-        viu
-        nomacs
         imv
         mpv
+        viu
+        nomacs
         # feh
         # swayimg
         # imagemagick
