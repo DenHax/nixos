@@ -67,8 +67,8 @@ in
       home = {
         inherit username;
         inherit stateVersion;
-        inherit homeDirectory;
-        # homeDirectory = lib.mkDefault homeDirectory;
+        # inherit homeDirectory;
+        homeDirectory = lib.mkDefault homeDirectory;
       };
     };
   };
