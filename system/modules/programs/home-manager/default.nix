@@ -11,7 +11,7 @@ let
   cfg = config.module.programs.hm;
 in
 {
-  imports = [ inputs.home-manager.nixosModules.home-manager ];
+  # imports = [ inputs.home-manager.nixosModules.home-manager ];
 
   options = {
     module.programs.hm.enable = mkEnableOption "Enable Home Manager";

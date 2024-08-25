@@ -34,8 +34,8 @@ let
 in
 {
   home-manager = {
-    # useGlobalPkgs = true;
-    # useUserPackages = true;
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
     extraSpecialArgs = {
       inherit
@@ -53,23 +53,22 @@ in
     };
 
     users.${username} = {
-      imports =
-        [
-          inputs.sops-nix.homeManagerModules.sops
-          "${commonModules}"
-          "${homeModules}"
-        ]
-        ++ lib.optional sshModuleExistPath sshModulePath
-        ++ lib.optional userConfigurationPathExist userConfigurationPath
-        ++ lib.optional userModulesPathExist userModulesPath;
+      imports = [
+        inputs.sops-nix.homeManagerModules.sops
+        "${commonModules}"
+        "${homeModules}"
+      ];
+      # ++ lib.optional sshModuleExistPath sshModulePath
+      # ++ lib.optional userConfigurationPathExist userConfigurationPath
+      # ++ lib.optional userModulesPathExist userModulesPath;
 
       programs.home-manager.enable = true;
 
       home = {
         inherit username;
         inherit stateVersion;
-        # inherit homeDirectory;
-        homeDirectory = lib.mkDefault homeDirectory;
+        inherit homeDirectory;
+        # homeDirectory = lib.mkDefault homeDirectory;
       };
     };
   };
