@@ -392,7 +392,8 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
         "sops-nix": "sops-nix",
-        "stylix": "stylix"
+        "stylix": "stylix",
+        "wallpaperImage": "wallpaperImage"
       }
     },
     "sops-nix": {
@@ -457,6 +458,18 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "wallpaperImage": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-aPJ82/QBJqb5vQYaKGHTyH9ZAlIAAUHeIqX5YqsqSX4=",
+        "type": "file",
+        "url": "https://r4.wallpaperflare.com/wallpaper/283/881/127/the-great-wave-off-kanagawa-painting-japanese-waves-wallpaper-0e19ea97218f10d82b15fbcaa3f2b7ee.jpg"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://r4.wallpaperflare.com/wallpaper/283/881/127/the-great-wave-off-kanagawa-painting-japanese-waves-wallpaper-0e19ea97218f10d82b15fbcaa3f2b7ee.jpg"
       }
     }
   },
