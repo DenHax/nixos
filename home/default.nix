@@ -34,8 +34,8 @@ let
 in
 {
   home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
+    # useGlobalPkgs = true;
+    # useUserPackages = true;
 
     extraSpecialArgs = {
       inherit
