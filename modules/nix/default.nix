@@ -56,7 +56,7 @@ in
       }
       // optionalAttrs isLinux {
         # gc.dates = "weekly";
-        optimise.automatic = true;
+        # optimise.automatic = true;
       }
     );
   };
