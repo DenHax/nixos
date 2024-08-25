@@ -53,9 +53,9 @@ in
       isAMD ? false,
     }:
     let
-      hostConfigurationPath = "${self}/system/machine/${hostname}";
+      hostConfigurationPath = "${self}/system/host/${hostname}";
       hostConfigurationPathExist = builtins.pathExists hostConfigurationPath;
-      hostModulesPath = "${self}/system/machine/${hostname}/modules";
+      hostModulesPath = "${self}/system/host/${hostname}/modules";
       hostModulesPathExist = builtins.pathExists hostModulesPath;
     in
     inputs.nixpkgs.lib.nixosSystem {
