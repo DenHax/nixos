@@ -19,7 +19,7 @@ in
 
   config = mkIf cfg.enable {
     home-manager = {
-      useGlobalPkgs = true;
+      useGlobalPkgs = false;
       useUserPackages = true;
       extraSpecialArgs = {
         inherit inputs;
