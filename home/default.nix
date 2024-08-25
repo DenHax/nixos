@@ -33,7 +33,6 @@ let
   sshModuleExistPath = builtins.pathExists sshModulePath;
 in
 {
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
@@ -69,8 +68,8 @@ in
       home = {
         inherit username;
         inherit stateVersion;
-        inherit homeDirectory;
-        # homeDirectory = lib.mkDefault homeDirectory;
+        # inherit homeDirectory;
+        homeDirectory = lib.mkDefault homeDirectory;
       };
     };
   };
