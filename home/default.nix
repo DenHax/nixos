@@ -53,14 +53,15 @@ in
     };
 
     users.${username} = {
-      imports = [
-        inputs.sops-nix.homeManagerModules.sops
-        "${commonModules}"
-        "${homeModules}"
-      ];
-      # ++ lib.optional sshModuleExistPath sshModulePath
-      # ++ lib.optional userConfigurationPathExist userConfigurationPath
-      # ++ lib.optional userModulesPathExist userModulesPath;
+      imports =
+        [
+          inputs.sops-nix.homeManagerModules.sops
+          "${commonModules}"
+          "${homeModules}"
+        ]
+        ++ lib.optional sshModuleExistPath sshModulePath
+        ++ lib.optional userConfigurationPathExist userConfigurationPath
+        ++ lib.optional userModulesPathExist userModulesPath;
 
       programs.home-manager.enable = true;
 
