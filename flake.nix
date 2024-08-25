@@ -39,6 +39,12 @@
     # };
 
     stylix.url = "github:danth/stylix";
+
+    wallpaperImage = {
+      url = "https://r4.wallpaperflare.com/wallpaper/283/881/127/the-great-wave-off-kanagawa-painting-japanese-waves-wallpaper-0e19ea97218f10d82b15fbcaa3f2b7ee.jpg";
+      flake = false;
+    };
+
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
