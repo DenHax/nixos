@@ -1,5 +1,6 @@
 {
   inputs,
+  self,
   lib,
   config,
   pkgs,
@@ -40,7 +41,7 @@ in
       extraOptions = ''
         trusted-users = root denhax
       '';
-      registry.s.flake = inputs.self;
+      registry.s.flake = self;
 
       settings = {
         experimental-features = [
