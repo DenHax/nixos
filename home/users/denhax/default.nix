@@ -59,7 +59,7 @@ in
     hyprland.enable = isLinux && isWorkstation;
     hypridle.enable = config.module.hyprland.enable;
     hyprlock.enable = config.module.hyprland.enable;
-    hyprpaper.enable = config.module.hyprland.enable;
+    hyprpaper.enable = false;
     rofi.enable = config.module.hyprland.enable;
     swaync.enable = true;
     qt.enable = true;

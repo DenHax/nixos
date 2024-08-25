@@ -5,7 +5,11 @@
   ...
 }:
 let
-  wallpaper = ./kgw5.png;
+  # wallpaper = ./kgw5.png;
+  wallpaper = pkgs.fetchurl {
+    url = "https://e7.pngegg.com/pngimages/107/930/png-clipart-kanagawa-prefecture-the-great-wave-off-kanagawa-thirty-six-views-of-mount-fuji-ukiyo-e-harbor-seal-winter-animals.png";
+    hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+  };
   # scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
   # scheme = "${pkgs.base16-schemes}/share/themes/flat.yaml"; # so bad comment color
   scheme = "${pkgs.base16-schemes}/share/themes/darktooth.yaml";
