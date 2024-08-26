@@ -24,7 +24,7 @@ return {
     config = function()
       require("treesitter-context").setup {
         enable = true,
-        max_lines = 8,
+        max_lines = 0,
         min_window_height = 0,
         line_numbers = true,
         multiline_threshold = 20,
@@ -43,5 +43,62 @@ return {
       require("colorizer").setup {}
     end,
   },
-  {},
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
+  {
+    "lervag/vimtex",
+    lazy = false,
+    init = function()
+      vim.g.vimtex_view_method = "zathura"
+    end,
+  },
+  {
+    "nvim-neorg/neorg",
+    lazy = false,
+    version = "*",
+    config = function()
+      require("neorg").setup {
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                notes = "~/Documents/Norg",
+              },
+              default_workspace = "notes",
+            },
+          },
+        },
+      }
+
+      vim.wo.foldlevel = 99
+      vim.wo.conceallevel = 2
+    end,
+  },
+  {
+    "onsails/lspkind.nvim",
+  },
+  {
+    "preservim/vim-pencil",
+  },
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    -- opts = {},
+    config = function()
+      require("todo-comments").setup {}
+    end,
+  },
+  {
+    "folke/twilight.nvim",
+    ft = "markdown",
+    opts = {},
+  },
 }

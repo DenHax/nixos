@@ -10,7 +10,6 @@ LineNumberColors()
 
 ---@type ChadrcConfig
 local M = {}
-
 M.base46 = {
   theme = "bearded-arc", -- dark-horizon, flexoki, monochrome, oxocarbon
   transparency = false,
@@ -23,6 +22,20 @@ M.base46 = {
 M.ui = {
   statusline = {
     theme = "vscode_colored",
+    modules = {
+      file = function()
+        local path = vim.fn.expand "%:p:~"
+        local sep = "/"
+        local segments = vim.split(path, sep)
+        if #segments == 0 then
+          return path
+        elseif #segments == 1 then
+          return segments[#segments]
+        else
+          return table.concat({ segments[#segments - 1], segments[#segments] }, sep)
+        end
+      end,
+    },
   },
   nvdash = {
     load_on_startup = true,

@@ -3,9 +3,6 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-map("n", ";", ":", { desc = "CMD enter command mode" })
-map("i", "j", "<ESC>")
-
 -- Personal keymaps
 map("n", ";", ":")
 map("i", "jj", "<Esc>", { desc = "Exit from insert" }) -- exit

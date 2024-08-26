@@ -45,7 +45,10 @@ return {
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
+    -- opts = {},
+    config = function()
+      require("todo-comments").setup {}
+    end,
   },
   {
     "olexsmir/gopher.nvim",
