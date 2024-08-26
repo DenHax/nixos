@@ -156,6 +156,7 @@ in
         inkscape-with-extensions
         gimp-with-plugins
         pizarra
+        drawio
         # plantuml
         # umlet
         # pencil
