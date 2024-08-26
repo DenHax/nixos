@@ -35,9 +35,10 @@ in
     # Cli tools, text editors, file managers, terminal emulator, shells and prompt
     alacritty.enable = false;
     direnv.enable = true;
-    helix.enable = isWorkstation;
+    helix.enable = false;
     feh.enable = false;
     fish.enable = false;
+    emacs.enable = false;
     kitty.enable = isWorkstation;
     lf.enable = true;
     nvim.enable = true;
