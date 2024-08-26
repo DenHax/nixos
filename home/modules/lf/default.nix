@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -18,13 +23,14 @@ in
 
         editor-open = ''$$EDITOR $f'';
 
-        mkdir = ''
-          ''${{
-          prinf "Directory Name: "
-          read DIR
-          mkdir $DIR
-          }}
-        '';
+        mkdir = # bash
+          ''
+            ''${{
+            prinf "Directory Name: "
+            read DIR
+            mkdir $DIR
+            }}
+          '';
       };
 
       keybindings = {
