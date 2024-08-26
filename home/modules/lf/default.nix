@@ -49,13 +49,13 @@ in
         ee = "editor-open";
         V = ''''$${pkgs.gat}/bin/gat "$f"'';
 
-        settings = {
-          preview = true;
-          hidden = true;
-          drawbox = true;
-          icons = true;
-          ignorecase = true;
-        };
+      };
+      settings = {
+        preview = true;
+        hidden = true;
+        drawbox = true;
+        icons = true;
+        ignorecase = true;
       };
     };
     # xdg.configFile."lf/icons".source = ./icons;
