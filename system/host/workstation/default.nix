@@ -49,7 +49,7 @@
       thunderbolt.enable = true;
       tlp.enable = false;
       posgresqlp.enable = true;
-      pgadmin = true;
+      pgadmin.enable = true;
     };
   };
 }
