@@ -17,7 +17,7 @@ in
   config = mkIf cfg.enable {
     services.pgadmin = {
       enable = true;
-
+      initialEmail = "whatxpw@gmail.com";
     };
   };
 }
