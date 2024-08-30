@@ -1,17 +1,16 @@
 {
-  imports = [
-    ./awesome
-    ./blueman
-    ./auto-cpufreq
-    ./fwupd
-    ./greetd
-    # ./gvfs
-    ./hyprland
-    ./input
-    ./logind
-    ./sddm
-    ./syncthing
-    ./thunderbolt
-    ./tlp
-  ];
+  systemModules,
+  lib,
+  ...
+}:
+
+let
+  hostServicesModulesPath = "${systemModules}/services";
+in
+{
+  imports = builtins.filter (module: lib.pathIsDirectory module) (
+    map (module: "${hostServicesModulesPath}/${module}") (
+      builtins.attrNames (builtins.readDir hostServicesModulesPath)
+    )
+  );
 }
