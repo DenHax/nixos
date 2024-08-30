@@ -50,7 +50,7 @@
       thunderbolt.enable = true;
       tlp.enable = false;
       postgresql.enable = true;
-      pgadmin.enable = true;
+      pgadmin.enable = false;
     };
   };
 }
