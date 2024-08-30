@@ -49,7 +49,7 @@
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
-      postgresql.enable = true;
+      postgresql.enable = false;
       pgadmin.enable = false;
     };
   };
