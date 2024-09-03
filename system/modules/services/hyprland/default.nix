@@ -13,15 +13,15 @@ let
   cfg = config.module.services.hyprland;
 in
 {
-  nixpkgs.overlay = [
-    import
-    "${overlayModules}/xdg-hypr"
-  ];
   options = {
     module.services.hyprland.enable = mkEnableOption "Enables hyprland";
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.overlay = [
+      import
+      "${overlayModules}/xdg-hypr"
+    ];
     programs.hyprland = {
       enable = true;
       package = pkgs.hyprland;
