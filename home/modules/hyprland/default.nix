@@ -33,7 +33,7 @@ in
       grimblast
       # hyprland
       # hyprlock
-      hyprpaper
+      # hyprpaper
       # hyprshot
       # xdg-desktop-portal-hyprland
     ];
