@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   isWorkstation,
   hostname,
   ...
@@ -67,7 +68,7 @@ in
         rustc
         nodejs_22
         typescript
-        go
+        inputs.nixpkgs-stable.go
         lua
         # python312
 
@@ -89,7 +90,7 @@ in
         ansible-lint
         kubectl
         kubernetes-helm
-        terraform
+        # terraform
       ]
       ++ lib.optionals isWorkstation [
         # discord
