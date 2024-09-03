@@ -57,7 +57,8 @@ in
     awesome.enable = false;
     flameshot.enable = false;
     gtk.enable = true;
-    hyprland.enable = isLinux && isWorkstation;
+    # hyprland.enable = isLinux && isWorkstation;
+    hyprland.enable = false;
     hypridle.enable = config.module.hyprland.enable;
     hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = config.module.hyprland.enable;

@@ -24,12 +24,12 @@ in
       settings = {
         default_session = {
           user = username;
-          command = "${pkgs.hyprland}/bin/Hyprland";
-          # command = "${pkgs.qtile-unwrapped}/bin/qtile";
+          # command = "${pkgs.hyprland}/bin/Hyprland";
+          command = "${pkgs.qtile-unwrapped}/bin/qtile";
         };
         initial_session = {
-          command = "${pkgs.hyprland}/bin/Hyprland";
-          # command = "${pkgs.qtile-unwrapped}/bin/qtile";
+          # command = "${pkgs.hyprland}/bin/Hyprland";
+          command = "${pkgs.qtile-unwrapped}/bin/qtile";
           user = username;
         };
       };

@@ -41,7 +41,7 @@
       fwupd.enable = true;
       greetd.enable = true;
       # gvfs.enable = true;
-      hyprland.enable = true;
+      hyprland.enable = false;
       input.enable = false;
       light.enable = true;
       logind.enable = false;
@@ -51,7 +51,7 @@
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
-      qtile.enable = false;
+      qtile.enable = true;
     };
   };
 }

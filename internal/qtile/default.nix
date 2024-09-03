@@ -28,5 +28,5 @@
     })
   ];
 
-  services.xserver.displayManager.sessionPackages = [ pkgs.qtile-unwrapped ];
+  services.displayManager.sessionPackages = [ pkgs.qtile-unwrapped ];
 }
