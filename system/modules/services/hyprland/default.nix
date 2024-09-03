@@ -19,7 +19,7 @@ in
 
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
-      (import ../../../../internal/xdg-hypr { inherit inputs; })
+      (import ../../../../internal/xdg-hypr { inherit inputs pkgs; })
     ];
     programs.hyprland = {
       enable = true;

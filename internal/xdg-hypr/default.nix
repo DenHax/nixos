@@ -1,4 +1,7 @@
-{ inputs }:
+{ inputs, pkgs }:
+let
+  unstable-small-pkgs = import inputs.nixos-unstable-small { system = pkgs.system; };
+in
 (final: prev: {
-  inherit (inputs.unstable-small-pkgs) xdg-desktop-portal-hyprland;
+  inherit (unstable-small-pkgs) xdg-desktop-portal-hyprland;
 })
