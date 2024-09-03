@@ -33,11 +33,10 @@ in
 
     nix = optionalAttrs cfg.useNixPackageManagerConfig ({
 
-      gc =
-        mkIf config.module.porgrams.nh.enable == false {
-          automatic = true;
-          options = "--delete-older-than 30d";
-        };
+      gc = mkIf (!config.module.porgrams.nh.enable) {
+        automatic = true;
+        options = "--delete-older-than 30d";
+      };
 
       extraOptions = ''
         trusted-users = root denhax
