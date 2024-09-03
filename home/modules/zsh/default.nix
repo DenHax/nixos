@@ -55,6 +55,10 @@ in
         ];
         # agnoster, alanpeabody, amuse, bira, bureau, clean, darkblood, fino, gnzh, jonathan, mortalscumbag
         # faorites; bira ?. fino
+        envExtra = # bash
+          ''
+            eval '$(direnv hook zsh)'
+          '';
         theme = "gnzh";
       };
     };
