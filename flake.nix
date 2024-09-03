@@ -39,7 +39,7 @@
     # };
 
     hyprpaper = {
-      url = "github.com:hyprwm/hyprpaper/v0.7.1";
+      url = "github:hyprwm/hyprpaper/v0.7.1";
     };
 
     stylix.url = "github:danth/stylix";
