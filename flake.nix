@@ -39,7 +39,7 @@
     # };
 
     hyprpaper = {
-      url = "github:hyprwm/hyprpaper/v0.7.1";
+      url = "github:hyprwm/hyprpaper/v0.7.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
