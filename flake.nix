@@ -29,9 +29,9 @@
     #   inputs.nixpgs.follows = "nixpkgs";
     # };
 
-    hyprland = {
-      url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    };
+    # hyprland = {
+    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # };
 
     # xdghypr = {
     #   url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.1";

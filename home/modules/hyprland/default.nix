@@ -11,6 +11,7 @@ with lib;
 let
   cfg = config.module.hyprland;
   flakeDir = "~/nix";
+  pkgsStable = import inputs.nixpkgs-stable { };
 in
 
 {
@@ -41,10 +42,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      # package = pkgs.hyprland;
-      # set the flake package
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      # make sure to also set the portal package, so that they are in sync
+      package = pkgsStable.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [
