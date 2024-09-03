@@ -18,7 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    nixpkgs.overlay = [
+    nixpkgs.overlays = [
       import
       "${overlayModules}/xdg-hypr"
     ];
