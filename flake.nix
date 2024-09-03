@@ -38,11 +38,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    hyprpaper = {
-      url = "github:hyprwm/hyprpaper/v0.7.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     stylix.url = "github:danth/stylix";
 
     wallpaperImage = {

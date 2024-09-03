@@ -37,7 +37,6 @@ in
       # Hypr ecosystem
       hyprpicker
       grimblast
-      inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
       # hyprland
       # hyprlock
       # hyprshot
