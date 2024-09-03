@@ -51,6 +51,7 @@
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
+      qtile.enable = false;
     };
   };
 }

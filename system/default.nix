@@ -5,6 +5,8 @@
 
   systemModules,
   commonModules,
+  # overlayModules,
+  # customPkgs,
   hostConfigurationPath,
   hostConfigurationPathExist,
   hostModulesPath,

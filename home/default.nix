@@ -9,6 +9,8 @@
   stateVersion,
   homeModules,
   commonModules,
+  overlayModules,
+  customPkgs,
   isWorkstation ? false,
   ...
 }:
@@ -48,6 +50,8 @@ in
         isLinux
         commonModules
         homeModules
+        overlayModules
+        customPkgs
         isWorkstation
         ;
     };

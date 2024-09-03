@@ -6,6 +6,8 @@ let
   homeModules = "${homeConfiguration}/modules";
   systemModules = "${systemConfiguration}/modules";
   commonModules = "${self}/modules";
+  overlayModules = "${self}/internal";
+  customPkgs = "${self}/pkg";
 in
 {
   # Move to #/home/default.nix
@@ -77,6 +79,8 @@ in
           homeModules
           systemModules
           commonModules
+          overlayModules
+          customPkgs
           hostConfigurationPath
           hostConfigurationPathExist
           hostModulesPath
@@ -121,6 +125,8 @@ in
           isIntel
           systemModules
           commonModules
+          overlayModules
+          customPkgs
           ;
       };
 
