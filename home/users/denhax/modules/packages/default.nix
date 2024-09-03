@@ -68,7 +68,7 @@ in
         rustc
         nodejs_22
         typescript
-        inputs.nixpkgs-stable.go
+        go
         lua
         # python312
 
