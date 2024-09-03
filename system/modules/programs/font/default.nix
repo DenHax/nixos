@@ -36,7 +36,7 @@ in
         fira-code-nerdfont
         fantasque-sans-mono
         font-awesome
-        corefonts
+        # corefonts
         (nerdfonts.override {
           fonts = [
             "FiraCode"
