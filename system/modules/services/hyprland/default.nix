@@ -10,7 +10,12 @@ with lib;
 
 let
   cfg = config.module.services.hyprland;
-  pkgsStable = import inputs.nixpkgs-stable { };
+  pkgsStable = import inputs.nixpkgs-stable {
+    inherit system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   options = {

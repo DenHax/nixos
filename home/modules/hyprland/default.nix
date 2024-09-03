@@ -11,7 +11,12 @@ with lib;
 let
   cfg = config.module.hyprland;
   flakeDir = "~/nix";
-  pkgsStable = import inputs.nixpkgs-stable { };
+  pkgsStable = import inputs.nixpkgs-stable {
+    inherit system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 
 {
