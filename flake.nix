@@ -40,6 +40,7 @@
 
     hyprpaper = {
       url = "github:hyprwm/hyprpaper/v0.7.1";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix.url = "github:danth/stylix";
