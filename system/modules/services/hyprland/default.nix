@@ -26,6 +26,7 @@ in
     programs.hyprland = {
       enable = true;
       package = pkgsStable.hyprland;
+      portalPackage = pkgsStable.xdg-desktop-portal-hyprland;
     };
   };
 }
