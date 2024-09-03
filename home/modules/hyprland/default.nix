@@ -37,9 +37,9 @@ in
       # Hypr ecosystem
       hyprpicker
       grimblast
+      inputs.hyprpaper.packages.${pkgs.system}.hyprpaper
       # hyprland
       # hyprlock
-      # hyprpaper
       # hyprshot
       # xdg-desktop-portal-hyprland
     ];
@@ -47,7 +47,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      package = pkgsStable.hyprland;
+      package = pkgs.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [
