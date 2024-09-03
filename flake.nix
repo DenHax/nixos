@@ -5,10 +5,6 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    nixos-unstable-small = {
-      url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    };
-
     devenv.url = "github:cachix/devenv";
 
     home-manager = {
