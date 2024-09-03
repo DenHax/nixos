@@ -44,6 +44,10 @@ in
       #   ''
       #     eval '$(direnv hook zsh)'
       #   '';
+      envExtra = # bash
+        ''
+          eval '$(direnv hook zsh)'
+        '';
 
       oh-my-zsh = {
         enable = true;
@@ -55,10 +59,6 @@ in
         ];
         # agnoster, alanpeabody, amuse, bira, bureau, clean, darkblood, fino, gnzh, jonathan, mortalscumbag
         # faorites; bira ?. fino
-        envExtra = # bash
-          ''
-            eval '$(direnv hook zsh)'
-          '';
         theme = "gnzh";
       };
     };
