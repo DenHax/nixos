@@ -33,7 +33,7 @@ in
 
     nix = optionalAttrs cfg.useNixPackageManagerConfig ({
 
-      gc = mkIf (!config.module.porgrams.nh.enable) {
+      gc = mkIf (!config.module.programs.nh.enable) {
         automatic = true;
         options = "--delete-older-than 30d";
       };
