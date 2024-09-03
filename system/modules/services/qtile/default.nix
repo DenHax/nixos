@@ -13,14 +13,14 @@ let
   cfg = config.module.services.qtile;
 in
 {
+  imports = [
+    "${overlayModules}/qtile"
+  ];
   options.module = {
     services.qtile.enable = mkEnableOption "Enables qtile";
   };
 
   config = mkIf cfg.enable {
-    imports = [
-      "${overlayModules}/qtile"
-    ];
     services.xserver.windowManager.qtile = {
       enable = true;
     };
