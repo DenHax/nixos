@@ -13,7 +13,7 @@ let
   cfg = config.module.services.hyprland;
 in
 {
-  nixpgs.overlay = [
+  nixpkgs.overlay = [
     import
     "${overlayModules}/xdg-hypr"
   ];
