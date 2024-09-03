@@ -33,10 +33,11 @@ in
 
     nix = optionalAttrs cfg.useNixPackageManagerConfig ({
 
-      gc = {
-        automatic = true;
-        options = "--delete-older-than 30d";
-      };
+      gc =
+        mkIf config.module.porgrams.nh.enable == false {
+          automatic = true;
+          options = "--delete-older-than 30d";
+        };
 
       extraOptions = ''
         trusted-users = root denhax
@@ -49,8 +50,8 @@ in
           "flakes"
         ];
         # auto-optimise-store = true;
-        # substituters = [ "https://hyprland.cachix.org" ];
-        # trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+        substituters = [ "https://hyprland.cachix.org" ];
+        trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
       };
 
     }
