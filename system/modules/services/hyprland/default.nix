@@ -11,7 +11,7 @@ with lib;
 let
   cfg = config.module.services.hyprland;
   pkgsStable = import inputs.nixpkgs-stable {
-    inherit system;
+    system = pkgs.stdenv.hostPlatform.system;
     config = {
       allowUnfree = true;
     };
