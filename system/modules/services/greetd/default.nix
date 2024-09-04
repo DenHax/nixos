@@ -4,6 +4,8 @@
   inputs,
   username,
   pkgs,
+  wm,
+  de,
   ...
 }:
 
@@ -11,6 +13,13 @@ with lib;
 
 let
   cfg = config.module.services.greetd;
+  cmd =
+    if wm == "hyprland" then
+      "${pkgs.hyprland}/bin/Hyprland"
+    else if wm == "qtile" then
+      "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland"
+    else
+      "";
 in
 {
   options = {
@@ -24,13 +33,14 @@ in
       settings = {
         default_session = {
           user = username;
-          # command = "${pkgs.hyprland}/bin/Hyprland";
-          command = "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland";
+          command = cmd;
         };
         initial_session = {
-          # command = "${pkgs.hyprland}/bin/Hyprland";
-          command = "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland";
+          command = cmd;
           user = username;
+
+          # command = "${pkgs.hyprland}/bin/Hyprland";
+          # command = "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland";
         };
       };
     };
