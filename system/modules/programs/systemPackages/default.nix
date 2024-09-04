@@ -90,7 +90,7 @@ in
         ipcalc
         cacert
       ]
-      ++ optionals isWorkstation [
+      ++ lib.optionals isWorkstation [
         # Hardware
         libGL
 
