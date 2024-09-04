@@ -9,6 +9,12 @@ with lib;
 
 let
   cfg = config.module.programs.xdg-portal;
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   options = {
@@ -27,9 +33,10 @@ in
             "org.freedesktop.impl.portal.Screenshot" = "hyprland";
           };
         };
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-gtk
-          xdg-desktop-portal-wlr
+        extraPortals = [
+          pkgs.xdg-desktop-portal-gtk
+          pkgs.xdg-desktop-portal-wlr
+          pkgsStable.xdg-desktop-portal-hyprland
         ];
       };
     };
