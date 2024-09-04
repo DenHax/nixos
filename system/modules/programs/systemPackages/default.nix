@@ -3,9 +3,9 @@
   lib,
   config,
   isWorkstation ? false,
-  isIntel ? false,
-  isRyzen ? false,
-  isNvidia ? false,
+  # isIntel ? false,
+  # isRyzen ? false,
+  # isNvidia ? false,
   cpu ? "",
   gpu ? "",
   ...
@@ -15,10 +15,10 @@ with lib;
 
 let
   cfg = config.module.programs.systemPackages;
-  isNvidia1 = gpu == "nvidia";
-  isAMD1 = gpu == "amd";
-  isIntel1 = cpu == "intel";
-  isRyzen1 = vpu == "ryzen";
+  isNvidia = gpu == "nvidia";
+  isAMD = gpu == "amd";
+  isIntel = cpu == "intel";
+  isRyzen = vpu == "ryzen";
 in
 {
   options = {

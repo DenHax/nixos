@@ -1,10 +1,11 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
+  pkgs,
   isWorkstation,
-  hostname,
+  isGame,
+  # hostname,
   ...
 }:
 
@@ -187,7 +188,8 @@ in
         # Messenger
         telegram-desktop
       ]
-      ++ lib.optionals (hostname == "workstation") [
+      # ++ lib.optionals (hostname == "workstation") [
+      ++ lib.optionals (isGame) [
         protonup
         lutris
         heroic
