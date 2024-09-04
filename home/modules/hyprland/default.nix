@@ -29,14 +29,14 @@ in
   };
   config = mkIf cfg.enable {
     module.hyprland = {
-      bind.enable = mkDefault cfg.enable;
-      monitor.enable = mkDefault cfg.enable;
+      # bind.enable = mkDefault cfg.enable;
+      # monitor.enable = mkDefault cfg.enable;
     };
 
     home.packages = [
       # Hypr ecosystem
-      pkgsStable.hyprpicker
-      pkgs.grimblast
+      # pkgsStable.hyprpicker
+      # pkgs.grimblast
       # hyprland
       # hyprlock
       # hyprshot
@@ -160,6 +160,10 @@ in
           force_default_wallpaper = 0;
         };
       };
+      bind = [
+        "$mainMod, RETURN, exec, kitty"
+        "$mainMod, R, exec, rofi -show drun -show-icons"
+      ];
     };
   };
 }
