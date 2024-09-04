@@ -11,6 +11,12 @@ with lib;
 
 let
   cfg = config.module.services.hyprland;
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   options = {
@@ -20,7 +26,7 @@ in
   config = mkIf cfg.enable {
     programs.hyprland = {
       enable = true;
-      package = pkgs.hyprland;
+      package = pkgsStable.hyprland;
       # portalPackage = pkgs.xdg-desktop-portal-hyprland;
     };
   };
