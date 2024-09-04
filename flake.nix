@@ -58,13 +58,15 @@
       legacyLinuxArch = "i686-linux";
       legacyDarwinArch = "x86_64-darwin";
 
-      systems = [
-        linuxArch
-        linuxArmArch
-        darwinArch
-        legacyLinuxArch
-        legacyDarwinArch
-      ];
+      systems = {
+        inherit
+          linuxArch
+          linuxArmArch
+          darwinArch
+          legacyLinuxArch
+          legacyDarwinArch
+          ;
+      };
 
       hosts = import ./hosts.nix { inherit systems; };
     in
