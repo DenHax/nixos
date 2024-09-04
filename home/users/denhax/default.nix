@@ -64,8 +64,7 @@ in
     awesome.enable = isAwesome;
     flameshot.enable = isWM && false;
     gtk.enable = true;
-    # hyprland.enable = isLinux && isWorkstation;
-    hyprland.enable = isHypr;
+    hyprland.enable = isHypr && false;
     hypridle.enable = false;
     hyprlock.enable = false;
     # hypridle.enable = isWM;
