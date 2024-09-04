@@ -21,8 +21,8 @@ in
 
 {
   imports = [
-    ./bind
-    ./monitor
+    # ./bind
+    # ./monitor
   ];
   options = {
     module.hyprland.enable = mkEnableOption "Enables hyprland";
@@ -46,7 +46,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      # package = pkgsStable.hyprland;
+      package = pkgsStable.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [
@@ -163,6 +163,7 @@ in
         bind = [
           "$mainMod, RETURN, exec, kitty"
           "$mainMod, R, exec, rofi -show drun -show-icons"
+          "$mainMod, Q, killactive,"
         ];
       };
     };
