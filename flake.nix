@@ -69,8 +69,8 @@
       # hosts = import ./hosts.nix { inherit systems; };
       hosts = {
         nixos = {
-          workstationDH = {
-            hostname = "workstation";
+          workstation = {
+            # hostname = "workstation";
             username = "denhax";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
@@ -82,8 +82,8 @@
             gpu = "nvidia";
             isGame = true;
           };
-          laptopDH = {
-            hostname = "laptop";
+          laptop = {
+            # hostname = "laptop";
             username = "denhax";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
@@ -95,7 +95,7 @@
             isGame = false;
           };
           serve = {
-            hostname = "server";
+            # hostname = "server";
             username = "dh";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
@@ -103,8 +103,8 @@
             isRyzen = false;
             cpu = "";
           };
-          raspDH = {
-            hostname = "raspberry";
+          rasp = {
+            # hostname = "raspberry";
             username = "denhax";
             platform = linuxArmArch; # ? legacyLinuxArch
             isWorkstation = false;
@@ -128,7 +128,7 @@
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       # inherit systems;
-      systems = confMake.forAllSystem;
+      systems = confMake.forAllSystems;
       flake = {
         nixosConfigurations = confMake.genNixOS hosts.nixos;
 
