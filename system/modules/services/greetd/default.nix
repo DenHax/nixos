@@ -25,11 +25,11 @@ in
         default_session = {
           user = username;
           # command = "${pkgs.hyprland}/bin/Hyprland";
-          command = "${pkgs.qtile-unwrapped}/bin/qtile";
+          command = "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland";
         };
         initial_session = {
           # command = "${pkgs.hyprland}/bin/Hyprland";
-          command = "${pkgs.qtile-unwrapped}/bin/qtile";
+          command = "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland";
           user = username;
         };
       };
