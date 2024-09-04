@@ -66,7 +66,61 @@
         legacyDarwinArch
       ];
 
-      hosts = import ./hosts.nix { inherit systems; };
+      # hosts = import ./hosts.nix { inherit systems; };
+      hosts = {
+        workstationDH = {
+          hostname = "workstation";
+          username = "denhax";
+          platform = linuxArch; # ? legacyLinuxArch
+          isWorkstation = true;
+          isRyzen = true;
+          isNvidia = true;
+          wm = "qtile";
+          de = "";
+          cpu = "ryzen";
+          gpu = "nvidia";
+          isGame = true;
+        };
+        laptopDH = {
+          hostname = "laptop";
+          username = "denhax";
+          platform = linuxArch; # ? legacyLinuxArch
+          isWorkstation = true;
+          isIntel = true;
+          wm = "qtile";
+          de = "";
+          cpu = "intel";
+          gpu = "";
+          isGame = false;
+        };
+        serve = {
+          hostname = "server";
+          username = "dh";
+          platform = linuxArch; # ? legacyLinuxArch
+          isWorkstation = true;
+          isIntel = false;
+          isRyzen = false;
+          cpu = "";
+        };
+        raspDH = {
+          hostname = "raspberry";
+          username = "denhax";
+          platform = linuxArmArch; # ? legacyLinuxArch
+          isWorkstation = false;
+          isIntel = false;
+          isRyzen = false;
+          cpu = "";
+        };
+        macXDH = {
+          hostname = "macbook";
+          username = "denhax";
+          platform = darwinArch; # ? legacyDarwinArch
+          isWorkstation = true;
+          isIntel = false;
+          cpu = "";
+        };
+      };
+
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
       inherit systems;
