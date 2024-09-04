@@ -8,51 +8,18 @@ let
   commonModules = "${self}/modules";
   overlayModules = "${self}/internal";
   customPkgs = "${self}/pkg";
-in
-{
-  # Move to #/home/default.nix
-  # mkHome =
-  #   {
-  #     username ? "denhax",
-  #     hostname ? "nixos",
-  #     platform ? "x86_64-linux",
-  #     isWorkstation ? false,
-  #     isIntel ? false,
-  #     isRyzen ? false,
-  #     isNvidia ? false,
-  #     isAMD ? false,
-  #   }:
-  #   inputs.home-manager.lib.homeManagerConfiguration {
-  #     pkgs = inputs.nixpkgs.legacyPackages.${platform};
-  #     extraSpecialArgs = {
-  #       inherit
-  #         inputs
-  #         platform
-  #         username
-  #         hostname
-  #         stateVersion
-  #         self
-  #         isWorkstation
-  #         isIntel
-  #         isRyzen
-  #         isNvidia
-  #         isAMD
-  #         ;
-  #     };
-  #     modules = [ ../home ];
-  #   };
 
   mkHost =
+    hostname:
     {
-      hostname ? "nixos",
       username ? "denhax",
       stateVersion ? "24.05",
       platform ? "x86_64-linux",
       isWorkstation ? false,
-      wm ? "",
-      de ? "",
-      cpu ? "",
-      gpu ? "",
+      wm ? null,
+      de ? null,
+      cpu ? null,
+      gpu ? null,
       isIntel ? false,
       isRyzen ? false,
       isNvidia ? false,
@@ -116,8 +83,8 @@ in
     };
 
   mkHostDarwin =
+    hostname:
     {
-      hostname ? "macos",
       username ? "denhax",
       stateVersion ? 6,
       platform ? "aarch64-darwin",
@@ -149,14 +116,21 @@ in
         "${homeConfiguration}"
       ];
     };
+in
+{
+  forAllSystems = inputs.nixpkgs.lib.systems.flakeExposed;
 
-  forAllSystems = inputs.nixpkgs.lib.genAttrs [
-    "aarch64-linux"
-    "x86_64-linux"
-    "aarch64-darwin"
+  genNixOS = builtins.mapAttrs mkHost;
 
-    # Legacy
-    "i686-linux"
-    "x86_64-darwin"
-  ];
+  genDarwin = builtins.mapAttrs mkHostDarwin;
+
+  # forAllSystems = inputs.nixpkgs.lib.genAttrs [
+  #   "aarch64-linux"
+  #   "x86_64-linux"
+  #   "aarch64-darwin"
+  #
+  #   # Legacy
+  #   "i686-linux"
+  #   "x86_64-darwin"
+  # ];
 }

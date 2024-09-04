@@ -68,76 +68,80 @@
 
       # hosts = import ./hosts.nix { inherit systems; };
       hosts = {
-        workstationDH = {
-          hostname = "workstation";
-          username = "denhax";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isRyzen = true;
-          isNvidia = true;
-          wm = "qtile";
-          de = "";
-          cpu = "ryzen";
-          gpu = "nvidia";
-          isGame = true;
+        nixos = {
+          workstationDH = {
+            hostname = "workstation";
+            username = "denhax";
+            platform = linuxArch; # ? legacyLinuxArch
+            isWorkstation = true;
+            isRyzen = true;
+            isNvidia = true;
+            wm = "qtile";
+            de = "";
+            cpu = "ryzen";
+            gpu = "nvidia";
+            isGame = true;
+          };
+          laptopDH = {
+            hostname = "laptop";
+            username = "denhax";
+            platform = linuxArch; # ? legacyLinuxArch
+            isWorkstation = true;
+            isIntel = true;
+            wm = "qtile";
+            de = "";
+            cpu = "intel";
+            gpu = "";
+            isGame = false;
+          };
+          serve = {
+            hostname = "server";
+            username = "dh";
+            platform = linuxArch; # ? legacyLinuxArch
+            isWorkstation = true;
+            isIntel = false;
+            isRyzen = false;
+            cpu = "";
+          };
+          raspDH = {
+            hostname = "raspberry";
+            username = "denhax";
+            platform = linuxArmArch; # ? legacyLinuxArch
+            isWorkstation = false;
+            isIntel = false;
+            isRyzen = false;
+            cpu = "";
+          };
         };
-        laptopDH = {
-          hostname = "laptop";
-          username = "denhax";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isIntel = true;
-          wm = "qtile";
-          de = "";
-          cpu = "intel";
-          gpu = "";
-          isGame = false;
-        };
-        serve = {
-          hostname = "server";
-          username = "dh";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isIntel = false;
-          isRyzen = false;
-          cpu = "";
-        };
-        raspDH = {
-          hostname = "raspberry";
-          username = "denhax";
-          platform = linuxArmArch; # ? legacyLinuxArch
-          isWorkstation = false;
-          isIntel = false;
-          isRyzen = false;
-          cpu = "";
-        };
-        macXDH = {
-          hostname = "macbook";
-          username = "denhax";
-          platform = darwinArch; # ? legacyDarwinArch
-          isWorkstation = true;
-          isIntel = false;
-          cpu = "";
+        darwin = {
+          macos = {
+            hostname = "macbook";
+            username = "denhax";
+            platform = darwinArch; # ? legacyDarwinArch
+            isWorkstation = true;
+            isIntel = false;
+            cpu = "";
+          };
         };
       };
 
     in
     flake-parts.lib.mkFlake { inherit inputs; } {
-      inherit systems;
+      # inherit systems;
+      systems = confMake.forAllSystem;
       flake = {
-        nixosConfigurations = {
-          ${hosts.workstationDH.hostname} = confMake.mkHost hosts.workstationDH;
-          ${hosts.serve.hostname} = confMake.mkHost hosts.serve;
-          ${hosts.laptopDH.hostname} = confMake.mkHost hosts.laptopDH;
-          ${hosts.raspDH.hostname} = confMake.mkHost hosts.raspDH;
-          ${hosts.macXDH.hostname} = confMake.mkHost hosts.macXDH;
-        };
+        nixosConfigurations = confMake.genNixOS hosts.nixos;
 
-        darwinConfigurations = {
-          ${hosts.macbox.hostname} = confMake.mkHostDarwin hosts.macbox;
-        };
+        darwinConfigurations = confMake.genDarwin hosts.darwin;
 
         templates = import "${self}/template" { inherit self; };
+
+        #     {
+        #   ${hosts.workstationDH.hostname} = confMake.mkHost hosts.workstationDH;
+        # };
+        #     {
+        #   ${hosts.macbox.hostname} = confMake.mkHostDarwin hosts.macbox;
+        # };
 
         # homeConfigurations = {
         #
