@@ -1,9 +1,9 @@
 {
-  pkgs,
-  inputs,
   lib,
   config,
   overlayModules,
+  pkgs,
+  inputs,
   ...
 }:
 
@@ -19,8 +19,8 @@ let
   };
 in
 {
-  options = {
-    module.services.hyprland.enable = mkEnableOption "Enables hyprland";
+  options.module = {
+    services.hyprland.enable = mkEnableOption "Enables hyprland";
   };
 
   config = mkIf cfg.enable {

@@ -1,8 +1,8 @@
 {
   lib,
   config,
-  inputs,
   username,
+  inputs,
   pkgs,
   wm,
   de,
@@ -28,8 +28,8 @@ let
       "";
 in
 {
-  options = {
-    module.services.greetd.enable = mkEnableOption "Enable greetd";
+  options.module = {
+    services.greetd.enable = mkEnableOption "Enable greetd";
   };
 
   config = mkIf cfg.enable {

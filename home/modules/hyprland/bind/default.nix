@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -42,8 +43,8 @@ let
 
 in
 {
-  options = {
-    module.hyprland.bind.enable = mkEnableOption "Enables binds in Hyprland";
+  options.module = {
+    hyprland.bind.enable = mkEnableOption "Enables binds in Hyprland";
   };
 
   config = mkIf cfg.enable {

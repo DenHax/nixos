@@ -1,8 +1,9 @@
 {
-  pkgs,
   config,
   lib,
   hostname,
+  pkgs,
+  inputs,
   ...
 }:
 
@@ -23,8 +24,8 @@ let
   };
 in
 {
-  options = {
-    module.hypridle.enable = mkEnableOption "Enables hypridle";
+  options.module = {
+    hypridle.enable = mkEnableOption "Enables hypridle";
   };
 
   config = mkIf cfg.enable {
