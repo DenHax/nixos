@@ -33,10 +33,10 @@ in
       monitor.enable = mkDefault cfg.enable;
     };
 
-    home.packages = with pkgs; [
+    home.packages = [
       # Hypr ecosystem
       pkgsStable.hyprpicker
-      grimblast
+      pkgs.grimblast
       # hyprland
       # hyprlock
       # hyprshot
