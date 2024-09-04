@@ -49,10 +49,15 @@ in
       stateVersion ? "24.05",
       platform ? "x86_64-linux",
       isWorkstation ? false,
+      wm ? "",
+      de ? "",
+      cpu ? "",
+      gpu ? "",
       isIntel ? false,
       isRyzen ? false,
       isNvidia ? false,
       isAMD ? false,
+      isGame ? false,
     }:
     let
       hostConfigurationPath = "${self}/system/host/${hostname}";
@@ -70,7 +75,12 @@ in
           platform
           stateVersion
           isWorkstation
+          wm
+          de
+          isGame
 
+          cpu
+          gpu
           isIntel
           isRyzen
           isNvidia
@@ -112,6 +122,7 @@ in
       stateVersion ? 6,
       platform ? "aarch64-darwin",
       isIntel ? false,
+      cpu ? "",
     }:
     inputs.darwin.lib.darwinSystem {
       specialArgs = {
@@ -122,7 +133,10 @@ in
           username
           platform
           stateVersion
+
           isIntel
+          cpu
+
           systemModules
           commonModules
           overlayModules

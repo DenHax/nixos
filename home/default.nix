@@ -12,6 +12,8 @@
   overlayModules,
   customPkgs,
   isWorkstation ? false,
+  wm ? "",
+  de ? "",
   ...
 }:
 
@@ -53,6 +55,8 @@ in
         overlayModules
         customPkgs
         isWorkstation
+        wm
+        de
         ;
     };
 

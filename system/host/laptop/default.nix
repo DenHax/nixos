@@ -1,4 +1,13 @@
 {
+  wm ? "",
+  de ? "",
+  ...
+}:
+let
+  isHypr = wm == "hyprland";
+  isQtile = wm == "qtile";
+in
+{
   imports = [
     ../../modules
     ./bootloader
@@ -41,7 +50,7 @@
       fwupd.enable = true;
       greetd.enable = true;
       # gvfs.enable = true;
-      hyprland.enable = false;
+      hyprland.enable = isHypr;
       input.enable = false;
       light.enable = true;
       logind.enable = false;
@@ -51,7 +60,7 @@
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
-      qtile.enable = true;
+      qtile.enable = isQtile;
     };
   };
 }
