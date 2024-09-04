@@ -66,8 +66,10 @@ in
     gtk.enable = true;
     # hyprland.enable = isLinux && isWorkstation;
     hyprland.enable = isHypr;
-    hypridle.enable = isWM;
-    hyprlock.enable = config.module.hyprland.enable;
+    hypridle.enable = false;
+    hyprlock.enable = false;
+    # hypridle.enable = isWM;
+    # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
     swaync.enable = isWM;
     qt.enable = true;
