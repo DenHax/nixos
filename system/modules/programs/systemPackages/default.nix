@@ -18,7 +18,7 @@ let
   isNvidia = gpu == "nvidia";
   isAMD = gpu == "amd";
   isIntel = cpu == "intel";
-  isRyzen = vpu == "ryzen";
+  isRyzen = cpu == "ryzen";
 in
 {
   options = {
