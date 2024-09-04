@@ -55,8 +55,8 @@ let
       [ ];
 in
 {
-  options = {
-    module.hyprland.monitor.enable = mkEnableOption "Enables monitors in Hyprland";
+  options.module = {
+    hyprland.monitor.enable = mkEnableOption "Enables monitors in Hyprland";
   };
 
   config = mkIf cfg.enable {
