@@ -14,6 +14,7 @@
   isWorkstation ? false,
   wm ? "",
   de ? "",
+  isGame ? false,
   ...
 }:
 
@@ -57,6 +58,7 @@ in
         isWorkstation
         wm
         de
+        isGame
         ;
     };
 
