@@ -2,10 +2,12 @@
   pkgs,
   lib,
   config,
-  isWorkstation,
-  isIntel,
-  isRyzen,
-  isNvidia,
+  isWorkstation ? false,
+  isIntel ? false,
+  isRyzen ? false,
+  isNvidia ? false,
+  cpu ? "",
+  gpu ? "",
   ...
 }:
 
@@ -13,6 +15,10 @@ with lib;
 
 let
   cfg = config.module.programs.systemPackages;
+  isNvidia1 = gpu == "nvidia";
+  isAMD1 = gpu == "amd";
+  isIntel1 = cpu == "intel";
+  isRyzen1 = vpu == "ryzen";
 in
 {
   options = {
@@ -49,6 +55,7 @@ in
         # CLI equivalents
 
         # DE: terminal, file manager, display manager, etc
+        dmenu
         kitty
         greetd.greetd
 

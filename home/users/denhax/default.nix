@@ -1,12 +1,19 @@
 {
-  isWorkstation,
+  isWorkstation ? false,
   username,
   config,
   pkgs,
+  wm ? "",
+  de ? "",
   ...
 }:
 let
   inherit (pkgs.stdenv) isLinux;
+  isHypr = wm == "hyprland";
+  isQtile = wm == "qtile";
+  isAwesome = wm == "awesome";
+  isWM = wm != "";
+  isDE = de != "";
 in
 
 {
@@ -26,14 +33,14 @@ in
 
   module = {
     # WM and Notice
-    ags.enable = false;
+    ags.enable = isWM && false;
     dconf.enable = isWorkstation;
-    dunst.enable = false;
-    eww.enable = false;
-    waybar.enable = config.module.hyprland.enable;
+    dunst.enable = isWM && false;
+    eww.enable = isWM && false;
+    waybar.enable = isWM;
 
     # Cli tools, text editors, file managers, terminal emulator, shells and prompt
-    alacritty.enable = false;
+    alacritty.enable = config.module.kitty.enable == false;
     direnv.enable = true;
     helix.enable = false;
     feh.enable = false;
@@ -54,15 +61,15 @@ in
     firefox.enable = isLinux && isWorkstation;
 
     # WM and  DE
-    awesome.enable = false;
-    flameshot.enable = false;
+    awesome.enable = isAwesome;
+    flameshot.enable = isWM && false;
     gtk.enable = true;
     # hyprland.enable = isLinux && isWorkstation;
-    hyprland.enable = false;
-    hypridle.enable = config.module.hyprland.enable;
+    hyprland.enable = isHypr;
+    hypridle.enable = isWM;
     hyprlock.enable = config.module.hyprland.enable;
-    rofi.enable = config.module.hyprland.enable;
-    swaync.enable = true;
+    rofi.enable = isWM;
+    swaync.enable = isWM;
     qt.enable = true;
     xdg.enable = isLinux && isWorkstation;
 
@@ -73,7 +80,7 @@ in
     fzf.enable = true;
     git.enable = true;
     htop.enable = true;
-    lazygit.enable = true;
+    lazygit.enable = config.module.git.enable;
     neofetch.enable = false;
     password-store.enable = false;
     ripgrep.enable = true;
