@@ -3,8 +3,8 @@
   username,
   config,
   pkgs,
-  wm ? "",
-  de ? "",
+  wm,
+  de,
   ...
 }:
 let
@@ -12,8 +12,8 @@ let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
   isAwesome = wm == "awesome";
-  isWM = wm != "";
-  isDE = de != "";
+  isWM = wm != "" || wm != null;
+  isDE = de != "" || wm != null;
 in
 
 {
