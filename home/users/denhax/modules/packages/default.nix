@@ -189,7 +189,7 @@ in
         telegram-desktop
       ]
       # ++ lib.optionals (hostname == "workstation") [
-      ++ lib.optionals (isGame) [
+      ++ lib.optionals isGame [
         protonup
         lutris
         heroic
