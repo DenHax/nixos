@@ -1,4 +1,13 @@
 {
+  wm,
+  de,
+  ...
+}:
+let
+  isHypr = wm == "hyprland";
+  isQtile = wm == "qtile";
+in
+{
   imports = [
     ../../modules
     ./bootloader
@@ -40,10 +49,11 @@
       fwupd.enable = true;
       greetd.enable = true;
       # gvfs.enable = true;
-      hyprland.enable = true;
+      hyprland.enable = isHypr;
       input.enable = false;
       light.enable = true;
       logind.enable = false;
+      qtile.enable = isQtile;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;

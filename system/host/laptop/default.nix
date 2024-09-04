@@ -54,13 +54,13 @@ in
       input.enable = false;
       light.enable = true;
       logind.enable = false;
+      qtile.enable = isQtile;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
-      qtile.enable = isQtile;
     };
   };
 }
