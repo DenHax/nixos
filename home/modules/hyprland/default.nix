@@ -55,6 +55,7 @@ in
         ];
       };
       settings = {
+        monitors = ",preffered,auto,1";
         exec-once = [
           "${pkgs.bash}/bin/bash ${flakeDir}/pkg/waystart/auto.sh"
           "wl-paste --type text --watch cliphist store"
@@ -159,11 +160,11 @@ in
           focus_on_activate = false;
           force_default_wallpaper = 0;
         };
+        bind = [
+          "$mainMod, RETURN, exec, kitty"
+          "$mainMod, R, exec, rofi -show drun -show-icons"
+        ];
       };
-      bind = [
-        "$mainMod, RETURN, exec, kitty"
-        "$mainMod, R, exec, rofi -show drun -show-icons"
-      ];
     };
   };
 }
