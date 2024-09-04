@@ -24,20 +24,6 @@
 
     sops-nix.url = "github:Mic92/sops-nix";
 
-    # firefox-addons = {
-    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-    #   inputs.nixpgs.follows = "nixpkgs";
-    # };
-
-    # hyprland = {
-    #   url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    # };
-
-    # xdghypr = {
-    #   url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.1";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
     stylix.url = "github:danth/stylix";
 
     wallpaperImage = {
@@ -54,11 +40,6 @@
   outputs =
     { self, flake-parts, ... }@inputs:
     let
-      linuxArch = "x86_64-linux";
-      linuxArmArch = "aarch64-linux";
-      darwinArch = "aarch64-darwin";
-      legacyLinuxArch = "i686-linux";
-      legacyDarwinArch = "x86_64-darwin";
 
       # stateVersion = "24.11";
       # stateVersionDarwin = 6;
@@ -70,48 +51,13 @@
           # stateVersionDarwin
           ;
       };
-      hosts = {
-        workstationDH = {
-          hostname = "workstation";
-          username = "denhax";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isRyzen = true;
-          isNvidia = true;
-        };
-        laptopDH = {
-          hostname = "laptop";
-          username = "denhax";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isIntel = true;
-        };
-        serve = {
-          hostname = "server";
-          username = "dh";
-          platform = linuxArch; # ? legacyLinuxArch
-          isWorkstation = true;
-          isIntel = false;
-          isRyzen = false;
-        };
-        raspDH = {
-          hostname = "raspberry";
-          username = "denhax";
-          platform = linuxArmArch; # ? legacyLinuxArch
-          isWorkstation = false;
-          isIntel = false;
-          isRyzen = false;
-        };
-        macXDH = {
-          hostname = "macbook";
-          username = "denhax";
-          platform = darwinArch; # ? legacyDarwinArch
-          isWorkstation = true;
-          isIntel = false;
-        };
-      };
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } {
+
+      linuxArch = "x86_64-linux";
+      linuxArmArch = "aarch64-linux";
+      darwinArch = "aarch64-darwin";
+      legacyLinuxArch = "i686-linux";
+      legacyDarwinArch = "x86_64-darwin";
+
       systems = [
         linuxArch
         linuxArmArch
@@ -119,6 +65,11 @@
         legacyLinuxArch
         legacyDarwinArch
       ];
+
+      hosts = import ./hosts.nix { inherit systems; };
+    in
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      inherit systems;
       flake = {
         nixosConfigurations = {
           ${hosts.workstationDH.hostname} = confMake.mkHost hosts.workstationDH;
