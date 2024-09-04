@@ -22,6 +22,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland = {
+      url = "github:hyprwm/hyprland#hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xdghypr = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     sops-nix.url = "github:Mic92/sops-nix";
 
     stylix.url = "github:danth/stylix";
