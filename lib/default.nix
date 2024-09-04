@@ -20,11 +20,11 @@ let
       de ? null,
       cpu ? null,
       gpu ? null,
-      isIntel ? false,
-      isRyzen ? false,
-      isNvidia ? false,
-      isAMD ? false,
       isGame ? false,
+    # isIntel ? false,
+    # isRyzen ? false,
+    # isNvidia ? false,
+    # isAMD ? false,
     }:
     let
       hostConfigurationPath = "${self}/system/host/${hostname}";
@@ -48,10 +48,10 @@ let
 
           cpu
           gpu
-          isIntel
-          isRyzen
-          isNvidia
-          isAMD
+          # isIntel
+          # isRyzen
+          # isNvidia
+          # isAMD
 
           homeModules
           systemModules
@@ -88,8 +88,8 @@ let
       username ? "denhax",
       stateVersion ? 6,
       platform ? "aarch64-darwin",
-      isIntel ? false,
       cpu ? "",
+    # isIntel ? false,
     }:
     inputs.darwin.lib.darwinSystem {
       specialArgs = {
@@ -101,8 +101,8 @@ let
           platform
           stateVersion
 
-          isIntel
           cpu
+          # isIntel
 
           systemModules
           commonModules

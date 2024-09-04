@@ -4,7 +4,7 @@
   inputs,
   pkgs,
   isWorkstation,
-  isGame ? false,
+  isGame,
   # hostname,
   ...
 }:

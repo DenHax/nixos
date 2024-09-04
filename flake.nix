@@ -74,43 +74,43 @@
             username = "denhax";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
-            isRyzen = true;
-            isNvidia = true;
             wm = "qtile";
             de = "";
             cpu = "ryzen";
             gpu = "nvidia";
             isGame = true;
+            # isRyzen = true;
+            # isNvidia = true;
           };
           laptop = {
             # hostname = "laptop";
             username = "denhax";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
-            isIntel = true;
             wm = "qtile";
             de = "";
             cpu = "intel";
             gpu = "";
             isGame = false;
+            # isIntel = true;
           };
           serve = {
             # hostname = "server";
             username = "dh";
             platform = linuxArch; # ? legacyLinuxArch
             isWorkstation = true;
-            isIntel = false;
-            isRyzen = false;
             cpu = "";
+            # isIntel = false;
+            # isRyzen = false;
           };
           rasp = {
             # hostname = "raspberry";
             username = "denhax";
             platform = linuxArmArch; # ? legacyLinuxArch
             isWorkstation = false;
-            isIntel = false;
-            isRyzen = false;
             cpu = "";
+            # isIntel = false;
+            # isRyzen = false;
           };
         };
         darwin = {
@@ -119,8 +119,8 @@
             username = "denhax";
             platform = darwinArch; # ? legacyDarwinArch
             isWorkstation = true;
-            isIntel = false;
             cpu = "";
+            # isIntel = false;
           };
         };
       };
