@@ -14,6 +14,13 @@ let
   # hyprlockCmd = "${config.programs.hyprlock.package}/bin/hyprlock";
   lockCmd = "${pkgs.systemd}/bin/loginctl lock-session";
   suspendCmd = "${pkgs.systemd}/bin/systemctl suspend";
+
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   options = {
@@ -23,7 +30,7 @@ in
   config = mkIf cfg.enable {
     services.hypridle = {
       enable = true;
-      package = pkgs.hypridle;
+      package = pkgsStable.hypridle;
 
       settings = {
         general = {

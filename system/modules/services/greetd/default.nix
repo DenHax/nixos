@@ -13,9 +13,15 @@ with lib;
 
 let
   cfg = config.module.services.greetd;
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
   cmd =
     if wm == "hyprland" then
-      "${pkgs.hyprland}/bin/Hyprland"
+      "${pkgsStable.hyprland}/bin/Hyprland"
     else if wm == "qtile" then
       "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland"
     else

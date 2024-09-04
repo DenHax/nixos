@@ -9,16 +9,22 @@ with lib;
 
 let
   cfg = config.module.hyprlock;
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
-  options = {
-    module.hyprlock.enable = mkEnableOption "Enables hyprlock";
+  options.module = {
+    hyprlock.enable = mkEnableOption "Enables hyprlock";
   };
 
   config = mkIf cfg.enable {
     programs.hyprlock = {
       enable = true;
-      package = pkgs.hyprlock;
+      package = pkgsStable.hyprlock;
 
       settings = {
         general = {

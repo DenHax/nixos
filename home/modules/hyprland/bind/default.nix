@@ -9,6 +9,12 @@ with lib;
 
 let
   cfg = config.module.hyprland.bind;
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 
   # Utils (light, clips, audio)
   audioControl = "${pkgs.pulseaudio}/bin/pactl";
@@ -17,7 +23,7 @@ let
   appLauncher = "rofi -show";
   terminal = "${pkgs.kitty}/bin/kitty";
   filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";
-  picker = "${pkgs.hyprpicker}/bin/hyprpicker -a";
+  picker = "${pkgsStable.hyprpicker}/bin/hyprpicker -a";
 
   # Screenshots and recorders
   grimBlastCmd = "${pkgs.grimblast}/bin/grimblast --notify --freeze";
