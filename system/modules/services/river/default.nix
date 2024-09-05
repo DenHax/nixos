@@ -3,7 +3,7 @@
 with lib;
 
 let
-  cfg = config.module.river;
+  cfg = config.module.services.river;
 in
 {
   options.module = {
