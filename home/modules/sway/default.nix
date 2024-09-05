@@ -17,8 +17,8 @@ in
     "${homeModules}/sway/outputs"
   ];
 
-  options.module.sway = {
-    enable = mkEnableOption "Enable sway";
+  options.module = {
+    sway.enable = mkEnableOption "Enable sway";
   };
 
   config = mkIf cfg.enable {
