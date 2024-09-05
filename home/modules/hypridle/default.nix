@@ -38,7 +38,7 @@ in
           lock_cmd = "pidof hyprlock || hyprlock";
           # unlock_cmd = "";
           before_sleep_cmd = "${lockCmd}";
-          after_sleep_cmd = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
+          after_sleep_cmd = "${config.programs.hyprland.package}/bin/hyprctl dispatch dpms on";
           # ignore_dbus_inhibit = false;
         };
 
@@ -46,8 +46,8 @@ in
           [
             {
               timeout = 240;
-              on-timeout = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms off";
-              on-resume = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl dispatch dpms on";
+              on-timeout = "${config.programs.hyprland.package}/bin/hyprctl dispatch dpms off";
+              on-resume = "${config.programs.hyprland.package}/bin/hyprctl dispatch dpms on";
             }
             {
               timeout = 300;

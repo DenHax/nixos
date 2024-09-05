@@ -65,8 +65,8 @@ in
     flameshot.enable = isWM && false;
     gtk.enable = true;
     hyprland.enable = false;
-    hypridle.enable = false;
-    hyprlock.enable = false;
+    hypridle.enable = isHypr;
+    hyprlock.enable = isHypr;
     # hypridle.enable = isWM;
     # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
