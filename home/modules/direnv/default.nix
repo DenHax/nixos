@@ -20,11 +20,12 @@ in
       enable = true;
       enableZshIntegration = true;
       nix-direnv.enable = true;
+      stdlib = ''
+        export zsh
+        if [ -f ".env" ]; then
+          dotenv
+        fi
+      '';
     };
-    stdlib = ''
-      if [ -f ".env" ]; then
-        dotenv
-      fi 
-    '';
   };
 }
