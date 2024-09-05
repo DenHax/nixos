@@ -64,7 +64,7 @@ in
     awesome.enable = isAwesome;
     flameshot.enable = isWM && false;
     gtk.enable = true;
-    hyprland.enable = isHypr && false;
+    hyprland.enable = false;
     hypridle.enable = false;
     hyprlock.enable = false;
     # hypridle.enable = isWM;
