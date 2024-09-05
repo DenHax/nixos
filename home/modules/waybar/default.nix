@@ -28,8 +28,9 @@ in
 
           modules-left = [
             "custom/nixlogo"
-            "hyprland/workspaces"
-            "hyprland/language"
+            "river-tags"
+            # "hyprland/workspaces"
+            # "hyprland/language"
             # "keyboard-state"
             # "hyprland/submap"
           ];
@@ -59,19 +60,52 @@ in
           "custom/nixlogo" = {
             format = " ";
             tooltip = false;
-            on-click = "rofi -show";
+            on-click = "${pkgs.rofi}/bin/rofi -show";
           };
 
-          "hyprland/workspaces" = {
-            disable-scroll = true;
+          "river/tags" = {
+            "num-tags" = 6;
+            "tag-labels" = [
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+
+              # ""
+              # "󰈹"
+              # "󰭹"
+              # ""
+            ];
           };
 
-          "hyprland/language" = {
-            format-en = "US";
-            format-ru = "RU";
-            min-length = 5;
-            tooltip = false;
+          "river/workspaces" = {
+            "format" = "{icon}";
+            "on-click" = "activate";
+            "format-icons" = {
+              "1" = "󰫍";
+              "2" = "󰫍";
+              "3" = "󰫍";
+              "4" = "󰫍";
+              "5" = "󰫍";
+              "6" = "󰫍";
+            };
+            "tooltip" = false;
+            "persistent_workspaces" = {
+              "*" = 6;
+            };
           };
+          # "hyprland/workspaces" = {
+          #   disable-scroll = true;
+          # };
+          #
+          # "hyprland/language" = {
+          #   format-en = "US";
+          #   format-ru = "RU";
+          #   min-length = 5;
+          #   tooltip = false;
+          # };
 
           # "keyboard-state" = {
           #numlock = true;

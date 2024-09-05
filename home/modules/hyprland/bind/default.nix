@@ -24,7 +24,7 @@ let
   appLauncher = "rofi -show";
   terminal = "${pkgs.kitty}/bin/kitty";
   filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";
-  picker = "${pkgsStable.hyprpicker}/bin/hyprpicker -a";
+  picker = "${pkgs.hyprpicker}/bin/hyprpicker -a";
 
   # Screenshots and recorders
   grimBlastCmd = "${pkgs.grimblast}/bin/grimblast --notify --freeze";

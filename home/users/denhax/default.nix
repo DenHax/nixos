@@ -9,13 +9,12 @@
 }:
 let
   inherit (pkgs.stdenv) isLinux;
-  isDE = de != "" || de != null;
-  isHypr = wm == "hyprland";
-  isQtile = wm == "qtile";
   isAwesome = wm == "awesome";
-  # isRiver = wm == "river";
-  # isSway = wm == "sway";
-  isWM = wm != "" || wm != null;
+  isDE = de != "" || wm != null;
+  isHypr = wm == "hyprland";
+  isSway = wm == "sway";
+  isRiver = wm == "river";
+  isWM = wm != null || wm != "";
 in
 
 {
@@ -39,6 +38,7 @@ in
     dconf.enable = isWorkstation;
     dunst.enable = isWM && false;
     eww.enable = isWM && false;
+    network-manager-applet.enable = true;
     waybar.enable = isWM;
 
     # Cli tools, text editors, file managers, terminal emulator, shells and prompt
@@ -66,16 +66,14 @@ in
     awesome.enable = isAwesome;
     flameshot.enable = isWM && false;
     gtk.enable = true;
-    hyprland.enable = false;
-    hypridle.enable = false;
-    hyprlock.enable = false;
-    # hypridle.enable = isWM;
-    # hyprlock.enable = config.module.hyprland.enable;
+    hyprland.enable = isHypr;
+    hypridle.enable = isWM;
+    hyprlock.enable = isHypr;
+    river.enable = isRiver;
     rofi.enable = isWM;
     qt.enable = true;
-    # river.enable = isRiver;
-    # sway.enable = isSway;
-    # swaylock.enable = isSway;
+    sway.enable = isSway;
+    swaylock.enable = isSway;
     swaync.enable = isWM;
     xdg.enable = isLinux && isWorkstation;
 
