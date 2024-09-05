@@ -59,7 +59,7 @@ in
         # Text editors and IDE
         # micro
         vim
-        pkgsStable.wlroots
+        # pkgsStable.wlroots
 
         # CLI equivalents
 
