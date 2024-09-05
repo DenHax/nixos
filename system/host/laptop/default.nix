@@ -6,8 +6,8 @@
 let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
-  isRiver = wm == "river";
 in
+# isRiver = wm == "river";
 {
   imports = [
     ../../modules
@@ -56,7 +56,7 @@ in
       light.enable = true;
       logind.enable = false;
       qtile.enable = true;
-      river.enable = isRiver;
+      # river.enable = isRiver;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;

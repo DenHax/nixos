@@ -13,8 +13,8 @@ let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
   isAwesome = wm == "awesome";
-  isRiver = wm == "river";
-  isSway = wm == "sway";
+  # isRiver = wm == "river";
+  # isSway = wm == "sway";
   isWM = wm != "" || wm != null;
 in
 
@@ -73,7 +73,7 @@ in
     # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
     qt.enable = true;
-    river.enable = isRiver;
+    # river.enable = isRiver;
     # sway.enable = isSway;
     # swaylock.enable = isSway;
     swaync.enable = isWM;
