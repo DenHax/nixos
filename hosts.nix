@@ -19,7 +19,7 @@
       username = "denhax";
       platform = systems.linuxArch; # ? legacyLinuxArch
       isWorkstation = true;
-      wm = "hyprland";
+      wm = "qtile";
       de = "";
       cpu = "intel";
       gpu = "";
