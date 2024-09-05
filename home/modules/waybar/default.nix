@@ -28,9 +28,9 @@ in
 
           modules-left = [
             "custom/nixlogo"
-            "river-tags"
-            # "hyprland/workspaces"
-            # "hyprland/language"
+            # "river-tags"
+            "hyprland/workspaces"
+            "hyprland/language"
             # "keyboard-state"
             # "hyprland/submap"
           ];
@@ -63,49 +63,49 @@ in
             on-click = "${pkgs.rofi}/bin/rofi -show";
           };
 
-          "river/tags" = {
-            "num-tags" = 6;
-            "tag-labels" = [
-              "󰫍"
-              "󰫍"
-              "󰫍"
-              "󰫍"
-              "󰫍"
-              "󰫍"
+          # "river/tags" = {
+          #   "num-tags" = 6;
+          #   "tag-labels" = [
+          #     "󰫍"
+          #     "󰫍"
+          #     "󰫍"
+          #     "󰫍"
+          #     "󰫍"
+          #     "󰫍"
 
-              # ""
-              # "󰈹"
-              # "󰭹"
-              # ""
-            ];
+          # ""
+          # "󰈹"
+          # "󰭹"
+          # ""
+          # ];
+          # };
+
+          # "river/workspaces" = {
+          #   "format" = "{icon}";
+          #   "on-click" = "activate";
+          #   "format-icons" = {
+          #     "1" = "󰫍";
+          #     "2" = "󰫍";
+          #     "3" = "󰫍";
+          #     "4" = "󰫍";
+          #     "5" = "󰫍";
+          #     "6" = "󰫍";
+          #   };
+          #   "tooltip" = false;
+          #   "persistent_workspaces" = {
+          #     "*" = 6;
+          #   };
+          # };
+          "hyprland/workspaces" = {
+            disable-scroll = true;
           };
 
-          "river/workspaces" = {
-            "format" = "{icon}";
-            "on-click" = "activate";
-            "format-icons" = {
-              "1" = "󰫍";
-              "2" = "󰫍";
-              "3" = "󰫍";
-              "4" = "󰫍";
-              "5" = "󰫍";
-              "6" = "󰫍";
-            };
-            "tooltip" = false;
-            "persistent_workspaces" = {
-              "*" = 6;
-            };
+          "hyprland/language" = {
+            format-en = "US";
+            format-ru = "RU";
+            min-length = 5;
+            tooltip = false;
           };
-          # "hyprland/workspaces" = {
-          #   disable-scroll = true;
-          # };
-          #
-          # "hyprland/language" = {
-          #   format-en = "US";
-          #   format-ru = "RU";
-          #   min-length = 5;
-          #   tooltip = false;
-          # };
 
           # "keyboard-state" = {
           #numlock = true;
