@@ -6,6 +6,7 @@
 let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
+  isRiver = wm == "river";
 in
 {
   imports = [
@@ -55,6 +56,7 @@ in
       light.enable = true;
       logind.enable = false;
       qtile.enable = isQtile;
+      river.enable = isRiver;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;
