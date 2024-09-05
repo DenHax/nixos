@@ -3,11 +3,15 @@
 with lib;
 
 let
-  cfg = config.module;
+  cfg = config.module.river;
 in
 {
   options.module = {
-    enable = mkEnableOption "Enable module";
+    river.enable = mkEnableOption "Enable river";
   };
-  config = mkIf cfg.enable { };
+  config = mkIf cfg.enable {
+    wayland.windowManager.river = {
+      enable = true;
+    };
+  };
 }

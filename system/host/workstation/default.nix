@@ -53,7 +53,7 @@ in
       input.enable = false;
       light.enable = true;
       logind.enable = false;
-      qtile.enable = isQtile;
+      qtile.enable = true;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;

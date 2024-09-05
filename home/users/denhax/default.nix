@@ -9,12 +9,13 @@
 }:
 let
   inherit (pkgs.stdenv) isLinux;
+  isDE = de != "" || de != null;
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
   isAwesome = wm == "awesome";
-  isWM = wm != "" || wm != null;
+  isRiver = wm == "river";
   isSway = wm == "sway";
-  isDE = de != "" || wm != null;
+  isWM = wm != "" || wm != null;
 in
 
 {
@@ -71,10 +72,11 @@ in
     # hypridle.enable = isWM;
     # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
+    qt.enable = true;
+    river.enable = isRiver;
     sway.enable = isSway;
     swaylock.enable = isSway;
     swaync.enable = isWM;
-    qt.enable = true;
     xdg.enable = isLinux && isWorkstation;
 
     # Cli utils and equivalents
