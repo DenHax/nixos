@@ -11,12 +11,12 @@ let
   cfg = config.module.river;
 in
 {
-  options.module= {
+  options.module = {
     river.enable = mkEnableOption "Enables ";
   };
 
   config = mkIf cfg.enable {
-    wayland.windowManager..river = {
+    wayland.windowManager.river = {
       enable = true;
       xwayland = true;
     };
