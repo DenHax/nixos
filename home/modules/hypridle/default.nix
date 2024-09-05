@@ -31,14 +31,14 @@ in
   config = mkIf cfg.enable {
     services.hypridle = {
       enable = true;
-      package = pkgsStable.hypridle;
+      package = pkgs.hypridle;
 
       settings = {
         general = {
           lock_cmd = "pidof hyprlock || hyprlock";
           # unlock_cmd = "";
           before_sleep_cmd = "${lockCmd}";
-          after_sleep_cmd = "${pkgsStable.hyprland}/bin/hyprctl dispatch dpms on";
+          after_sleep_cmd = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
           # ignore_dbus_inhibit = false;
         };
 
@@ -46,8 +46,8 @@ in
           [
             {
               timeout = 240;
-              on-timeout = "${pkgsStable.hyprland}/bin/hyprctl dispatch dpms off";
-              on-resume = "${pkgsStable.hyprland}/bin/hyprctl dispatch dpms on";
+              on-timeout = "${pkgs.hyprland}/bin/hyprctl dispatch dpms off";
+              on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
             }
             {
               timeout = 300;
@@ -60,7 +60,7 @@ in
             {
               timeout = 450;
               on-timeout = suspendCmd;
-              on-resume = "hyprctl dispatch dpms on";
+              on-resume = "${pkgs.hyprland}/bin/hyprctl dispatch dpms on";
               # on-resume = "";
             }
           ];

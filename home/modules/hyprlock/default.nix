@@ -16,8 +16,8 @@ let
       allowUnfree = true;
     };
   };
-  wallpaper = inputs.wallpaperImage;
 in
+# wallpaper = inputs.wallpaperImage;
 {
   options.module = {
     hyprlock.enable = mkEnableOption "Enables hyprlock";
@@ -41,8 +41,8 @@ in
         background = [
           {
             monitor = "";
-            # path = "/home/denhax/Pictures/Wallpapers/kanagawa.png";
-            path = wallpaper;
+            path = "/home/denhax/Pictures/Wallpapers/kanagawa.png";
+            # path = wallpaper;
             color = "rgba(25, 20, 20, 1.0)";
             blur_size = 8;
             blur_passes = 2;
