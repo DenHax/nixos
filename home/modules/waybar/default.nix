@@ -28,6 +28,7 @@ in
 
           modules-left = [
             "custom/nixlogo"
+            "river-tags"
             # "hyprland/workspaces"
             # "hyprland/language"
             # "keyboard-state"
@@ -59,9 +60,42 @@ in
           "custom/nixlogo" = {
             format = " ";
             tooltip = false;
-            on-click = "rofi -show";
+            on-click = "${pkgs.rofi}/bin/rofi -show";
           };
 
+          "river/tags" = {
+            "num-tags" = 6;
+            "tag-labels" = [
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+
+              # ""
+              # "󰈹"
+              # "󰭹"
+              # ""
+            ];
+          };
+
+          "river/workspaces" = {
+            "format" = "{icon}";
+            "on-click" = "activate";
+            "format-icons" = {
+              "1" = "󰫍";
+              "2" = "󰫍";
+              "3" = "󰫍";
+              "4" = "󰫍";
+              "5" = "󰫍";
+              "6" = "󰫍";
+            };
+            "tooltip" = false;
+            "persistent_workspaces" = {
+              "*" = 6;
+            };
+          };
           # "hyprland/workspaces" = {
           #   disable-scroll = true;
           # };
