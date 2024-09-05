@@ -21,5 +21,10 @@ in
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+    stdlib = ''
+      if [ -f ".env" ]; then
+        dotenv
+      fi 
+    '';
   };
 }
