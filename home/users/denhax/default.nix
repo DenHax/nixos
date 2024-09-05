@@ -13,6 +13,7 @@ let
   isQtile = wm == "qtile";
   isAwesome = wm == "awesome";
   isWM = wm != "" || wm != null;
+  isSway = wm == "sway";
   isDE = de != "" || wm != null;
 in
 
@@ -70,6 +71,8 @@ in
     # hypridle.enable = isWM;
     # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
+    sway.enable = isSway;
+    swaylock.enable = isSway;
     swaync.enable = isWM;
     qt.enable = true;
     xdg.enable = isLinux && isWorkstation;
