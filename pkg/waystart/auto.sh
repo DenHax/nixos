@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-nm-applet --indicator &
+# nm-applet --indicator &
 waybar &
-swaync
+# swaync
+
 # dunst
 # swww init &
 # swww img ~/Pictures/Wallpapers/kanagawa_5k.png &

@@ -28,8 +28,8 @@ in
 
           modules-left = [
             "custom/nixlogo"
-            "hyprland/workspaces"
-            "hyprland/language"
+            # "hyprland/workspaces"
+            # "hyprland/language"
             # "keyboard-state"
             # "hyprland/submap"
           ];
@@ -62,16 +62,16 @@ in
             on-click = "rofi -show";
           };
 
-          "hyprland/workspaces" = {
-            disable-scroll = true;
-          };
-
-          "hyprland/language" = {
-            format-en = "US";
-            format-ru = "RU";
-            min-length = 5;
-            tooltip = false;
-          };
+          # "hyprland/workspaces" = {
+          #   disable-scroll = true;
+          # };
+          #
+          # "hyprland/language" = {
+          #   format-en = "US";
+          #   format-ru = "RU";
+          #   min-length = 5;
+          #   tooltip = false;
+          # };
 
           # "keyboard-state" = {
           #numlock = true;
