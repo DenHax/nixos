@@ -44,10 +44,6 @@ in
       #   ''
       #     eval '$(direnv hook zsh)'
       #   '';
-      envExtra = # bash
-        ''
-          eval '$(direnv hook zsh)'
-        '';
 
       oh-my-zsh = {
         enable = true;
