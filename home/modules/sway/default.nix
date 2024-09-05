@@ -1,15 +1,17 @@
-{ config
-, lib
-, pkgs
-, homeModules
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  homeModules,
+  ...
 }:
 
 with lib;
 
 let
   cfg = config.module.sway;
-in {
+in
+{
   imports = [
     "${homeModules}/sway/keybinds"
     "${homeModules}/sway/outputs"
@@ -22,12 +24,12 @@ in {
   config = mkIf cfg.enable {
     module.sway = {
       keybindings.enable = cfg.enable;
-      outputs.enable     = cfg.enable;
+      outputs.enable = cfg.enable;
     };
 
     home.sessionVariables = {
-      XDG_CURRENT_DESKTOP    = "sway";
-      XDG_SESSION_DESKTOP    = "sway";
+      XDG_CURRENT_DESKTOP = "sway";
+      XDG_SESSION_DESKTOP = "sway";
     };
 
     wayland.windowManager.sway = {
@@ -67,7 +69,7 @@ in {
           inner = 7;
         };
 
-        bars = [  ];
+        bars = [ ];
 
         window = {
           titlebar = false;
@@ -76,17 +78,16 @@ in {
         startup = [
           { command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"; }
           { command = "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 1; exec ${pkgs.firefox}/bin/firefox'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 2; exec ${pkgs.telegram-desktop}/bin/telegram-desktop'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 4; exec ${pkgs.obsidian}/bin/obsidian'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.foot}/bin/foot'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.foot}/bin/foot'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.foot}/bin/foot'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 6; exec ${pkgs.firefox}/bin/firefox -P work'"; }
-          { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 8; exec ${pkgs.vesktop}/bin/vesktop'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 1; exec ${pkgs.firefox}/bin/firefox'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 2; exec ${pkgs.telegram-desktop}/bin/telegram-desktop'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 4; exec ${pkgs.obsidian}/bin/obsidian'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.kitty}/bin/kitty'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.kitty}/bin/kitty'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 5; exec ${pkgs.kitty}/bin/kitty'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 6; exec ${pkgs.firefox}/bin/firefox -P work'"; }
+          # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 8; exec ${pkgs.vesktop}/bin/vesktop'"; }
         ];
       };
     };
   };
 }
-
