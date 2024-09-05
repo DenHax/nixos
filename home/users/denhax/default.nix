@@ -66,9 +66,9 @@ in
     awesome.enable = isAwesome;
     flameshot.enable = isWM && false;
     gtk.enable = true;
-    hyprland.enable = false;
-    hypridle.enable = false;
-    hyprlock.enable = false;
+    hyprland.enable = isHypr;
+    hypridle.enable = isWM;
+    hyprlock.enable = isHypr;
     river.enable = isRiver;
     rofi.enable = isWM;
     sway.enable = isSway;

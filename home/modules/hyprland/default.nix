@@ -21,22 +21,22 @@ in
 
 {
   imports = [
-    # ./bind
-    # ./monitor
+    ./bind
+    ./monitor
   ];
   options = {
     module.hyprland.enable = mkEnableOption "Enables hyprland";
   };
   config = mkIf cfg.enable {
     module.hyprland = {
-      # bind.enable = mkDefault cfg.enable;
-      # monitor.enable = mkDefault cfg.enable;
+      bind.enable = mkDefault cfg.enable;
+      monitor.enable = mkDefault cfg.enable;
     };
 
-    home.packages = [
+    home.packages = with pkgs; [
       # Hypr ecosystem
-      # pkgsStable.hyprpicker
-      # pkgs.grimblast
+      hyprpicker
+      grimblast
       # hyprland
       # hyprlock
       # hyprshot
@@ -46,7 +46,7 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
-      package = pkgsStable.hyprland;
+      package = pkgs.hyprland;
       systemd = {
         enable = true;
         extraCommands = lib.mkBefore [
