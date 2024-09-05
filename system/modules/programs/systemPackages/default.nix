@@ -1,7 +1,8 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
+  inputs,
   isWorkstation ? false,
   # isIntel ? false,
   # isRyzen ? false,
