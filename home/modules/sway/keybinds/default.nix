@@ -29,7 +29,7 @@ let
   screenshotScreen = "${pkgs.grim}/bin/grim -o $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq -r '.[] | select(.focused) | .name') - | ${pkgs.wl-clipboard}/bin/wl-copy";
 
   # appLauncher = "${pkgs.rofi}/bin/rofi -monitor $(swaymsg -t get_outputs | ${pkgs.jq}/bin/jq '.[] | select(.focused) | .name' -r) -show";
-  # audioControl = "${pkgs.pulseaudio}/bin/pactl";
+  audioControl = "${pkgs.pulseaudio}/bin/pactl";
   appLauncher = "rofi -show dmenu -show-icons";
   brightnessControl = "${pkgs.brightnessctl}/bin/brightnessctl";
   clipHist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
