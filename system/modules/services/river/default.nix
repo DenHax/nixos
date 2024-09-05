@@ -7,7 +7,7 @@ let
 in
 {
   options.module = {
-    river.enable = mkEnableOption "Enable river";
+    services.river.enable = mkEnableOption "Enable river";
   };
   config = mkIf cfg.enable {
     programs.river = {
