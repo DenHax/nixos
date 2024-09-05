@@ -26,7 +26,7 @@ in
   config = mkIf cfg.enable {
     programs.hyprlock = {
       enable = true;
-      package = pkgsStable.hyprlock;
+      package = pkgs.hyprlock;
 
       settings = {
         general = {

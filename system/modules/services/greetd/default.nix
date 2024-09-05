@@ -21,7 +21,7 @@ let
   };
   cmd =
     if wm == "hyprland" then
-      "${pkgsStable.hyprland}/bin/Hyprland"
+      "${pkgs.hyprland}/bin/Hyprland"
     else if wm == "qtile" then
       "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland"
     else if wm == "river" then
