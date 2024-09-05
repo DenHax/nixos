@@ -1,7 +1,7 @@
 {
-  pkgs,
   config,
   lib,
+  pkgs,
   ...
 }:
 
@@ -12,13 +12,17 @@ let
 in
 {
   options.module = {
-    river.enable = mkEnableOption "Enables ";
+    river.enable = mkEnableOption "Enables river";
   };
 
   config = mkIf cfg.enable {
     wayland.windowManager.river = {
       enable = true;
       xwayland = true;
+      package = pkgs.river;
+      systemd = {
+        enable = true;
+      };
     };
   };
 }
