@@ -19,6 +19,13 @@ let
   isAMD = gpu == "amd";
   isIntel = cpu == "intel";
   isRyzen = cpu == "ryzen";
+
+  pkgsStable = import inputs.nixpkgs-stable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config = {
+      allowUnfree = true;
+    };
+  };
 in
 {
   options = {
@@ -51,6 +58,7 @@ in
         # Text editors and IDE
         # micro
         vim
+        pkgsStable.wlroots
 
         # CLI equivalents
 
