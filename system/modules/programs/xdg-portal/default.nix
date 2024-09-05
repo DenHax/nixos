@@ -36,8 +36,8 @@ in
         };
         extraPortals = [
           pkgs.xdg-desktop-portal-gtk
-          pkgs.xdg-desktop-portal-wlr
-          pkgsStable.xdg-desktop-portal-hyprland
+          pkgsStable.xdg-desktop-portal-wlr
+          # pkgsStable.xdg-desktop-portal-hyprland
         ];
       };
     };

@@ -28,6 +28,9 @@ in
       enable = true;
       package = pkgsStable.hyprland;
       portalPackage = pkgsStable.xdg-desktop-portal-hyprland;
+      envirenment.systemPackage = [
+        pkgsStable.wlroots
+      ];
     };
   };
 }
