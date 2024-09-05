@@ -53,6 +53,7 @@ in
         zip
         unzip
         killall
+        cmake
         # light
         # auto-cpufreq
 
