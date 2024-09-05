@@ -45,11 +45,7 @@ in
       inherit terminal;
       modifier = super;
 
-      assigns = {
-        "2" = [ { app_id = "org.telegram.desktop"; } ];
-        "4" = [ { app_id = "obsidian"; } ];
-        "8" = [ { app_id = "vesktop"; } ];
-      };
+      assigns = { };
 
       keybindings = {
         # Terminal
@@ -66,10 +62,10 @@ in
         "--to-code ${modifier}+l" = "focus right";
 
         # With arrows
-        "--to-code ${modifier}+Left" = "focus left";
-        "--to-code ${modifier}+Down" = "focus down";
-        "--to-code ${modifier}+Up" = "focus up";
-        "--to-code ${modifier}+Right" = "focus right";
+        # "--to-code ${modifier}+Left" = "focus left";
+        # "--to-code ${modifier}+Down" = "focus down";
+        # "--to-code ${modifier}+Up" = "focus up";
+        # "--to-code ${modifier}+Right" = "focus right";
 
         # Move focused window
         # Vim like
@@ -79,14 +75,14 @@ in
         "--to-code ${modifier}+Shift+l" = "move right";
 
         # With arrows
-        "--to-code ${modifier}+Shift+Left" = "move left";
-        "--to-code ${modifier}+Shift+Down" = "move down";
-        "--to-code ${modifier}+Shift+Up" = "move up";
-        "--to-code ${modifier}+Shift+Right" = "move right";
+        # "--to-code ${modifier}+Shift+Left" = "move left";
+        # "--to-code ${modifier}+Shift+Down" = "move down";
+        # "--to-code ${modifier}+Shift+Up" = "move up";
+        # "--to-code ${modifier}+Shift+Right" = "move right";
 
         # Application launcher
-        "--to-code Ctrl+Space" = "exec ${appLauncher}";
-        "--to-code ${modifier}+c" = "exec ${clipHist}";
+        "--to-code ${modifier}+r" = "exec ${appLauncher}";
+        "--to-code ${modifier}+v" = "exec ${clipHist}";
 
         # Multimedia keys
         "--to-code xf86audioraisevolume" = "exec ${audioControl} set-sink-volume @DEFAULT_SINK@ +5%";
@@ -109,7 +105,7 @@ in
         "--to-code ${modifier}+f" = "fullscreen";
 
         # Resize mode
-        "--to-code ${modifier}+r" = "mode resize";
+        "--to-code ${modifier}+Control+r" = "mode resize";
 
         # Layouts
         "--to-code ${modifier}+v" = "splitv";
@@ -161,10 +157,10 @@ in
           "l" = "resize shrink width 10px";
 
           # Arrows
-          "Left" = "resize shrink width 10px";
-          "Down" = "resize shrink height 10px";
-          "Up" = "resize shrink height 10px";
-          "Right" = "resize shrink width 10px";
+          # "Left" = "resize shrink width 10px";
+          # "Down" = "resize shrink height 10px";
+          # "Up" = "resize shrink height 10px";
+          # "Right" = "resize shrink width 10px";
 
           # Vim like binds
           "Shift+h" = "resize grow width 10px";
@@ -173,10 +169,10 @@ in
           "Shift+l" = "resize grow width 10px";
 
           # Arrows
-          "Shift+Left" = "resize grow width 10px";
-          "Shift+Down" = "resize grow height 10px";
-          "Shift+Up" = "resize grow height 10px";
-          "Shift+Right" = "resize grow width 10px";
+          # "Shift+Left" = "resize grow width 10px";
+          # "Shift+Down" = "resize grow height 10px";
+          # "Shift+Up" = "resize grow height 10px";
+          # "Shift+Right" = "resize grow width 10px";
 
           # Return to normal mode
           "Escape" = "mode default";
