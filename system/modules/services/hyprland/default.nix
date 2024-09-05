@@ -29,7 +29,7 @@ in
       package = pkgsStable.hyprland;
       portalPackage = pkgsStable.xdg-desktop-portal-hyprland;
     };
-    envirenment.systemPackage = [
+    environment.systemPackage = [
       pkgsStable.wlroots
     ];
   };
