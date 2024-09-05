@@ -34,9 +34,9 @@ in
             "org.freedesktop.impl.portal.Screenshot" = "hyprland";
           };
         };
-        extraPortals = [
-          pkgs.xdg-desktop-portal-gtk
-          pkgs.xdg-desktop-portal-wlr
+        extraPortals = with pkgs; [
+          xdg-desktop-portal-gtk
+          xdg-desktop-portal-wlr
           # pkgsStable.xdg-desktop-portal-hyprland
         ];
       };
