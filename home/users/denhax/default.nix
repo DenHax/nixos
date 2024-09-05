@@ -74,8 +74,8 @@ in
     rofi.enable = isWM;
     qt.enable = true;
     river.enable = isRiver;
-    sway.enable = isSway;
-    swaylock.enable = isSway;
+    # sway.enable = isSway;
+    # swaylock.enable = isSway;
     swaync.enable = isWM;
     xdg.enable = isLinux && isWorkstation;
 
