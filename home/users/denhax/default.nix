@@ -69,7 +69,7 @@ in
     hyprland.enable = isHypr;
     hypridle.enable = isWM;
     hyprlock.enable = isHypr;
-    river.enable = isRiver;
+    # river.enable = isRiver;
     rofi.enable = isWM;
     qt.enable = true;
     sway.enable = isSway;
