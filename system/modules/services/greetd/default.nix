@@ -24,6 +24,8 @@ let
       "${pkgsStable.hyprland}/bin/Hyprland"
     else if wm == "qtile" then
       "${pkgs.qtile-unwrapped}/bin/qtile start -b wayland"
+    else if isRiver then
+      "${pkgs.river}/bin/river"
     else
       "";
 in
