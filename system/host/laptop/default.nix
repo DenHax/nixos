@@ -55,7 +55,7 @@ in
       input.enable = false;
       light.enable = true;
       logind.enable = false;
-      qtile.enable = isQtile;
+      qtile.enable = true;
       river.enable = isRiver;
       sddm.enable = false;
       syncthing.enable = false;
