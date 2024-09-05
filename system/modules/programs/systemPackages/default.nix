@@ -60,7 +60,6 @@ in
         # Text editors and IDE
         # micro
         vim
-        # pkgsStable.wlroots
 
         # CLI equivalents
 
@@ -70,11 +69,11 @@ in
         greetd.greetd
 
         # Sound
+        pavucontrol
+        alsa-utils
         # pipewire
         # pulseaudio
         # pamixer
-        pavucontrol
-        alsa-utils
 
         # Hardware utils
         glxinfo
