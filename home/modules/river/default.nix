@@ -15,7 +15,7 @@ in
     river.enable = mkEnableOption "Enable river";
   };
   config = mkIf cfg.enable {
-    wayland.windowMAnager.river = {
+    wayland.windowManager.river = {
       enable = true;
       xwayland = true;
     };
