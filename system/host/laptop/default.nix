@@ -56,7 +56,7 @@ in
       light.enable = true;
       logind.enable = false;
       qtile.enable = true;
-      # river.enable = true;
+      river.enable = isRiver;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;

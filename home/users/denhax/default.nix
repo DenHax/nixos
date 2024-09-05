@@ -73,7 +73,7 @@ in
     # hyprlock.enable = config.module.hyprland.enable;
     rofi.enable = isWM;
     qt.enable = true;
-    # river.enable = false;
+    river.enable = isRiver;
     sway.enable = isSway;
     swaylock.enable = isSway;
     swaync.enable = isWM;
