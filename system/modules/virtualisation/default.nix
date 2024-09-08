@@ -44,6 +44,8 @@ in
       dive
       podman-tui
       docker-compose
+      libvirt
+      bridge-utils
     ];
   };
 }
