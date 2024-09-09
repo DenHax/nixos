@@ -41,6 +41,7 @@ in
 
     environment.systemPackages = with pkgs; [
       qemu
+      spice
       dive
       podman-tui
       docker-compose
