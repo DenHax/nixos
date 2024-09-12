@@ -31,6 +31,17 @@ let
         ;
     }
   );
+  rstudio_cust = pkgs.rstudioWrapper.override {
+    packages = with pkgs.rPackages; [
+      ggplot2
+      dplyr
+      xts
+      shiny
+      maps
+      mapproj
+      renv
+    ];
+  };
 in
 {
   options.module.users.denhax.packages = {
@@ -108,14 +119,16 @@ in
         shared-mime-info
         lxde.lxmenu-data
 
+        # IDE
+        rstudio_cust
+
         # Office
-        # onlyoffice-bin
-        # texlive-pkg
+        onlyoffice-bin
+        texlive-pkg
         # libreoffice-qt
         # hunspell
         # hunspellDicts.en_US
         # hunspellDicts.ru_RU
-        # biber
 
         # Misc, Music, Video
         pavucontrol

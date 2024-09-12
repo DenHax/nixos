@@ -83,6 +83,8 @@ in
     fastfetch.enable = true;
     fzf.enable = true;
     git.enable = true;
+    gh.enable = true;
+    gh-dash.enable = true;
     htop.enable = true;
     lazygit.enable = config.module.git.enable;
     neofetch.enable = false;
