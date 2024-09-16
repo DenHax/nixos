@@ -45,9 +45,6 @@ return {
 			-- Markup languages
 			"markdown_inline",
 			"markdown",
-			"org",
-			"norg",
-			"norg_meta",
 			"latex",
 			"bibtex",
 			"query",
@@ -75,11 +72,7 @@ return {
 		highlight = { enable = true, disable = { "help" } },
 		indent = { enable = true },
 		-- autotag = { enable = true },
-		disable = {
-			-- For Neorg.nvim parser
-			"norg",
-			"norg_meta",
-		},
+		disable = {},
 	},
 
 	config = function(_, opts)

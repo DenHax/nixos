@@ -12,7 +12,7 @@ return {
 			"html",
 			"cssls",
 			"tailwindcss",
-			"tsserver",
+			"ts_ls",
 			"emmet_language_server",
 			"jsonls",
 

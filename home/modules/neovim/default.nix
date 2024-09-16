@@ -17,7 +17,7 @@ in
 
   config = mkIf cfg.enable {
     home.shellAliases.vv = "NVIM_APPNAME=nvim-dh nvim";
-    home.shellAliases.vc = "NVIM_APPNAME=nvim-coder nvim";
+    home.shellAliases.v = "NVIM_APPNAME=nvim-coder nvim";
     home.shellAliases.vw = "NVIM_APPNAME=nvim-writter nvim";
 
     programs.neovim = {
