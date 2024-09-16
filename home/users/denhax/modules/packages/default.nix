@@ -39,6 +39,7 @@ let
       shiny
       maps
       mapproj
+      gapminder
       renv
     ];
   };
