@@ -28,6 +28,7 @@ in
             "docker"
             "input"
             "libvirtd"
+            "kvm"
             "networkmanager"
             "video"
             "wheel"
