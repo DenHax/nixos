@@ -21,9 +21,11 @@ let
         scheme-medium
         xifthen
         ifmtarg
+        textpos
         framed
         paralist
         titlesec
+        tocloft
         enumitem
         cyrillic
         babel-russian
@@ -115,7 +117,13 @@ in
         # DevOps Utils
         vagrant
 
-        # Filemanagers
+        # GUI utils
+        gparted
+        modem-manager-gui
+
+        # Filemanagers gui
+        nemo
+
         pcmanfm
         shared-mime-info
         lxde.lxmenu-data
@@ -124,12 +132,12 @@ in
         rstudio_cust
 
         # Office
-        onlyoffice-bin
+        # onlyoffice-bin
         texlive-pkg
-        # libreoffice-qt
-        # hunspell
-        # hunspellDicts.en_US
-        # hunspellDicts.ru_RU
+        libreoffice-qt
+        hunspell
+        hunspellDicts.en_US
+        hunspellDicts.ru_RU
 
         # Misc, Music, Video
         pavucontrol
