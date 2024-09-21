@@ -98,5 +98,6 @@ in
       useNixPackageManagerConfig = false;
     };
     users.${username}.packages.enable = true;
+    users.${username}.aliases.enable = true;
   };
 }

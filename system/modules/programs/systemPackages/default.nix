@@ -4,6 +4,7 @@
   pkgs,
   inputs,
   isWorkstation ? false,
+  hostname,
   # isIntel ? false,
   # isRyzen ? false,
   # isNvidia ? false,
@@ -114,6 +115,9 @@ in
         # Utils
         # gnome.dconf-editor
         grim
+      ]
+      ++ lib.optionals (isWorkstation && hostname == "laptop") [
+        (import "${customPkgs}/bat_log" { inherit pkgs; })
       ]
       ++ lib.optionals (isIntel == "true") [ microcodeIntel ]
       ++ lib.optionals (isRyzen == "true") [ ]
