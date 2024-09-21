@@ -53,6 +53,8 @@ in
         zip
         unzip
         killall
+        parted
+        modemmanager
         # cmake
         # light
         # auto-cpufreq
@@ -62,11 +64,6 @@ in
         vim
 
         # CLI equivalents
-
-        # DE: terminal, file manager, display manager, etc
-        dmenu
-        kitty
-        greetd.greetd
 
         # Sound
         pavucontrol
@@ -102,6 +99,11 @@ in
       ++ lib.optionals isWorkstation [
         # Hardware
         libGL
+
+        # DE: terminal, file manager, display manager, etc
+        dmenu
+        kitty
+        greetd.greetd
 
         # Hardware utils
         libva-utils
