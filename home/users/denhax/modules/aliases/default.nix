@@ -14,6 +14,7 @@ with lib;
 let
   inherit (pkgs.stdenv) isLinux;
   cfg = config.module.users.denhax.packages;
+  bat_log = (import "${customPkgs}/bat_log" { inherit pkgs; });
 in
 {
   options.module.users.denhax.aliases = {
@@ -21,6 +22,6 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.shellAliases.bat_log = "${pkgs.bat_log}/bin/bat_log";
+    home.shellAliases.bat_log = "${bat_log}";
   };
 }

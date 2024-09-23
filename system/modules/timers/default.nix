@@ -7,7 +7,6 @@
 }:
 let
   bat_log = (import "${customPkgs}/bat_log" { inherit pkgs; });
-
 in
 
 # with lib;
