@@ -97,7 +97,9 @@ in
       enable = true;
       useNixPackageManagerConfig = false;
     };
-    users.${username}.packages.enable = true;
-    users.${username}.aliases.enable = true;
+    users.${username} = {
+      packages.enable = true;
+      aliases.enable = true;
+    };
   };
 }

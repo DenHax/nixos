@@ -103,6 +103,7 @@ in
         docker-compose
         ansible
         ansible-lint
+        k3s
         kubectl
         kubernetes-helm
         # terraform
