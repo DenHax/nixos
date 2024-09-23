@@ -54,6 +54,7 @@ in
       # gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
+      k3s.enable = true;
       light.enable = true;
       logind.enable = false;
       river.enable = isRiver;
