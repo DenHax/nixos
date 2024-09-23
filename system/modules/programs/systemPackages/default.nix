@@ -118,7 +118,7 @@ in
         grim
       ]
       ++ lib.optionals (isWorkstation && hostname == "laptop") [
-        (import "${customPkgs}/bat_log" { inherit pkgs; })
+        # (import "${customPkgs}/bat_log" { inherit pkgs; })
       ]
       ++ lib.optionals (isIntel == "true") [ microcodeIntel ]
       ++ lib.optionals (isRyzen == "true") [ ]
