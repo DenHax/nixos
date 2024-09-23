@@ -1,9 +1,14 @@
 {
   config,
   lib,
+  customPkgs,
   pkgs,
   ...
 }:
+let
+  bat_log = (import "${customPkgs}/bat_log" { inherit pkgs; });
+
+in
 
 # with lib;
 #
@@ -19,7 +24,7 @@
   systemd.services.logBattery = {
     description = "Log battery status to ~/log/bat_log.txt";
     serviceConfig = {
-      ExecStart = "${pkgs.bash}/bin/bash -c ${pkgs.bat_log}/bin/bat_log";
+      ExecStart = "${pkgs.bash}/bin/bash -c ${bat_log}";
     };
     wantedBy = [ "multi-user.target" ];
   };
