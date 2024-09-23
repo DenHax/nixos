@@ -5,6 +5,7 @@
   inputs,
   isWorkstation ? false,
   hostname,
+  customPkgs,
   # isIntel ? false,
   # isRyzen ? false,
   # isNvidia ? false,
