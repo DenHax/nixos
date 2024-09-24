@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  username,
+  ...
+}:
 
 with lib;
 
@@ -12,6 +17,7 @@ in
   config = mkIf cfg.enable {
     services.k3s = {
       enable = true;
+      configPath = ./.kube;
     };
   };
 }
