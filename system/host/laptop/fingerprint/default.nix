@@ -1,12 +1,22 @@
 { pkgs, ... }:
 {
-  # NOTE: UNFREE
-  systemd.services.fprintd = {
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.Type = "simple";
-  };
+  # services.open-fprintd.enable = true;
+  # services.python-validity.enable = true;
 
-  services.fprintd.enable = true;
-  services.fprintd.tod.enable = true;
-  services.fprintd.tod.driver = pkgs.libfprint-2-tod1-goodix;
+  # systemd.services.fprintd = {
+  #   wantedBy = [ "multi-user.target" ];
+  #   serviceConfig.Type = "simple";
+  # };
+
+  # services.fprintd = {
+  #   enable = true;
+  #   tod = {
+  #     enable = true;
+  #     driver = pkgs.pkgs.libfprint-2-tod1-goodix;
+  #     # pkgs.libfprint-2-tod1-goodix; # Goodix driver module
+  #     # pkgs.libfprint-2-tod1-elan # Elan(04f3:0c4b) driver
+  #     # pkgs.libfprint-2-tod1-vfs0090; # driver for 2016 ThinkPads
+  #     # pkgs.libfprint-2-tod1-goodix-550a
+  #   };
+  # };
 }
