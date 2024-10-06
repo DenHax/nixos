@@ -32,6 +32,9 @@ in
 
       libvirtd = {
         enable = true;
+        qemu = {
+          vhostUserPackages = [ pkgs.virtiofsd ];
+        };
       };
     };
 
@@ -47,6 +50,8 @@ in
       docker-compose
       libvirt
       bridge-utils
+      dosbox-staging
+      virtiofsd
     ];
   };
 }
