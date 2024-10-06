@@ -51,7 +51,7 @@ in
       blueman.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
-      # gvfs.enable = true;
+      gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
       k3s.enable = true;
