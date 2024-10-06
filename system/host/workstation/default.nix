@@ -46,6 +46,7 @@ in
       awesome.enable = false;
       auto-cpufreq.enable = false;
       blueman.enable = true;
+      devmon.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
       gvfs.enable = true;
@@ -60,6 +61,7 @@ in
       tlp.enable = false;
       postgresql.enable = true;
       pgadmin.enable = true;
+      udisk.enable = true;
     };
   };
 }
