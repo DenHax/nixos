@@ -118,6 +118,9 @@ in
         # DevOps Utils
         vagrant
 
+        # database
+        dbeaver-bin
+
         # GUI utils
         gparted
         modem-manager-gui
