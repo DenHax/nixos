@@ -17,7 +17,6 @@ in
   config = mkIf cfg.enable {
     services.k3s = {
       enable = true;
-      configPath = ./.kube;
     };
   };
 }
