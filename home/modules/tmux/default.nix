@@ -19,7 +19,7 @@ in
     programs.tmux = {
       enable = true;
       baseIndex = 1;
-      prefix = "C-a";
+      # prefix = "C-a";
       keyMode = "vi";
       clock24 = true;
       extraConfig = # bash
