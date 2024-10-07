@@ -3,12 +3,14 @@
 with lib;
 
 let
-  cfg = config.module.gvfs;
+  cfg = config.module.services.gvfs;
 in
 {
-  options = {
-    module.gvfs.enable = mkEnableOption "Enables gvfs";
+  options.module = {
+    services.gvfs.enable = mkEnableOption "Enables gvfs";
   };
 
-  config = mkIf cfg.enable { services.gvfs.enable = true; };
+  config = mkIf cfg.enable {
+    services.gvfs.enable = true;
+  };
 }

@@ -3,11 +3,11 @@
 with lib;
 
 let
-  cfg = config.module.devmon;
+  cfg = config.module.services.udisk;
 in
 {
-  options = {
-    module.devmon.enable = mkEnableOption "Enables devmon";
+  options.module = {
+    services.udisk.enable = mkEnableOption "Enables udisk";
   };
 
   config = mkIf cfg.enable {
