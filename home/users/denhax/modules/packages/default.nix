@@ -5,6 +5,7 @@
   pkgs,
   isWorkstation,
   isGame,
+  hostname,
   # hostname,
   ...
 }:
@@ -14,6 +15,22 @@ with lib;
 let
   inherit (pkgs.stdenv) isLinux;
   cfg = config.module.users.denhax.packages;
+
+  isHardGame = isWorkstation && isGame && hostname == "workstation";
+  isSoftGame = isWorkstation && isGame && hostname == "laptop";
+
+  retroarch-pkg = (
+    pkgs.retroarch.override {
+      cores = with pkgs.libretro; [
+        snes9x
+        beetle-psx-hw
+        vba-next
+        ppsspp
+        parallel-n64
+        desmume
+      ];
+    }
+  );
 
   texlive-pkg = (
     pkgs.texlive.combine {
@@ -214,11 +231,18 @@ in
         # Messenger
         telegram-desktop
       ]
-      # ++ lib.optionals (hostname == "workstation") [
-      ++ lib.optionals isGame [
+      ++ lib.optionals isHardGame [
         protonup
         lutris
         heroic
+        retroarch-pkg
+        dolphin-emu
+        lime3ds
+      ]
+      ++ lib.optionals isSoftGame [
+        retroarch-pkg
+        dolphin-emu
+        lime3ds
       ];
   };
 }

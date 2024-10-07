@@ -1,7 +1,9 @@
 {
   wm,
   de,
+  isGame,
   ...
+
 }:
 let
   isHypr = wm == "hyprland";
@@ -15,6 +17,7 @@ in
     ./bootloader
     ./disko
     ./fingerprint
+    ./gpu
     ./hardware
     ./kernel
     ./network
@@ -39,7 +42,7 @@ in
       hm.enable = true;
       kdeconnect.enable = true;
       nh.enable = true;
-      steam.enable = false;
+      steam.enable = isGame;
       systemPackages.enable = true;
       xdg-portal.enable = true;
       zsh.enable = true;
