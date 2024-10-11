@@ -17,7 +17,7 @@ in
     ./bootloader
     ./disko
     ./fingerprint
-    ./gpu
+    # ./gpu
     ./hardware
     ./kernel
     ./network
@@ -63,6 +63,7 @@ in
       logind.enable = false;
       river.enable = isRiver;
       qtile.enable = isQtile;
+      samba.enable = true;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;
