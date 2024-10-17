@@ -34,6 +34,9 @@ in
             "hyprland/language"
             # "keyboard-state"
             # "hyprland/submap"
+            "cpu"
+            "temperature"
+            "pulseaudio"
           ];
           modules-center = [
             "clock"
@@ -42,18 +45,14 @@ in
           modules-right =
             if isLaptop then
               [
-                "pulseaudio"
                 "custom/mem"
-                "cpu"
                 "backlight"
                 "battery"
                 "tray"
               ]
             else
               [
-                "pulseaudio"
                 "custom/mem"
-                "cpu"
                 "tray"
               ];
 
@@ -61,42 +60,42 @@ in
           "custom/nixlogo" = {
             format = " ";
             tooltip = false;
-            on-click = "${pkgs.rofi}/bin/rofi -show";
+            on-click = "rofi -show drun -show-icons";
           };
 
-          # "river/tags" = {
-          #   "num-tags" = 6;
-          #   "tag-labels" = [
-          #     "󰫍"
-          #     "󰫍"
-          #     "󰫍"
-          #     "󰫍"
-          #     "󰫍"
-          #     "󰫍"
+          "river/tags" = {
+            "num-tags" = 6;
+            "tag-labels" = [
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
+              "󰫍"
 
-          # ""
-          # "󰈹"
-          # "󰭹"
-          # ""
-          # ];
-          # };
+              ""
+              "󰈹"
+              "󰭹"
+              ""
+            ];
+          };
 
-          # "river/workspaces" = {
-          #   "format" = "{icon}";
-          #   "on-click" = "activate";
-          #   "format-icons" = {
-          #     "1" = "󰫍";
-          #     "2" = "󰫍";
-          #     "3" = "󰫍";
-          #     "4" = "󰫍";
-          #     "5" = "󰫍";
-          #     "6" = "󰫍";
-          #   };
-          #   "tooltip" = false;
-          #   "persistent_workspaces" = {
-          #     "*" = 6;
-          #   };
-          # };
+          "river/workspaces" = {
+            "format" = "{icon}";
+            "on-click" = "activate";
+            "format-icons" = {
+              "1" = "󰫍";
+              "2" = "󰫍";
+              "3" = "󰫍";
+              "4" = "󰫍";
+              "5" = "󰫍";
+              "6" = "󰫍";
+            };
+            "tooltip" = false;
+            "persistent_workspaces" = {
+              "*" = 6;
+            };
+          };
           "hyprland/workspaces" = {
             disable-scroll = true;
           };
@@ -108,15 +107,15 @@ in
             tooltip = false;
           };
 
-          # "keyboard-state" = {
-          #numlock = true;
-          # capslock = true;
-          # format = "{icon} ";
-          # format-icons = {
-          # locked = " ";
-          # unlocked = "";
-          # };
-          # };
+          "keyboard-state" = {
+            numlock = true;
+            capslock = true;
+            format = "{icon} ";
+            format-icons = {
+              locked = " ";
+              unlocked = "";
+            };
+          };
 
           "clock" = {
             # timezone = "America/New_York";
@@ -210,17 +209,24 @@ in
             format-plugged = "{capacity}% ";
             format-alt = "{time} {icon}";
             format-icons = [
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
+              ""
+              ""
+              ""
+              ""
+              ""
             ];
+            # format-icons = [
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            #   ""
+            # ];
           };
 
           tray = {
@@ -235,5 +241,7 @@ in
         ${builtins.readFile "${homeModules}/waybar/style.css"}
       '';
     };
+
+    stylix.targets.waybar.enable = false;
   };
 }

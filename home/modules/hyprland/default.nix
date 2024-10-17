@@ -80,7 +80,7 @@ in
         input = {
           kb_layout = "us,ru";
           kb_variant = "lang";
-          kb_options = "grp:win_space_toggle,grp:nocaps";
+          kb_options = "grp:win_space_toggle,ctrl:nocaps";
 
           follow_mouse = 1;
 

@@ -3,23 +3,24 @@
   # isNvidia,
   gpu,
   pkgs,
-  isIntel,
+  cpu,
   ...
 }:
 let
   isNvidia = gpu == "nvidia";
   isAMD = gpu == "amd";
+  isIntel = cpu == "intel";
 in
 {
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = with pkgs; [
+        intel-media-sdk
+        # intel-ocl
+      ];
     };
-    extraPackages = with pkgs; [
-      intel-media-sdk
-      # intel-ocl
-    ];
   };
   services.xserver.videoDrivers =
     if isNvidia then

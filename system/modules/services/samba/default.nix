@@ -12,26 +12,33 @@ let
 in
 {
   options.module = {
-    services.sabma.enable = mkEnableOption "Enables samba";
+    services.samba.enable = mkEnableOption "Enables samba";
   };
 
   config = mkIf cfg.enable {
-    services.sabma = {
+    services.samba = {
       enable = true;
-
-      settings = {
-        win_share = {
-          path = "/home/${username}/Share/VM/win7";
-          comment = "Win sharing";
-          "guest ok" = "yes";
-          "read only" = "no";
-          available = "yes";
-          "valid users" = "nobody";
-          browsable = yes;
-          public = yes;
-          writable = yes;
-        };
-      };
+      # openFirewall = true;
+      # shares = {
+      # global = {
+      #   "invalid users" = [
+      #     "root"
+      #   ];
+      #   "passwd program" = "/run/wrappers/bin/passwd %u";
+      #   security = "user";
+      # };
+      #   public = {
+      #     "path" = "/home/${username}/Share/VM/win7";
+      #     comment = "Win sharing";
+      #     "guest ok" = "yes";
+      #     "read only" = false;
+      #     "available" = "yes";
+      #     "valid users" = "nobody";
+      #     browsable = "yes";
+      #     "public" = "yes";
+      #     "writable" = "yes";
+      #   };
+      # };
     };
   };
 }

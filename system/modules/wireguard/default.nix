@@ -23,7 +23,7 @@ in
       wg0 = {
         ips = [ "10.0.0.3/32" ];
         listenPort = 51830;
-        privateKeyFile = "/home/denhax/.sec/wg_pr";
+        privateKeyFile = "/home/denhax/.sec/wir/private";
         peers = [
           {
             publicKey = "H+50yJ72znMwdAPkGvDzz/chJWWunSurrxnreYU8Llo=";

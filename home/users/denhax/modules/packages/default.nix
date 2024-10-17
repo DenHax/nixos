@@ -22,12 +22,13 @@ let
   retroarch-pkg = (
     pkgs.retroarch.override {
       cores = with pkgs.libretro; [
-        snes9x
-        beetle-psx-hw
-        vba-next
-        ppsspp
-        parallel-n64
-        desmume
+        snes9x # SNES
+        beetle-psx-hw # PS1
+        vba-next # GBA
+        ppsspp # PSP
+        parallel-n64 # N64
+        desmume # DS
+        dosbox-pure # DOS
       ];
     }
   );
@@ -50,6 +51,7 @@ let
         ;
     }
   );
+
   rstudio_cust = pkgs.rstudioWrapper.override {
     packages = with pkgs.rPackages; [
       ggplot2
@@ -86,6 +88,7 @@ in
         unzip
         pre-commit
         ffmpeg
+        wf-recorder
 
         # Nix and NixOS
         nix-prefetch-scripts
@@ -133,14 +136,14 @@ in
       ]
       ++ lib.optionals (isLinux && isWorkstation) [
         # DevOps Utils
-        vagrant
+        # vagrant
 
         # database
-        dbeaver-bin
+        # dbeaver-bin
 
         # GUI utils
         gparted
-        modem-manager-gui
+        # modem-manager-gui
 
         # Filemanagers gui
         nemo
@@ -149,8 +152,17 @@ in
         shared-mime-info
         lxde.lxmenu-data
 
+        # Tor 
+        rustmission
+        transmission_4
+
+        # REmote Desktop
+        # rdesktop
+        # remmina
+        freerdp3
+
         # IDE
-        rstudio_cust
+        # rstudio_cust
 
         # Office
         # onlyoffice-bin
@@ -210,7 +222,7 @@ in
         # Utlis
         # swww
         brightnessctl
-        cliphist
+        # cliphist
         dbus
         libnotify
         glib
@@ -238,11 +250,13 @@ in
         retroarch-pkg
         dolphin-emu
         lime3ds
+        # arx-libertatis
       ]
       ++ lib.optionals isSoftGame [
         retroarch-pkg
         dolphin-emu
-        lime3ds
+        # protonup
+        # lime3ds
       ];
   };
 }

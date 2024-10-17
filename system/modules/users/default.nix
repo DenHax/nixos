@@ -37,7 +37,7 @@ in
         };
 
         root = {
-          shell = pkgs.fish;
+          shell = pkgs.bash;
         };
       };
     };
