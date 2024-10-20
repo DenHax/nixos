@@ -11,7 +11,7 @@ in
   config = mkIf cfg.enable {
     security = {
       sudo = {
-        enable = false;
+        enable = true;
       };
       # lockKernelModules = true;
       # protectKernelImage = true;
