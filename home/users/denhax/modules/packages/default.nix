@@ -222,7 +222,7 @@ in
         # Utlis
         # swww
         brightnessctl
-        # cliphist
+        cliphist
         dbus
         libnotify
         glib

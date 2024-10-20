@@ -22,7 +22,7 @@ in
       userEmail = "whatxpw@gmail.com";
       extraConfig = {
         init.defaultBranch = "main";
-        safe.direcrory = "/home/${username}/nix";
+        # safe.direcrory = "/home/${username}/nix";
         pull.rebase = false;
       };
     };

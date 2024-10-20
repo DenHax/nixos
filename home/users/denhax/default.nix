@@ -78,7 +78,7 @@ in
     xdg.enable = isLinux && isWorkstation;
 
     # Cli utils and equivalents
-    btop.enable = false;
+    btop.enable = true;
     eza.enable = true;
     fastfetch.enable = true;
     fzf.enable = true;
