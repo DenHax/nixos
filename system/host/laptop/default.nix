@@ -1,8 +1,4 @@
-{
-  wm,
-  de,
-  ...
-}:
+{ wm, de, ... }:
 let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";

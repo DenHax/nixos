@@ -1,11 +1,8 @@
-{
-  wm,
-  de,
-  ...
-}:
+{ wm, de, ... }:
 let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
+  isRiver = wm == "river";
 in
 {
   imports = [
@@ -51,15 +48,18 @@ in
       # gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
-      light.enable = true;
+      k3s.enable = true;
+      light.enable = false;
       logind.enable = false;
-      qtile.enable = true;
+      river.enable = isRiver;
+      qtile.enable = isQtile;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
-      postgresql.enable = true;
-      pgadmin.enable = true;
+      postgresql.enable = false;
+      pgadmin.enable = false;
+
     };
   };
 }
