@@ -1,4 +1,10 @@
-{ wm, de, ... }:
+{
+  wm,
+  de,
+  isGame,
+  ...
+
+}:
 let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
@@ -11,6 +17,7 @@ in
     ./bootloader
     ./disko
     ./fingerprint
+    # ./gpu
     ./hardware
     ./kernel
     ./network
@@ -26,10 +33,11 @@ in
     users.enable = true;
     variables.enable = true;
     virtualisation.enable = true;
+    wireguard.enable = false;
 
     programs = {
       dconf.enable = false;
-      fish.enable = true;
+      fish.enable = false;
       font.enable = true;
       gnupg.enable = true;
       hm.enable = true;
@@ -45,22 +53,25 @@ in
       awesome.enable = false;
       auto-cpufreq.enable = true;
       blueman.enable = true;
+      devmon.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
-      # gvfs.enable = true;
+      gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
-      k3s.enable = true;
+      k3s.enable = false;
       light.enable = true;
       logind.enable = false;
       river.enable = isRiver;
       qtile.enable = isQtile;
+      samba.enable = false;
       sddm.enable = false;
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
+      udisk.enable = true;
     };
   };
 }

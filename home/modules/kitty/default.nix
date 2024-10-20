@@ -29,7 +29,7 @@ in
         italic_font      Fantasque Sans Mono Italic
         bold_italic_font Fantasque Sans Mono Bold Italic
       '';
-      theme = "Kanagawa";
+      # theme = "Kanagawa";
     };
   };
 }

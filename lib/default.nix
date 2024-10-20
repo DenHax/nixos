@@ -76,7 +76,11 @@ let
         ]
         ++ (
           if hostname == "laptop" then
-            [ inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-6th-gen ]
+            [
+              inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-6th-gen
+              inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules.open-fprintd
+              inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules.python-validity
+            ]
           else
             [ ]
         );

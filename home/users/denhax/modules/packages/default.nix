@@ -5,6 +5,7 @@
   pkgs,
   isWorkstation,
   isGame,
+  hostname,
   # hostname,
   ...
 }:
@@ -14,6 +15,23 @@ with lib;
 let
   inherit (pkgs.stdenv) isLinux;
   cfg = config.module.users.denhax.packages;
+
+  isHardGame = isWorkstation && isGame && hostname == "workstation";
+  isSoftGame = isWorkstation && isGame && hostname == "laptop";
+
+  retroarch-pkg = (
+    pkgs.retroarch.override {
+      cores = with pkgs.libretro; [
+        snes9x # SNES
+        beetle-psx-hw # PS1
+        vba-next # GBA
+        ppsspp # PSP
+        parallel-n64 # N64
+        desmume # DS
+        dosbox-pure # DOS
+      ];
+    }
+  );
 
   texlive-pkg = (
     pkgs.texlive.combine {
@@ -33,6 +51,7 @@ let
         ;
     }
   );
+
   rstudio_cust = pkgs.rstudioWrapper.override {
     packages = with pkgs.rPackages; [
       ggplot2
@@ -69,6 +88,7 @@ in
         unzip
         pre-commit
         ffmpeg
+        wf-recorder
 
         # Nix and NixOS
         nix-prefetch-scripts
@@ -116,11 +136,14 @@ in
       ]
       ++ lib.optionals (isLinux && isWorkstation) [
         # DevOps Utils
-        vagrant
+        # vagrant
+
+        # database
+        # dbeaver-bin
 
         # GUI utils
         gparted
-        modem-manager-gui
+        # modem-manager-gui
 
         # Filemanagers gui
         nemo
@@ -129,8 +152,17 @@ in
         shared-mime-info
         lxde.lxmenu-data
 
+        # Tor 
+        rustmission
+        transmission_4
+
+        # REmote Desktop
+        # rdesktop
+        # remmina
+        freerdp3
+
         # IDE
-        rstudio_cust
+        # rstudio_cust
 
         # Office
         # onlyoffice-bin
@@ -211,11 +243,20 @@ in
         # Messenger
         telegram-desktop
       ]
-      # ++ lib.optionals (hostname == "workstation") [
-      ++ lib.optionals isGame [
+      ++ lib.optionals isHardGame [
         protonup
         lutris
         heroic
+        retroarch-pkg
+        dolphin-emu
+        lime3ds
+        # arx-libertatis
+      ]
+      ++ lib.optionals isSoftGame [
+        retroarch-pkg
+        dolphin-emu
+        # protonup
+        # lime3ds
       ];
   };
 }

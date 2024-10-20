@@ -20,7 +20,7 @@ let
   # Utils (light, clips, audio)
   audioControl = "${pkgs.pulseaudio}/bin/pactl";
   brightnessControl = "${pkgs.brightnessctl}/bin/brightnessctl";
-  cliphist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
+  cliphist = "cliphist list | rofi -dmenu | cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
   appLauncher = "rofi -show";
   terminal = "${pkgs.kitty}/bin/kitty";
   filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";

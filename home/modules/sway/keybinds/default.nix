@@ -32,7 +32,7 @@ let
   audioControl = "${pkgs.pulseaudio}/bin/pactl";
   appLauncher = "rofi -show dmenu -show-icons";
   brightnessControl = "${pkgs.brightnessctl}/bin/brightnessctl";
-  clipHist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
+  clipHist = "cliphist list | rofi -dmenu | cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
   notificationsApp = "${pkgs.swaynotificationcenter}/bin/swaync-client -t -sw";
 in
 {

@@ -21,15 +21,13 @@ in
           flakeDir = "~/nix";
         in
         {
-          rb = "doas nixos-rebuild switch --flake ${flakeDir}";
+          rb = "nixos-rebuild switch --use-remote-sudo --flake ${flakeDir}";
           upd = "nix flake update ${flakeDir}";
-          upg = "doas nixos-rebuild switch --upgrade --flake ${flakeDir}";
-          hms = "home-manager switch --flake ${flakeDir}";
+          # hms = "home-manager switch --flake ${flakeDir}";
 
           ll = "ls -l";
           el = "eza -l";
           ea = "eza -a";
-          se = "sudoedit";
           ff = "fastfetch";
           e = "eza --icons=auto";
           tree = "eza --tree --level=4 --icons=auto";

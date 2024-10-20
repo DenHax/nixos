@@ -76,8 +76,9 @@ in
         };
 
         startup = [
-          { command = "${pkgs.wl-clipboard}/bin/wl-paste --type text --watch cliphist store"; }
-          { command = "${pkgs.wl-clipboard}/bin/wl-paste --type image --watch cliphist store"; }
+          # ${pkgs.wl-clipboard}/
+          { command = "bin/wl-paste --type text --watch cliphist store"; }
+          { command = "wl-paste --type image --watch cliphist store"; }
           # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 1; exec ${pkgs.firefox}/bin/firefox'"; }
           # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 2; exec ${pkgs.telegram-desktop}/bin/telegram-desktop'"; }
           # { command = "${pkgs.swayfx}/bin/swaymsg 'workspace 4; exec ${pkgs.obsidian}/bin/obsidian'"; }

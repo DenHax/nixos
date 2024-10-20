@@ -23,7 +23,7 @@
       de = "";
       cpu = "intel";
       gpu = "";
-      isGame = false;
+      isGame = true;
       # isIntel = true;
     };
     serve = {

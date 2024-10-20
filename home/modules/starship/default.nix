@@ -14,8 +14,8 @@ in
     programs.starship = {
       enable = true;
       enableZshIntegration = true;
-      enableFishIntegration = true;
-      enableBashIntegration = false;
+      enableFishIntegration = false;
+      enableBashIntegration = true;
     };
   };
 }

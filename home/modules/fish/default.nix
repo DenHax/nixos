@@ -32,7 +32,6 @@ in
         "e" = "eza --icons -F -H --group-directories-first --git";
         "ea" = "eza -a";
         "el" = "eza --icons -F -H --group-directories-first --git -all";
-        "se" = "sudoedit";
         "ff" = "fastfetch";
         "tree" = "eza --tree --level=4 --icons";
         "h" = "history";

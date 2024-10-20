@@ -25,3 +25,11 @@ ln -s "$(which codeium_language_server)" /home/denhax/.cache/nvim/codeuim/bin/1.
 ```
 
 Link for gtk3 for gtk4 in .config/gtk$(..)
+
+
+- k3s config:
+```bash
+mkdir ~/.kube
+cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+chmod -R 700 ~/.kube
+```

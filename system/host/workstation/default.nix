@@ -43,9 +43,10 @@ in
       awesome.enable = false;
       auto-cpufreq.enable = false;
       blueman.enable = true;
+      devmon.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
-      # gvfs.enable = true;
+      gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
       k3s.enable = true;
@@ -57,9 +58,9 @@ in
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
-      postgresql.enable = false;
-      pgadmin.enable = false;
-
+      postgresql.enable = true;
+      pgadmin.enable = true;
+      udisk.enable = true;
     };
   };
 }

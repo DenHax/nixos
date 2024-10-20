@@ -28,6 +28,12 @@ in
       networkmanager.wifi.macAddress = "random";
       # useDHCP = mkDefault true;
       hostName = hostname;
+
+      # bridges = {
+      #   br0 = {
+      #     interfaces = [ "wlp2s0" ];
+      #   };
+      # };
     };
   };
 }
