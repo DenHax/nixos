@@ -1,3 +1,4 @@
 env.nix
 .env
 .devenv
+.pswd
