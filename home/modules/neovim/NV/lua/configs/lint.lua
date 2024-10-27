@@ -6,6 +6,8 @@ local options = {
     typescript = { "eslint_d" },
     javascriptreact = { "eslint_d" },
     typescriptreact = { "eslint_d" },
+    -- php = { "php-cs" },
+    php = {},
     python = { "ruff", "mypy" },
     sql = { "sqlfluff" },
   },
