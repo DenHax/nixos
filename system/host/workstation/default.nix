@@ -49,7 +49,7 @@ in
       gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
-      k3s.enable = true;
+      k3s.enable = false;
       light.enable = false;
       logind.enable = false;
       river.enable = isRiver;
@@ -58,8 +58,8 @@ in
       syncthing.enable = false;
       thunderbolt.enable = true;
       tlp.enable = false;
-      postgresql.enable = true;
-      pgadmin.enable = true;
+      postgresql.enable = false;
+      pgadmin.enable = false;
       udisk.enable = true;
     };
   };
