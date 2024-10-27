@@ -20,7 +20,7 @@ let
   # Utils (light, clips, audio)
   audioControl = "${pkgs.pulseaudio}/bin/pactl";
   brightnessControl = "${pkgs.brightnessctl}/bin/brightnessctl";
-  cliphist = "cliphist list | rofi -dmenu | cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
+  cliphist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
   appLauncher = "rofi -show";
   terminal = "${pkgs.kitty}/bin/kitty";
   filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";
@@ -51,8 +51,8 @@ in
     wayland.windowManager.hyprland.settings = {
       exec-once = [
         # Clipboad init
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
+        "wl-paste --type text --watch ${pkgs.cliphist}/bin/cliphist store"
+        "wl-paste --type image --watch ${pkgs.cliphist}/bin/cliphist store"
       ];
 
       # bind = [
@@ -111,8 +111,8 @@ in
 
         # System and Windows actyvity
         "$shiftMod CONTROL, L, exec, ${pkgs.systemd}/bin/loginctl lock-session"
-        "$mainMod  CONTROL, P, exec, systemctl suspend"
-        "$shiftMod CONTROL, P, exec, poweroff"
+        "$mainMod  CONTROL, P, exec, ${pkgs.systemd}/bin/systemctl suspend"
+        "$shiftMod CONTROL, P, exec, ${pkgs.systemd}/bin/systemctl poweroff"
 
         "$mainMod, Q, killactive,"
         "$mainMod, M, exit,"

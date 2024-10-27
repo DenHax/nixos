@@ -88,7 +88,7 @@ in
     htop.enable = true;
     lazygit.enable = config.module.git.enable;
     neofetch.enable = false;
-    password-store.enable = false;
+    password-store.enable = true;
     ripgrep.enable = true;
     ssh.enable = isLinux && isWorkstation;
     zoxide.enable = true;

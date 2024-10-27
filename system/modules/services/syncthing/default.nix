@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  username,
+  ...
+}:
 
 with lib;
 
@@ -13,9 +18,9 @@ in
   config = mkIf cfg.enable {
     services.syncthing = {
       enable = true;
-      user = "denhax";
-      # dataDir = "/home/denhax/Documents";
-      # configDir = "/home/denhax/.config/syncthing";
+      user = username;
+      # dataDir = "/home/${username}/Documents";
+      configDir = "/home/${username}/.config/syncthing";
     };
   };
 }

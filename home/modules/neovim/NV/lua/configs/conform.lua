@@ -24,6 +24,8 @@ local options = {
     sql = { "sqlfluff" },
 
     -- rust = { "rustfmt" },
+    -- php = { { "pint", "php_cs_fixer" } },
+    php = { "php-cs-fixer" },
     python = { "isort", "black" },
   },
 

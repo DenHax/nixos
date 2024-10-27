@@ -34,10 +34,10 @@ in
 
         # Language server protocols, linters, formatters
 
-        # YAML
-        yaml-language-server
-        yamllint
-        yamlfmt
+        # Bash
+        nodePackages.bash-language-server
+        shellcheck
+        shfmt
 
         # Docker & Kubernetes
         docker-ls
@@ -50,35 +50,23 @@ in
         impl
         iferr
 
-        # Nix
-        nil
-        nixfmt-rfc-style
-
-        # web (JS, TS, HTML, CSS)
-        typescript-language-server
-        emmet-language-server
-        prettierd
-        eslint_d
-        vscode-langservers-extracted
-        tailwindcss-language-server
-
-        # Rust
-        rust-analyzer
-        rustfmt
-
-        # Bash
-        nodePackages.bash-language-server
-        shellcheck
-        shfmt
-
         # Lua
         lua-language-server
         selene
         stylua
 
-        # Database
-        sqls
-        sqlfluff
+        # Markdown, Markups langs, TeX
+        marksman
+        texlab
+        ltex-ls
+
+        # Nix
+        nil
+        nixfmt-rfc-style
+
+        # PHP
+        # intelephense
+        # php84Packages.php-codesniffer
 
         # Python
         ruff
@@ -88,10 +76,26 @@ in
         black
         isort
 
-        # Markdown, Markups langs, TeX
-        marksman
-        texlab
-        ltex-ls
+        # Rust
+        rust-analyzer
+        rustfmt
+
+        # Database
+        sqls
+        sqlfluff
+
+        # web (JS, TS, HTML, CSS)
+        typescript-language-server
+        emmet-language-server
+        prettierd
+        eslint_d
+        vscode-langservers-extracted
+        tailwindcss-language-server
+
+        # YAML
+        yaml-language-server
+        yamllint
+        yamlfmt
 
         # Java
 
