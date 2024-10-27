@@ -249,7 +249,7 @@ in
         heroic
         retroarch-pkg
         dolphin-emu
-        lime3ds
+        # lime3ds
         # arx-libertatis
       ]
       ++ lib.optionals isSoftGame [
