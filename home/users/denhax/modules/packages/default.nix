@@ -138,7 +138,7 @@ in
         # DevOps Utils
         # vagrant
 
-        # database
+        # Database
         # dbeaver-bin
 
         # GUI utils
@@ -212,6 +212,8 @@ in
         akira-unstable
         inkscape-with-extensions
         gimp-with-plugins
+        # flowblade
+        libsForQt5.kdenlive
         pizarra
         drawio
         # plantuml
