@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  username,
   ...
 }:
 
@@ -11,7 +12,7 @@ let
 in
 {
   options.module = {
-    services.rdp.enable = mkEnableOption "Enable remote desktop";
+    services.rdp.enable = mkEnableOption "Enable rdp";
   };
   config = mkIf cfg.enable {
     services.xrdp = {

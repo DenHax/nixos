@@ -33,7 +33,7 @@ in
     ];
     services.pgmanage = {
       enable = true;
-      prot = 8090;
+      port = 8090;
       connections = [
         {
           lib_db = "hostaddr=127.0.0.1 port=5432 dbname=lib-storage sslmode=disable dbuser=admin";
