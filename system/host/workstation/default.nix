@@ -52,6 +52,7 @@ in
       k3s.enable = false;
       light.enable = false;
       logind.enable = false;
+      rdp = true;
       river.enable = isRiver;
       qtile.enable = isQtile;
       sddm.enable = false;
@@ -60,6 +61,7 @@ in
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
+      pgmanage.enable = false;
       udisk.enable = true;
     };
   };
