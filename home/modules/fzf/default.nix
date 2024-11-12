@@ -21,7 +21,7 @@ in
       enableFishIntegration = true;
       defaultOptions = [
         "--border"
-        "--preview 'bat --color=always {}'"
+        "--preview '${pkgs.bat}/bin/bat --color=always {}'"
         "--prompt 'Files> '"
       ];
     };
