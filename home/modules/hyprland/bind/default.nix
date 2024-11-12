@@ -123,7 +123,7 @@ in
         "$mainMod, Return, exec, ${terminal}"
         "$mainMod, E, exec, ${filemanager}"
         "$mainMod, R, exec, ${appLauncher} drun -show-icons"
-        "$mainMod, C, exec, ${appLauncher} calc"
+        "$mainMod, C, exec, ${appLauncher} calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | wl-copy\""
         "$mainMod, V, exec, ${cliphist}"
         # "$mainMod, P,       pseudo,      # dwindle"
         "$mainMod, P,       exec, ${picker}"
