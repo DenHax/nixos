@@ -8,31 +8,33 @@ local options = {
 
     go = { "gofmt", "goimports" },
 
-    html = { "prettier" },
-    css = { "prettier" },
-    json = { "prettier" },
-    jsonc = { "prettier" },
-    yaml = { "prettier" },
-    typescript = { "prettier" },
-    javascript = { "prettier" },
-    typescriptreact = { "prettier" },
-    javascriptreact = { "prettier" },
+    html = { "prettierd" },
+    css = { "prettierd" },
+    json = { "prettierd" },
+    jsonc = { "prettierd" },
+    yaml = { "prettierd" },
+    typescript = { "prettierd" },
+    javascript = { "prettierd" },
+    typescriptreact = { "prettierd" },
+    javascriptreact = { "prettierd" },
 
-    markdown = { "prettier" },
+    markdown = { "prettierd" },
     -- ["markdown.mdx"] = { "prettier" },
 
     sql = { "sqlfluff" },
 
     -- rust = { "rustfmt" },
     -- php = { { "pint", "php_cs_fixer" } },
-    php = { "php-cs-fixer" },
+    -- php = { "php-cs-fixer" },
+    php = { "pint", "php-codesniffer" },
     python = { "isort", "black" },
   },
 
   format_on_save = {
     -- These options will be passed to conform.format()
-    timeout_ms = 500,
     lsp_fallback = true,
+    async = false,
+    timeout_ms = 500,
   },
 }
 
