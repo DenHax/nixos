@@ -41,7 +41,7 @@ in
       font.enable = true;
       gnupg.enable = true;
       hm.enable = true;
-      kdeconnect.enable = true;
+      kdeconnect.enable = false;
       nh.enable = true;
       steam.enable = false;
       systemPackages.enable = true;
@@ -71,6 +71,7 @@ in
       tlp.enable = false;
       postgresql.enable = false;
       pgadmin.enable = false;
+      pgmanage.enable = false;
       udisk.enable = true;
     };
   };
