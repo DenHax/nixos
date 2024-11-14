@@ -96,6 +96,9 @@ in
         # deadnix
         # statix
 
+        # Database cli
+        pgcli
+
         # Development envirements, Devenv and etc.
         devenv
 
@@ -138,19 +141,14 @@ in
         # DevOps Utils
         # vagrant
 
-        # Database
-        # dbeaver-bin
-
         # GUI utils
-        gparted
-        # modem-manager-gui
+        # gparted
 
         # Filemanagers gui
-        nemo
-
         pcmanfm
         shared-mime-info
         lxde.lxmenu-data
+        # nemo
 
         # Tor 
         rustmission
@@ -174,7 +172,7 @@ in
 
         # Misc, Music, Video
         pavucontrol
-        musescore
+        # musescore
         # obs-studio
         # dconf2nix
         # via
@@ -205,21 +203,15 @@ in
         # Screenshots and recorders
         grim
         slurp
-        swappy
+        # swappy
         satty
 
         # UML, SVG, Diagrams, Prototypes, any editors
-        akira-unstable
-        inkscape-with-extensions
-        gimp-with-plugins
+        # akira-unstable
+        # inkscape-with-extensions
+        # gimp-with-plugins
         # flowblade
         libsForQt5.kdenlive
-        pizarra
-        drawio
-        # plantuml
-        # umlet
-        # pencil
-        # staruml
 
         # Utlis
         # swww
@@ -254,11 +246,9 @@ in
         lime3ds
         # arx-libertatis
       ]
-      ++ lib.optionals isSoftGame [
-        retroarch-pkg
-        dolphin-emu
-        # protonup
-        # lime3ds
-      ];
+      ++
+        lib.optionals isSoftGame
+          [
+          ];
   };
 }
