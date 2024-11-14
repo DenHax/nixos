@@ -48,7 +48,7 @@ local servers = {
   "html",
   "cssls",
   "tailwindcss",
-  "ts_ls",
+  "tsserver",
   "emmet_language_server",
 
   -- YAML
