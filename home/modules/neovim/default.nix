@@ -24,7 +24,7 @@ in
 
   config = mkIf cfg.enable {
     home.shellAliases.vv = "NVIM_APPNAME=nvim-dh nvim";
-    home.shellAliases.v = "NVIM_APPNAME=nvim-coder nvim";
+    home.shellAliases.v = "nvim"; # NVIM_APPNAME=nvim-coder
     home.shellAliases.vw = "NVIM_APPNAME=nvim-writter nvim";
 
     programs.neovim = {
@@ -132,7 +132,8 @@ in
       recursive = true;
     };
 
-    xdg.configFile."nvim-coder" = {
+    xdg.configFile."nvim" = {
+      # -coder
       source = ./NV;
       recursive = true;
     };
