@@ -22,11 +22,11 @@ in
     programs.ags = {
       enable = true;
 
-      configDir = ../config;
+      configDir = ./config;
 
-      extraPackages = with pkgs; [
+      extraPackages = [
         inputs.ags.packages.${pkgs.system}.battery
-        fzf
+        pkgs.fzf
         # gtksourceview
         # webkitgtk
         # accountsservice
