@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   username,
   ...
 }:
@@ -17,7 +18,7 @@ in
   config = mkIf cfg.enable {
     services.xrdp = {
       enable = true;
-      defaultWindowManager = "Hyprland";
+      defaultWindowManager = "${pkgs.gnome-remote-desktop}/bin/gnome-remote-desktop";
       openFirewall = true;
     };
   };

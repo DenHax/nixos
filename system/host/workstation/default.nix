@@ -52,7 +52,7 @@ in
       k3s.enable = false;
       light.enable = false;
       logind.enable = false;
-      rdp = true;
+      rdp.enable = true;
       river.enable = isRiver;
       qtile.enable = isQtile;
       sddm.enable = false;
