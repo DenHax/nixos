@@ -13,7 +13,7 @@ in
     programs.gh = {
       enable = true;
       settings = {
-        editor = "nvim";
+        editor = "$EDITOR";
       };
     };
   };

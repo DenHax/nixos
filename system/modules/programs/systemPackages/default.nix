@@ -49,14 +49,13 @@ in
         wget
         curl
         git
-        ranger
+        lf
         tree
         file
         zip
         unzip
         killall
         parted
-        modemmanager
         # cmake
         # light
         # auto-cpufreq
@@ -112,10 +111,6 @@ in
         intel-gpu-tools
         fwupd
         fwupd-efi
-
-        # Utils
-        # gnome.dconf-editor
-        grim
       ]
       ++ lib.optionals (isWorkstation && hostname == "laptop") [
         # (import "${customPkgs}/bat_log" { inherit pkgs; })

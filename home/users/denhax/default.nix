@@ -34,7 +34,7 @@ in
 
   module = {
     # WM and Notice
-    ags.enable = isWM && false;
+    ags.enable = isWM;
     dconf.enable = isWorkstation;
     dunst.enable = isWM && false;
     eww.enable = isWM && false;

@@ -1,7 +1,8 @@
 {
-  pkgs,
   config,
   lib,
+  inputs,
+  pkgs,
   ...
 }:
 
@@ -11,9 +12,25 @@ let
   cfg = config.module.ags;
 in
 {
-  options = {
-    module.ags.enable = mkEnableOption "Enables ags";
+  options.module = {
+    ags.enable = mkEnableOption "Enable ags";
   };
 
-  config = mkIf cfg.enable { };
+  imports = [ inputs.ags.homeManagerModules.default ];
+
+  config = mkIf cfg.enable {
+    programs.ags = {
+      enable = true;
+
+      configDir = ./config;
+
+      extraPackages = [
+        inputs.ags.packages.${pkgs.system}.battery
+        pkgs.fzf
+        # gtksourceview
+        # webkitgtk
+        # accountsservice
+      ];
+    };
+  };
 }

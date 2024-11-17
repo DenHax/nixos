@@ -5,68 +5,66 @@ local lspconfig = require "lspconfig"
 
 -- EXAMPLE
 local servers = {
+  -- Ansible
+  "ansiblels",
+
+  -- Bash
+  "bashls",
+
+  -- Docker
+  "dockerls",
+  "docker_compose_language_service",
+
+  -- Go
+  "gopls",
+
+  -- Helm
+  "helm_ls",
+
+  -- JSON
+  "jsonls",
+
   -- Lua
   "lua_ls",
+
+  -- Nix
+  "nixd",
+  -- "nil_ls",
+
+  -- PHP
+  "intelephense",
+
+  -- Python
+  "pyright",
+  -- "basedpyright",
+
+  -- Rust
+  -- "rust_analyzer",
+
+  -- Database (SQL, MongoDB, Redis, Kafka)
+  "sqls",
 
   -- Web (TypeScript, JavaScript, HTML, CSS)
   "html",
   "cssls",
   "tailwindcss",
-  "ts_ls",
+  "tsserver",
   "emmet_language_server",
-  -- "jsonls",
 
-  -- Rust
-  -- "rust_analyzer",
-
-  -- Nix
-  "nil_ls",
-
-  -- Go
-  "gopls",
-
-  -- Database (SQL, MongoDB, Redis, Kafka)
-  "sqls",
-
-  -- Shells (Bash)
-  "bashls",
-
-  -- Python
-  "pyright",
-  -- "basedpyright",
+  -- YAML
+  "yamlls",
 }
 local nvlsp = require "nvchad.configs.lspconfig"
--- local util = require "nvchad.configs.lspconfig/util"
 
--- local opt = {}
--- lsps with default config
 for _, lsp in ipairs(servers) do
-  -- local has_server_opts, server_opts = pcall(require, "plugins.lsp-settings." .. lsp)
-  -- if has_server_opts then
-  -- 	opts = vim.tbl_deep_extend("force", server_opts, opts)
-  -- end
-  lspconfig[lsp].setup {
+  local opts = {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
   }
+  local has_server_opts, server_opts = pcall(require, "configs.lspconfig." .. lsp)
+  if has_server_opts then
+    opts = vim.tbl_deep_extend("force", server_opts, opts)
+  end
+  lspconfig[lsp].setup(opts)
 end
-
--- configuring single server, example: typescript
-lspconfig.gopls.setup {
-  on_attach = nvlsp.on_attach,
-  on_init = nvlsp.on_init,
-  capabilities = nvlsp.capabilities,
-  cmd = { "gopls" },
-  filetypes = { "go", "gomod", "gowork", "gotmpl" },
-  -- root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-  settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unisedparams = true,
-      },
-    },
-  },
-}
