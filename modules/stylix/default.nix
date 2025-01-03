@@ -45,7 +45,7 @@ in
       };
 
       serif = {
-        package = (pkgs.nerdfonts.override { fonts = [ "FiraMono" ]; });
+        package = pkgs.nerd-fonts.fira-mono;
         name = "FiraMono Nerd Font";
       };
 
@@ -55,14 +55,7 @@ in
       };
 
       monospace = {
-        package = (
-          pkgs.nerdfonts.override {
-            fonts = [
-              "FiraCode"
-              "NerdFontsSymbolsOnly"
-            ];
-          }
-        );
+        package = pkgs.nerd-fonts.fira-code;
         name = "FiraCode Nerd Font";
       };
 
