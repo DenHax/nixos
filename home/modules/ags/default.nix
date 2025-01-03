@@ -25,8 +25,8 @@ in
       configDir = ./config;
 
       extraPackages = [
-        inputs.ags.packages.${pkgs.system}.battery
-        pkgs.fzf
+        # inputs.ags.packages.${pkgs.system}.battery
+        # pkgs.fzf
         # gtksourceview
         # webkitgtk
         # accountsservice

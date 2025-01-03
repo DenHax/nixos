@@ -11,6 +11,9 @@ local servers = {
   -- Bash
   "bashls",
 
+  -- C/C++
+  "clangd",
+
   -- Docker
   "dockerls",
   "docker_compose_language_service",
