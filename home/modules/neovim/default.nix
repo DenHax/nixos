@@ -16,7 +16,9 @@ let
       allowUnfree = true;
     };
   };
+
 in
+# neovimPkgs = import ./module { inherit pkgs; };
 {
   options = {
     module.nvim.enable = mkEnableOption "Enables neovim";
@@ -24,6 +26,7 @@ in
 
   config = mkIf cfg.enable {
     home.shellAliases.vv = "NVIM_APPNAME=nvim-dh nvim";
+    home.shellAliases.fv = "NVIM_APPNAME=nvim-fast nvim";
     home.shellAliases.v = "nvim"; # NVIM_APPNAME=nvim-coder
     home.shellAliases.vw = "NVIM_APPNAME=nvim-writter nvim";
 
@@ -37,6 +40,10 @@ in
         lua51Packages.luarocks
         lua51Packages.jsregexp
         tree-sitter
+        fzf
+
+        vimPlugins.rocks-nvim
+        vimPlugins.rocks-config-nvim
         # luajitPackages.luarocks
 
         # Language server protocols, linters, formatters
@@ -61,6 +68,8 @@ in
         impl
         iferr
 
+        # JSON
+
         # Lua
         lua-language-server
         selene
@@ -68,11 +77,6 @@ in
 
         # Kubernetes
         helm-ls
-
-        # Markdown, Markups langs, TeX
-        marksman
-        texlab
-        ltex-ls
 
         # Nix
         nixd
@@ -122,6 +126,14 @@ in
         # Perl
         # Scala
         # Swift
+
+        # Markdown, Markups langs, TeX
+        marksman
+        texlab
+        ltex-ls
+        # neovimPkgs.coderEnv
+        # neovimPkgs.fastEnv
+        # neovimPkgs.writterEnv
       ];
     };
 
@@ -135,6 +147,12 @@ in
     xdg.configFile."nvim" = {
       # -coder
       source = ./NV;
+      recursive = true;
+    };
+
+    xdg.configFile."nvim-fast" = {
+      # -fast neovim
+      source = ./FV;
       recursive = true;
     };
 

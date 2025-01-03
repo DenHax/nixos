@@ -94,20 +94,17 @@ let
 
   ];
 
-  fastPackages = [
-    pkgs.nerdtree
-    pkgs.fzf
+  fastPackages = with pkgs; [
+    vimPlugins.rocks-nvim
+    vimPlugins.rocks-config-nvim
   ];
 
-  # Создаем деривации для каждой сборки
   coderEnv = pkgs.mkShell {
     buildInputs = coderPackages;
   };
-
   writterEnv = pkgs.mkShell {
     buildInputs = writterPackages;
   };
-
   fastEnv = pkgs.mkShell {
     buildInputs = fastPackages;
   };
