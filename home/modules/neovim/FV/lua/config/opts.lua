@@ -21,6 +21,8 @@ opts.expandtab = true
 opts.autoindent = true
 opts.cursorline = true
 
+vim.cmd("colorscheme desert")
+
 -- spell
 -- opts.spelling = "en_us"
 -- opts.spelling = "ru_ru"

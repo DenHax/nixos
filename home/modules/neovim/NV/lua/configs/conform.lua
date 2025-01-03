@@ -4,6 +4,8 @@ local options = {
 
     lua = { "stylua" },
 
+    -- c =  e;
+
     nix = { "nixfmt" },
 
     go = { "gofmt", "goimports" },

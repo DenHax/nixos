@@ -12,7 +12,7 @@ keyset("n", "<leader>ss", ":vsplit<CR>", opts, { desc = "Vertical split" })
 keyset("n", "<Esc>", ":nohlsearch<CR>", opts)
 
 -- Tree and file explorers
-keyset("n", "<leader>e", ":Neotree toggle<CR>", opts, { desc = "Noe tree" })
+keyset("n", "<leader>e", ":Ex<CR>", opts, { desc = "Explorer" })
 keyset("n", "<C-a>", "gg<S-v>G", { desc = "Select all text" })
 
 -- Remap default maps
@@ -25,6 +25,8 @@ keyset("n", "<C-l>", "<C-W>l", opts)
 keyset("n", "<S-h>", "<Cmd>bprev<CR>", opts)
 keyset("n", "<S-l>", "<Cmd>bnext<CR>", opts)
 keyset("n", "<leader>bc", "<Cmd>bdelete<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-b>", ":enew<CR>", { noremap = true, silent = true })
+
 -- Barbar keys
 --
 -- -- Move to previous/next
