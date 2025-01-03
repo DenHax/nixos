@@ -155,8 +155,8 @@ in
         transmission_4
 
         # REmote Desktop
-        # rdesktop
-        # remmina
+        rdesktop
+        remmina
         freerdp3
 
         # IDE
@@ -169,6 +169,7 @@ in
         hunspell
         hunspellDicts.en_US
         hunspellDicts.ru_RU
+        hunspellDicts.ru-ru
 
         # Misc, Music, Video
         pavucontrol

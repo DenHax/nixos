@@ -38,17 +38,26 @@ in
       };
     };
 
+    services = {
+      spice-webdavd.enable = true;
+      spice-vdagentd.enable = true;
+    };
+
     programs.virt-manager = {
       enable = true;
     };
 
     environment.systemPackages = with pkgs; [
       qemu
-      spice
       dive
       podman-tui
       docker-compose
       libvirt
+      # qemu-kvm
+      # spice
+      # libvirt-daemon-system
+      # libvirt-clients
+      # spice-client
       bridge-utils
       dosbox-staging
       virtiofsd
