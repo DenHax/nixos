@@ -10,10 +10,10 @@ local lsp = {
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts, { desc = "Go to implementation" })
 		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
-		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts, { desc = "Add workspace folder" })
+		vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts, { desc = "Add workspace folder" })
 		vim.keymap.set(
 			"n",
-			"<space>wr",
+			"<leader>wr",
 			vim.lsp.buf.remove_workspace_folder,
 			opts,
 			{ desc = "Remove workspace folder" }
@@ -23,12 +23,12 @@ local lsp = {
 		end, opts, { desc = "List of workspaces" })
 		vim.keymap.set("n", "<space>D", vim.lsp.buf.type_definition, opts, { desc = "Type of definition" })
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code actions" })
-		vim.keymap.set("n", "<space>cr", vim.lsp.buf.rename, opts, { desc = "Rename variable" })
+		vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts, { desc = "Rename variable" })
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts, { desc = "Go to reference" })
-		vim.keymap.set("n", "<space>of", vim.diagnostic.open_float, opts, { desc = "Open floating diagnostic" })
+		vim.keymap.set("n", "<leader>of", vim.diagnostic.open_float, opts, { desc = "Open floating diagnostic" })
 		vim.keymap.set("n", "<C-p", vim.diagnostic.goto_prev, opts)
 		vim.keymap.set("n", "<C-n>", vim.diagnostic.goto_next, opts)
-		vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist, opts, { desc = "Set diag. to the location list" })
+		vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts, { desc = "Set diag. to the location list" })
 	end,
 }
 

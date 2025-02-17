@@ -12,7 +12,7 @@ LineNumberColors()
 local M = {}
 M.base46 = {
   theme = "kanagawa",
-  transparency = true,
+  transparency = false,
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },

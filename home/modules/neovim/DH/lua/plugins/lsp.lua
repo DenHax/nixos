@@ -5,42 +5,57 @@ return {
 		local capabilities = require("plugins.lsp-settings.lsp-setup").capabilites
 		local on_attach = require("plugins.lsp-settings.lsp-setup").on_attach
 		local servers = {
-			-- Lua
-			"lua_ls",
+			"ansiblels",
 
-			-- Web (TypeScript, JavaScript, HTML, CSS)
-			"html",
-			"cssls",
-			"tailwindcss",
-			"ts_ls",
-			"emmet_language_server",
-			"jsonls",
+			-- Bash
+			"bashls",
 
-			-- Rust
-			-- "rust_analyzer",
+			-- C/C++
+			"clangd",
 
-			-- Nix
-			"nil_ls",
+			-- Docker
+			"dockerls",
+			"docker_compose_language_service",
 
 			-- Go
 			"gopls",
 
-			-- Database (SQL, MongoDB, Redis, Kafka)
-			"sqls",
+			-- Helm
+			"helm_ls",
 
-			-- Shells (Bash)
-			"bashls",
+			-- JSON
+			"jsonls",
+
+			-- Lua
+			"lua_ls",
+
+			-- Nix
+			"nixd",
+			-- "nil_ls",
+
+			-- PHP
+			"phpactor",
 
 			-- Python
 			"pyright",
 			-- "basedpyright",
 
-			-- Markups languages, TeX, Markdown
-			"marksman",
-			"texlab",
-			-- "ltex",
+			-- Rust
+			-- "rust_analyzer",
+
+			-- Database (SQL, MongoDB, Redis, Kafka)
+			"sqls",
+
+			-- Web (TypeScript, JavaScript, HTML, CSS)
+			"html",
+			"cssls",
+			"tailwindcss",
+			"tsserver",
+			"emmet_language_server",
+
+			-- YAML
+			"yamlls",
 		}
-		-- local util = require("lspconfig/util")
 		for _, server in pairs(servers) do
 			local opts = {
 				capabilities = capabilities,

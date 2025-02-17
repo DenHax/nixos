@@ -26,22 +26,25 @@ local options = {
     sql = { "sqlfluff" },
 
     -- rust = { "rustfmt" },
-    -- php = { { "pint", "php_cs_fixer" } },
-    -- php = { "php-cs-fixer" },
-    php = { "pint", "php-codesniffer" },
+    php = { "php_cs_fixer" },
     python = { "isort", "black" },
   },
-
+  formatters = {
+    php_cs_fixer = {
+      command = "php-cs-fixer",
+      args = { "fix", "$FILENAME" },
+      cwd = require("conform.util").root_file {
+        "composer.json",
+        ".php-cs-fixer.php",
+        ".php-cs-fixer.dist.php",
+      },
+    },
+  },
   format_on_save = {
-    -- These options will be passed to conform.format()
     lsp_fallback = true,
     async = false,
-    timeout_ms = 500,
+    timeout_ms = 1000,
   },
 }
-
-vim.keymap.set("n", "<leader>cf", function()
-  require("conform").format {}
-end, { desc = "Formatting" })
 
 return options

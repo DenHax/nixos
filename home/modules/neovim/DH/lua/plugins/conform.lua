@@ -31,10 +31,11 @@ return {
 				sql = { "sqlfluff" },
 
 				-- rust = { "rustfmt" },
+				php = { "php_cs_fixer" },
 				python = { "isort", "black" },
 			},
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 1500,
 				lsp_format = "fallback",
 			},
 			format_after_save = {

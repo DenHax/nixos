@@ -25,3 +25,7 @@ map({ "n", "v" }, "<C-a>", "gg<S-v>G", { desc = "Select all text" })
 
 -- Telescope
 map("n", "<leader>fg", "<cmd> Telescope live_grep<cr>")
+
+vim.keymap.set("n", "<leader>cf", function()
+  require("conform").format {}
+end, { desc = "Formatting" })
