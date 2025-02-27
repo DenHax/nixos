@@ -37,12 +37,8 @@ in
         fantasque-sans-mono
         font-awesome
         corefonts
-        (nerdfonts.override {
-          fonts = [
-            "FiraCode"
-            "NerdFontsSymbolsOnly"
-          ];
-        })
+        nerd-fonts.fira-code
+
       ];
     };
   };

@@ -103,7 +103,7 @@ in
         iredis
 
         # Development envirements, Devenv and etc.
-        devenv
+        # devenv
 
         # Program langs,
         rustc

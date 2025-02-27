@@ -75,7 +75,7 @@ in
       postgresql.enable = false;
       pgadmin.enable = false;
       pgmanage.enable = false;
-      printing.enable = true;
+      printing.enable = false;
       udisk.enable = true;
     };
   };

@@ -68,7 +68,7 @@ in
     gtk.enable = true;
     hyprland.enable = isHypr;
     hypridle.enable = isWM;
-    hyprlock.enable = false;
+    hyprlock.enable = true;
     # river.enable = isRiver;
     rofi.enable = isWM;
     qt.enable = true;

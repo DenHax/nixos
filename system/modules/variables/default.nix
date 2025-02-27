@@ -32,7 +32,7 @@ in
     environment.sessionVariables = {
       NIXOS_OZONE_WL = "1";
       FLAKE = "/home/${username}/nix";
-      QT_QPA_PLATFORMTHEME = "gtk3";
+      # QT_QPA_PLATFORMTHEME = "gtk3";
     };
   };
 }
