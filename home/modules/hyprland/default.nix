@@ -28,6 +28,8 @@ in
     module.hyprland.enable = mkEnableOption "Enables hyprland";
   };
   config = mkIf cfg.enable {
+    # stylix.targets.hyprland.shadow.enable = false;
+
     module.hyprland = {
       bind.enable = mkDefault cfg.enable;
       monitor.enable = mkDefault cfg.enable;

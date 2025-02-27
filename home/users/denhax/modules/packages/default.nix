@@ -253,9 +253,9 @@ in
         protonup
         lutris
         heroic
-        retroarch-pkg
+        # retroarch-pkg
         dolphin-emu
-        lime3ds
+        # lime3ds
         # arx-libertatis
       ]
       ++
