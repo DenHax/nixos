@@ -11,7 +11,7 @@ LineNumberColors()
 ---@type ChadrcConfig
 local M = {}
 M.base46 = {
-  theme = "kanagawa",
+  theme = "everforst", -- everblush
   transparency = false,
   hl_override = {
     Comment = { italic = true },

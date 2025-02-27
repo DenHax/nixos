@@ -72,5 +72,15 @@ local options = {
     "norg",
     "norg_meta",
   },
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+  fold = {
+    enable = true,
+    custom_foldtext = true,
+  },
 }
 return options

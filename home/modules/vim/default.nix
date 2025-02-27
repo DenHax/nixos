@@ -53,16 +53,23 @@ in
           set clipboard=unnamedplus
           set ruler
           set hidden
-          nnoremap <C-N> :bnext<CR>
-          nnoremap <C-P> :bprev<CR>
+          nnoremap <S-n> :bnext<CR>
+          nnoremap <S-p> :bprevious<CR>
           inoremap jj <Esc>
           nnoremap ; :
+
 
           set wildmenu
           " set wildmenu=list:longest
           filetype plugin indent on
 
           nnoremap <Space>e :NERDTreeToggle<CR>
+
+          let mapleader = " "
+
+          let g:netrw_banner = 0
+          let g:netrw_listyle = 3
+          let g:netrw_browse_split = 3
         '';
     };
   };

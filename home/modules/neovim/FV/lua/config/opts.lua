@@ -20,10 +20,10 @@ opts.shiftwidth = 2
 opts.expandtab = true
 opts.autoindent = true
 opts.cursorline = true
+opts.spell = false
 
 vim.cmd("colorscheme desert")
 
--- spell
--- opts.spelling = "en_us"
--- opts.spelling = "ru_ru"
-opts.spell = false
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_browse_split = 3

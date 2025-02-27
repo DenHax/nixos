@@ -34,7 +34,7 @@ in
         };
 
       history = {
-        size = 10000;
+        size = 100000;
         path = "${config.xdg.dataHome}/zsh/history";
       };
 

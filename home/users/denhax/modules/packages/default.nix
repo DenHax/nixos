@@ -80,6 +80,8 @@ in
         fd
         duf
         jq
+        httpie-desktop
+        httpie
         procs
         tlrc
         pre-commit
@@ -98,6 +100,7 @@ in
 
         # Database cli
         pgcli
+        iredis
 
         # Development envirements, Devenv and etc.
         devenv
@@ -126,16 +129,20 @@ in
         docker-compose
         ansible
         ansible-lint
-        # k3s
         kubectl
         kubernetes-helm
+        minikube
+        # k3s
+        # helm
         # terraform
       ]
       ++ lib.optionals isWorkstation [
         # discord
         obsidian
         semgrep
+        grpcui
         bruno
+        insomnia
       ]
       ++ lib.optionals (isLinux && isWorkstation) [
         # DevOps Utils
@@ -212,7 +219,7 @@ in
         # inkscape-with-extensions
         # gimp-with-plugins
         # flowblade
-        libsForQt5.kdenlive
+        # libsForQt5.kdenlive
 
         # Utlis
         # swww
@@ -237,6 +244,10 @@ in
 
         # Messenger
         telegram-desktop
+      ]
+      ++ lib.optionals isLinux [
+        winetricks
+        wineWowPackages.waylandFull
       ]
       ++ lib.optionals isHardGame [
         protonup
