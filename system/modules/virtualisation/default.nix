@@ -16,6 +16,10 @@ in
   };
 
   config = mkIf cfg.enable {
+
+    users.groups.libvirtd.members = [ "denhax" ];
+    users.extraGroups.vboxusers.members = [ "denhax" ];
+
     virtualisation = {
       docker = {
         enable = true;
@@ -24,9 +28,9 @@ in
           setSocketVariable = true;
         };
       };
+
       podman = {
         enable = true;
-
         defaultNetwork.settings.dns_enabled = true;
       };
 
@@ -36,6 +40,15 @@ in
           vhostUserPackages = [ pkgs.virtiofsd ];
         };
       };
+
+      spiceUSBRedirection.enable = true;
+
+      # virtualbox.host = {
+      #   enable = true;
+      #   enableExtensionPack = true;
+      # };
+
+      # vmware.host.enable = true;
     };
 
     services = {
@@ -61,6 +74,7 @@ in
       bridge-utils
       dosbox-staging
       virtiofsd
+      virtio-win
     ];
   };
 }

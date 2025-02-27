@@ -36,7 +36,6 @@ in
   };
 
   config = mkIf cfg.enable {
-
     environment.systemPackages =
       with pkgs;
       [
@@ -48,6 +47,7 @@ in
         # CLI utils
         wget
         curl
+        grpcurl
         git
         lf
         tree
@@ -56,6 +56,7 @@ in
         unzip
         killall
         parted
+        exfat
         # cmake
         # light
         # auto-cpufreq

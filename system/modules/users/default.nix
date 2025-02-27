@@ -21,7 +21,7 @@ in
         ${username} = {
           isNormalUser = true;
           shell = pkgs.zsh;
-          description = "${username}, Senior HelloWorld-developer (Golang, Rust, JavaScript, TypeScript, Lua, Nix, C, C++, Bash, PowerShell, Java, PHP, Python, Latex, Markdown, Norg, HTML, CSS, XML, SQL)";
+          description = "${username}, Senior HelloWorld-developer (Golang, Rust, JavaScript, TypeScript, Lua, Nix, C, C++, Bash, PowerShell, Java, PHP, Python, R, Kotlin, Latex, Markdown, Norg, HTML, CSS, XML, JSON, SQL)";
           home = "/home/${username}";
           extraGroups = [
             "audio"
@@ -32,8 +32,10 @@ in
             "networkmanager"
             "video"
             "wheel"
+            "scanner"
+            "lp"
           ];
-          packages = with pkgs; [ ];
+          packages = [ ];
         };
 
         root = {

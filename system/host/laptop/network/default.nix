@@ -1,5 +1,9 @@
 {
   networking = {
+    # hosts = {
+    #   "127.0.0.1" = [ "best-fitness.com" ];
+    #
+    # };
     # networkmanager.wifi.backend = "iwd";
     #
     # wireless.iwd = {
@@ -17,7 +21,10 @@
 
       allowedTCPPorts = [
         8384
+        8443
         22000
+        30000
+        32767
         51413
       ];
 

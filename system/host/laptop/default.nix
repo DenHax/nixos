@@ -9,6 +9,7 @@ let
   isHypr = wm == "hyprland";
   isQtile = wm == "qtile";
   isRiver = wm == "river";
+  isGnome = de == "gnome";
 in
 # isRiver = wm == "river";
 {
@@ -16,7 +17,6 @@ in
     ../../modules
     ./bootloader
     ./disko
-    ./fingerprint
     # ./gpu
     ./hardware
     ./kernel
@@ -28,6 +28,7 @@ in
   module = {
     locale.enable = true;
     network.enable = true;
+    scanner.enable = true;
     security.enable = true;
     timedate.enable = true;
     users.enable = true;
@@ -54,12 +55,14 @@ in
       auto-cpufreq.enable = true;
       blueman.enable = true;
       devmon.enable = true;
+      fprint.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
       gvfs.enable = true;
       hyprland.enable = isHypr;
       input.enable = false;
       k3s.enable = false;
+      kubernetes.enable = false;
       light.enable = true;
       logind.enable = false;
       river.enable = isRiver;
@@ -72,6 +75,7 @@ in
       postgresql.enable = false;
       pgadmin.enable = false;
       pgmanage.enable = false;
+      printing.enable = true;
       udisk.enable = true;
     };
   };

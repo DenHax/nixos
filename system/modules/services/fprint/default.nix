@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 with lib;
 
@@ -12,14 +17,16 @@ in
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      open-fprintd
       fprintd
+      # libfprint
     ];
 
     services.fprintd.enable = true;
 
     security.pam.services = {
-      login.fprintAuth = true;
       sudo.fprintAuth = true;
+      # login.fprintAuth = true;
       # xscreensaver.fprintAuth = true;
     };
     # services.open-fprintd.enable = true;

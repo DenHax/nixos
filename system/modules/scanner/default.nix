@@ -15,9 +15,8 @@ in
 
   config = mkIf cfg.enable {
     hardware.sane.enable = true;
-    # environment.systemPackages = with pkgs; [
-    #   sane-backends
-    #   sane-frontends
-    # ];
+    environment.systemPackages = with pkgs; [
+      simple-scan
+    ];
   };
 }
