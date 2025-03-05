@@ -34,7 +34,7 @@ in
 
   module = {
     # WM and Notice
-    ags.enable = isWM;
+    ags.enable = false;
     dconf.enable = isWorkstation;
     dunst.enable = isWM && false;
     eww.enable = isWM && false;
@@ -59,8 +59,10 @@ in
     zsh.enable = true;
 
     # GUI applications
-    zathura.enable = true;
     firefox.enable = isLinux && isWorkstation;
+    librewolf.enable = isLinux && isWorkstation;
+    thunderbird.enable = isWorkstation;
+    zathura.enable = isWorkstation;
 
     # WM and  DE
     awesome.enable = isAwesome;
