@@ -34,7 +34,7 @@ in
     users.enable = true;
     variables.enable = true;
     virtualisation.enable = true;
-    wireguard.enable = false;
+    wireguard.enable = true;
 
     programs = {
       dconf.enable = false;
