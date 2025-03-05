@@ -84,7 +84,7 @@ in
         # nil
 
         # PHP
-        # intelephense
+        intelephense
         phpactor
         php83Packages.php-codesniffer
         php83Packages.php-cs-fixer

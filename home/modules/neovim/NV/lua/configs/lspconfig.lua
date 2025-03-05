@@ -35,7 +35,8 @@ local servers = {
   -- "nil_ls",
 
   -- PHP
-  "phpactor",
+  -- "phpactor",
+  "intelephence",
 
   -- Python
   "pyright",
