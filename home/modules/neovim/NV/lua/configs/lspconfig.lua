@@ -36,7 +36,7 @@ local servers = {
 
   -- PHP
   -- "phpactor",
-  "intelephence",
+  "intelephense",
 
   -- Python
   "pyright",
