@@ -70,6 +70,9 @@ let
           inputs.home-manager.nixosModules.home-manager
           inputs.stylix.nixosModules.stylix
           inputs.disko.nixosModules.disko
+          inputs.nur.modules.nixos.default
+          inputs.proxmox-nixos.nixosModules.proxmox-ve
+          inputs.impermanence.nixosModules.impermanence
 
           "${systemConfiguration}"
           "${homeConfiguration}"
@@ -78,8 +81,6 @@ let
           if hostname == "laptop" then
             [
               inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-6th-gen
-              # inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules.open-fprintd
-              # inputs.nixos-06cb-009a-fingerprint-sensor.nixosModules.python-validity
             ]
           else
             [ ]
@@ -106,7 +107,6 @@ let
           stateVersion
 
           cpu
-          # isIntel
 
           systemModules
           commonModules
@@ -128,7 +128,6 @@ in
 
   genDarwin = builtins.mapAttrs mkHostDarwin;
 
-  # forAllSystems = inputs.nixpkgs.lib.genAttrs [
   #   "aarch64-linux"
   #   "x86_64-linux"
   #   "aarch64-darwin"
@@ -136,5 +135,4 @@ in
   #   # Legacy
   #   "i686-linux"
   #   "x86_64-darwin"
-  # ];
 }

@@ -17,6 +17,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    impermanence = {
+      url = "github:/nix-community/impermanence";
+    };
+
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -40,10 +44,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # xdghypr = {
-    #   url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.3";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    nur = {
+      url = "github:nix-community/NUR";
+    };
+
+    xdghypr = {
+      url = "github:hyprwm/xdg-desktop-portal-hyprland/v1.3.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    proxmox-nixos = {
+      url = "github:SaumonNet/proxmox-nixos";
+    };
 
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -102,30 +114,6 @@
         darwinConfigurations = confMake.genDarwin hosts.darwin;
 
         templates = import "${self}/template" { inherit self; };
-
-        #     {
-        #   ${hosts.workstationDH.hostname} = confMake.mkHost hosts.workstationDH;
-        # };
-        #     {
-        #   ${hosts.macbox.hostname} = confMake.mkHostDarwin hosts.macbox;
-        # };
-
-        # homeConfigurations = {
-        #
-        #   "${hosts.workstationDH.username}@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
-        #   "root@${hosts.workstationDH.hostname}" = confMake.mkHome hosts.workstationDH;
-        #
-        #   "${hosts.serve.username}@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
-        #   "root@${hosts.serve.hostname}" = confMake.mkHome hosts.serve;
-        #
-        #   "${hosts.laptopDH.username}@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
-        #   "root@${hosts.laptopDH.hostname}" = confMake.mkHome hosts.laptopDH;
-        #
-        #   "${hosts.raspDH.username}@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
-        #   "root@${hosts.raspDH.hostname}" = confMake.mkHome hosts.raspDH;
-        #
-        #   "${hosts.macXDH.username}@${hosts.macXDH.hostname}" = confMake.mkHome hosts.macXDH;
-        # };
       };
     };
 }
