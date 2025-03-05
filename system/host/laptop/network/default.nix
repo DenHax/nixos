@@ -1,21 +1,5 @@
 {
   networking = {
-    # hosts = {
-    #   "127.0.0.1" = [ "best-fitness.com" ];
-    #
-    # };
-    # networkmanager.wifi.backend = "iwd";
-    #
-    # wireless.iwd = {
-    #   enable = true;
-    #
-    #   settings = {
-    #     Settings = {
-    #       AutoConnect = true;
-    #     };
-    #   };
-    # };
-
     firewall = {
       enable = true;
 
