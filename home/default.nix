@@ -65,7 +65,9 @@ in
     users.${username} = {
       imports =
         [
+          inputs.impermanence.nixosModules.home-manager.impermanence
           inputs.sops-nix.homeManagerModules.sops
+          inputs.nur.modules.homeManager.default
           "${commonModules}"
           "${homeModules}"
         ]
