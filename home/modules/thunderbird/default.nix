@@ -3,11 +3,11 @@
 with lib;
 
 let
-  cfg = config.module.programs.thunderbird;
+  cfg = config.module.thunderbird;
 in
 {
   options.module = {
-    programs.thunderbird.enable = mkEnableOption "Enable thunderbird";
+    thunderbird.enable = mkEnableOption "Enable thunderbird";
   };
 
   config = mkIf cfg.enable {

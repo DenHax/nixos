@@ -23,10 +23,12 @@ in
           id = 1;
           name = "Work";
 
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            ublock-origin
-            vimium
-          ];
+          extensions = {
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              ublock-origin
+              vimium
+            ];
+          };
 
           search = {
             force = true;
@@ -49,14 +51,16 @@ in
           name = "Default";
           isDefault = true;
 
-          extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-            ublock-origin
-            sponsorblock
-            return-youtube-dislikes
-            foxyproxy-standard
-            vimium
-            wappalyzer
-          ];
+          extensions = {
+            packages = with pkgs.nur.repos.rycee.firefox-addons; [
+              ublock-origin
+              sponsorblock
+              return-youtube-dislikes
+              foxyproxy-standard
+              vimium
+              wappalyzer
+            ];
+          };
 
           search = {
             force = true;
@@ -70,8 +74,8 @@ in
               "Youtube"
               "NixOS Options"
               "Nix Packages"
-              "GitHub"
               "Home Manager"
+              "GitHub"
             ];
 
             engines = {

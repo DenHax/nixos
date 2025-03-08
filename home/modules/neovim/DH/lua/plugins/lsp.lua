@@ -11,7 +11,7 @@ return {
 			"bashls",
 
 			-- C/C++
-			"clangd",
+			"ccls",
 
 			-- Docker
 			"dockerls",

@@ -44,7 +44,7 @@ in
 
         vimPlugins.rocks-nvim
         vimPlugins.rocks-config-nvim
-        # luajitPackages.luarocks
+        vimPlugins.vim-airline
 
         # Language server protocols, linters, formatters
         # Ansible
@@ -54,6 +54,10 @@ in
         nodePackages.bash-language-server
         shellcheck
         shfmt
+
+        # C
+
+        ccls
 
         # Docker
         docker-compose-language-service

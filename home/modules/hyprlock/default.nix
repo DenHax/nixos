@@ -16,8 +16,8 @@ let
       allowUnfree = true;
     };
   };
+  wallpaper = inputs.wallpaperImage;
 in
-# wallpaper = inputs.wallpaperImage;
 {
   options.module = {
     hyprlock.enable = mkEnableOption "Enables hyprlock";
@@ -44,9 +44,8 @@ in
         background = [
           {
             monitor = "";
-            path = "/home/denhax/Pictures/Wallpapers/kanagawa.png";
-            # path = wallpaper;
-            # color = "rgba(25, 20, 20, 1.0)";
+            path = wallpaper;
+            color = "rgba(25, 20, 20, 1.0)";
             blur_size = 8;
             blur_passes = 2;
             noise = 1.17e-2;
@@ -66,9 +65,9 @@ in
             dots_spacing = 0.2;
             dots_center = true;
             dots_rounding = -1;
-            # outer_color = "rgba(0, 0, 0, 0)";
-            # inner_color = "rgba(0, 0, 0, 0.5)";
-            # font_color = "rgb(200, 200, 200)";
+            outer_color = "rgba(0, 0, 0, 0)";
+            inner_color = "rgba(0, 0, 0, 0.5)";
+            font_color = "rgb(200, 200, 200)";
             fade_on_empty = false;
             fade_timeout = 1000;
             placeholder_text = ''<b><span foreground="##cdd6f4">Input Password...</span></b>'';
@@ -76,7 +75,7 @@ in
             rounding = -1;
             shadow_passes = 0;
             shadow_size = 3;
-            # shadow_color = "rgba(0, 0, 0, 1.0)";
+            shadow_color = "rgba(0, 0, 0, 1.0)";
             shadow_boost = 1.2;
             check_color = "rgb(204, 136, 34)";
             fail_color = "rgb(204, 34, 34)";
@@ -99,8 +98,8 @@ in
             text = "$TIME";
             color = "rgba(200, 200, 200, 1.0)";
             font_size = 120;
-            font_family = "FiraCode Nerd Font";
-            # font_famyly = config.stylix.fonts.serif.name;
+            # font_family = "FiraCode Nerd Font";
+            font_famyly = config.stylix.fonts.serif.name;
             rotate = 0.0;
             shadow_passes = 0;
             shadow_size = 3;
@@ -117,7 +116,8 @@ in
             color = "rgba(200, 200, 200, 1.0)";
             font_size = 20;
             # font_family = "Iosevka Nerd Font Mono";
-            font_famyly = "FiraCode Nerd Font";
+            font_famyly = config.stylix.fonts.serif.name;
+            # font_famyly = "FiraCode Nerd Font";
             rotate = 0.0;
             shadow_passes = 0;
             shadow_size = 3;

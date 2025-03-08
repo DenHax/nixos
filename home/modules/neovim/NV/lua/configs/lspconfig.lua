@@ -12,7 +12,7 @@ local servers = {
   "bashls",
 
   -- C/C++
-  "clangd",
+  "ccls",
 
   -- Docker
   "dockerls",
@@ -35,7 +35,7 @@ local servers = {
   -- "nil_ls",
 
   -- PHP
-  -- "phpactor",
+  "phpactor",
   "intelephense",
 
   -- Python
@@ -52,7 +52,7 @@ local servers = {
   "html",
   "cssls",
   "tailwindcss",
-  "tsserver",
+  "ts_ls",
   "emmet_language_server",
 
   -- YAML

@@ -23,7 +23,7 @@ let
   cliphist = "${pkgs.cliphist}/bin/cliphist list | rofi -dmenu | ${pkgs.cliphist}/bin/cliphist decode | ${pkgs.wl-clipboard}/bin/wl-copy";
   appLauncher = "rofi -show";
   terminal = "${pkgs.kitty}/bin/kitty";
-  filemanager = "${pkgs.pcmanfm}/bin/pcmanfm";
+  filemanager = "${pkgs.xfce.thunar}/bin/thunar";
   picker = "${pkgs.hyprpicker}/bin/hyprpicker -a";
 
   # Screenshots and recorders

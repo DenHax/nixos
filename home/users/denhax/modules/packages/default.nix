@@ -80,10 +80,12 @@ in
         fd
         duf
         jq
-        httpie-desktop
         httpie
         procs
         tlrc
+        man-db
+        man-pages
+        man-pages-posix
         pre-commit
         tokei
         zip
@@ -141,6 +143,7 @@ in
         obsidian
         semgrep
         grpcui
+        httpie-desktop
         bruno
         insomnia
       ]
@@ -152,31 +155,35 @@ in
         # gparted
 
         # Filemanagers gui
-        pcmanfm
+        xfce.thunar
         shared-mime-info
         lxde.lxmenu-data
+        # pcmanfm
         # nemo
 
-        # Tor 
+        # Database UI
+        beekeeper-studio
+
+        # Tor
         rustmission
         transmission_4
 
         # REmote Desktop
-        rdesktop
-        remmina
         freerdp3
+        # rdesktop
+        # remmina
 
         # IDE
         # rstudio_cust
 
         # Office
-        # onlyoffice-bin
+        onlyoffice-bin
         texlive-pkg
-        libreoffice-qt
-        hunspell
-        hunspellDicts.en_US
-        hunspellDicts.ru_RU
-        hunspellDicts.ru-ru
+        # libreoffice-qt
+        # hunspell
+        # hunspellDicts.en_US
+        # hunspellDicts.ru_RU
+        # hunspellDicts.ru-ru
 
         # Misc, Music, Video
         pavucontrol
@@ -258,9 +265,7 @@ in
         # lime3ds
         # arx-libertatis
       ]
-      ++
-        lib.optionals isSoftGame
-          [
-          ];
+      ++ lib.optionals isSoftGame [
+      ];
   };
 }

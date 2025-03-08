@@ -71,4 +71,10 @@ return {
     version = "^5",
     lazy = false,
   },
+  -- {
+  --   "tpope/vim-dadbod",
+  -- },
+  -- {
+  --   "tpope/vim-dadbod-ui",
+  -- },
 }

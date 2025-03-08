@@ -1,16 +1,16 @@
-local dbDriver = os.getenv "SQLS_DRIVER"
-local dbDSN = os.getenv "SQLS_DSN"
+-- local dbDriver = os.getenv "SQLS_DRIVER"
+-- local dbDSN = os.getenv "SQLS_DSN"
 
 return {
   cmd = { "sqls" },
   settings = {
     sqls = {
-      connections = {
-        {
-          driver = dbDriver,
-          dataSourceName = dbDSN,
-        },
-      },
+      -- connections = {
+      --   {
+      --     driver = os.getenv "SQLS_DRIVER", -- dbDriver,
+      --     dataSourceName = os.getenv "SQLS_DSN", -- dbDSN,
+      --   },
+      -- },
     },
   },
 }

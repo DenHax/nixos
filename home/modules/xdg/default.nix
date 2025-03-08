@@ -20,6 +20,13 @@ in
       mimeApps = {
         enable = true;
         defaultApplications = {
+          "x-scheme-handler/mailto" = "userapp-Thunderbird-A8K222.desktop";
+          "x-scheme-handler/mid" = "userapp-Thunderbird-A8K222.desktop";
+          "message/rfc822" = "userapp-Thunderbird-A8K222.desktop";
+
+          "x-scheme-handler/tg" = "org.telegram.desktop.desktop";
+          "x-scheme-handler/tonsite" = "org.telegram.desktop.desktop";
+
           "text/markdown" = "nvim.desktop";
           "text/plain" = "nvim.desktop";
 
@@ -30,7 +37,7 @@ in
           "x-scheme-handler/unknown" = "firefox.desktop";
 
           "application/pdf" = "org.pwmt.zathura.desktop";
-          "inode/directory" = "pcmanfm.dektop";
+          "inode/directory" = "thunar.dektop";
         };
       };
       desktopEntries = {
