@@ -55,6 +55,7 @@ in
       auto-cpufreq.enable = true;
       blueman.enable = true;
       devmon.enable = true;
+      flatpak.enable = true;
       fprint.enable = true;
       fwupd.enable = true;
       greetd.enable = true;
