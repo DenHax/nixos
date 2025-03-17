@@ -1,0 +1,44 @@
+{
+  pkgs,
+  ...
+}:
+
+{
+  programs.vscode.extensions = with pkgs.vscode-extensions; [
+    tal7aouy.icons
+    bmewburn.vscode-intelephense-client
+    hashicorp.hcl
+    visualstudioexptteam.vscodeintellicode
+    visualstudioexptteam.intellicode-api-usage-examples
+    ms-vscode.cpptools-extension-pack
+    stylelint.vscode-stylelint
+    reloadedextensions.reloaded-cpp
+    hediet.vscode-drawio
+    hars.cppsnippets
+    equinusocio.vsc-material-theme-icons
+    ms-vscode-remote.remote-containers
+    ms-azuretools.vscode-docker
+    junstyle.php-cs-fixer
+    ikappas.composer
+    dbaeumer.vscode-eslint
+    gitlab.gitlab-workflow
+    eamodio.gitlens
+    golang.go
+    ms-python.isort
+    wholroyd.jinja
+    ms-toolsai.jupyter
+    ms-toolsai.vscode-jupyter-cell-tags
+    ms-toolsai.jupyter-keymap
+    ms-toolsai.jupyter-renderers
+    ms-toolsai.vscode-jupyter-slideshow
+    pkief.material-icon-theme
+    equinusocio.vsc-material-theme
+    bbenoist.nix
+    esbenp.prettier-vscode
+    ms-python.vscode-pylance
+    ms-python.python
+    gruntfuggly.todo-tree
+    xadillax.viml
+    redhat.vscode-yaml
+  ];
+}
