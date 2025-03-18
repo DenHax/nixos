@@ -36,8 +36,12 @@ in
           "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/unknown" = "firefox.desktop";
 
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document" =
+            "onlyoffice-desktopeditors.desktop";
           "application/pdf" = "org.pwmt.zathura.desktop";
           "inode/directory" = "thunar.dektop";
+
+          "application/vnd.microsoft.portable-executable" = "ru.linux_gaming.PortProton.desktop";
         };
       };
       desktopEntries = {
