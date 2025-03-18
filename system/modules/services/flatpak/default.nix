@@ -7,7 +7,7 @@ let
 in
 {
   options.module.services = {
-    flakpak.enable = mkEnableOption "Enables flatpak";
+    flatpak.enable = mkEnableOption "Enables flatpak";
   };
 
   config = mkIf cfg.enable {
