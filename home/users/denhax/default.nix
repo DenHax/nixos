@@ -77,6 +77,7 @@ in
     sway.enable = isSway;
     swaylock.enable = isSway;
     swaync.enable = isWM;
+    vscode.enable = isWorkstation;
     xdg.enable = isLinux && isWorkstation;
 
     # Cli utils and equivalents

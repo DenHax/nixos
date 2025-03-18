@@ -15,11 +15,9 @@
     reloadedextensions.reloaded-cpp
     hediet.vscode-drawio
     hars.cppsnippets
-    equinusocio.vsc-material-theme-icons
     ms-vscode-remote.remote-containers
     ms-azuretools.vscode-docker
-    junstyle.php-cs-fixer
-    ikappas.composer
+    devsense.composer-php-vscode
     dbaeumer.vscode-eslint
     gitlab.gitlab-workflow
     eamodio.gitlens
@@ -32,7 +30,6 @@
     ms-toolsai.jupyter-renderers
     ms-toolsai.vscode-jupyter-slideshow
     pkief.material-icon-theme
-    equinusocio.vsc-material-theme
     bbenoist.nix
     esbenp.prettier-vscode
     ms-python.vscode-pylance

@@ -22,6 +22,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    stylix.targets.vscode.enable = false;
     programs.vscode = {
       enable = true;
       enableUpdateCheck = false;
