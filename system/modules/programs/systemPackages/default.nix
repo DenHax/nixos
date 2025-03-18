@@ -117,9 +117,9 @@ in
         # (import "${customPkgs}/bat_log" { inherit pkgs; })
       ]
       ++ lib.optionals (isWorkstation && hostname == "workstation") [
-        wineWowPackages.stable
-        winetricks
-        wineWowPackages.waylandFull
+        # wineWowPackages.stable
+        # winetricks
+        # wineWowPackages.waylandFull
         # (import "${customPkgs}/bat_log" { inherit pkgs; })
       ]
       ++ lib.optionals (isIntel == "true") [ microcodeIntel ]

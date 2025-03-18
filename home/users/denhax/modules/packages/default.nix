@@ -253,8 +253,10 @@ in
         telegram-desktop
       ]
       ++ lib.optionals isLinux [
-        winetricks
-        wineWowPackages.waylandFull
+        # bottles-unwrapped
+        # winetricks
+        # wineWowPackages.waylandFull
+
       ]
       ++ lib.optionals isHardGame [
         protonup
