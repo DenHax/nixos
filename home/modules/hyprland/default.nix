@@ -90,7 +90,7 @@ in
             natural_scroll = false;
           };
 
-          sensitivity = 0.1; # -1.0 - 1.0, 0 means no modification.
+          sensitivity = 0.3; # -1.0 - 1.0, 0 means no modification.
         };
 
         general = {
@@ -148,6 +148,7 @@ in
           workspace_swipe_invert = false;
           workspace_swipe_distance = 200;
           workspace_swipe_forever = true;
+          workspace_swipe_direction_lock = false;
         };
 
         misc = {
