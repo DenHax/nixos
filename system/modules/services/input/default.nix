@@ -19,11 +19,20 @@ in
   config = mkIf cfg.enable {
 
     services.libinput = {
-      enable = false;
+      enable = true;
       touchpad = {
         accelProfile = "adaptive";
         accelSpeed = "0.5";
       };
     };
+
+    environment.systemPackages = with pkgs; [
+      libinput
+      libinput-gestures
+      touchpad-gestures
+    ];
+
+    services.touchegg.enable = true;
+    boot.kernelModules = [ "hid_apple" ];
   };
 }

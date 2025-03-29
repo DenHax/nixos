@@ -115,7 +115,7 @@ in
         "$shiftMod CONTROL, P, exec, ${pkgs.systemd}/bin/systemctl poweroff"
 
         "$mainMod, Q, killactive,"
-        "$mainMod, M, exit,"
+        "$mainMod CONTROL, M, exit,"
         "$mainMod, F, fullscreen,"
         "$mainMod, G, togglefloating,"
 
