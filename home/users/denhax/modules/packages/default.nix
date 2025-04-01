@@ -129,6 +129,7 @@ in
 
         # DevOps Utils
         docker-compose
+        lazydocker
         ansible
         ansible-lint
         kubectl
